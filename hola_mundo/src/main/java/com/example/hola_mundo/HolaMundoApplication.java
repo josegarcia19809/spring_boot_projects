@@ -11,6 +11,7 @@ public class HolaMundoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HolaMundoApplication.class, args);
+        System.out.println("Ejecutando en puerto 8080..");
 	}
 	@GetMapping("/hello")
 	public String hello() {
