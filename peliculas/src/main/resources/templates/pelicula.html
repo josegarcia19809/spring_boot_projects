@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Principal</title>
+</head>
+<body>
+<h1 th:text="${mensaje}">Bienvenidos</h1>
+
+<hr>
+<p th:text="'Titulo: ' + ${titulo}"></p>
+<p th:text="'Fecha de reseña: '+ ${fechaResenia}"></p>
+<p th:text="'Genero: '+ ${genero}"></p>
+<p th:text="'Año de estreno: '+ ${anioEstreno}"></p>
+<p th:text="'Rating: '+ ${rating}"></p>
+<p th:text="'Vigente: '+ ${vigente}"></p>
+
+</body>
+</html>

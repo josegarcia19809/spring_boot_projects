@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>IMDB: Top 5 Episodios</title>
+    <style>
+        body {
+            background-color: #180e18;
+            color: #fff;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th, td {
+            border: #fff 2px solid;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+<body>
+<h2>IMDB: Top 5 Episodios</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Episode</th>
+        <th>Rating</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${titulo1}"></td>
+        <td th:text="${episodio1}"></td>
+        <td th:text="${rating1}"></td>
+    </tr>
+    <tr>
+        <td th:text="${titulo2}"></td>
+        <td th:text="${episodio2}"></td>
+        <td th:text="${rating2}"></td>
+    </tr>
+    <tr>
+        <td th:text="${titulo3}"></td>
+        <td th:text="${episodio3}"></td>
+        <td th:text="${rating3}"></td>
+    </tr>
+    <tr>
+        <td th:text="${titulo4}"></td>
+        <td th:text="${episodio4}"></td>
+        <td th:text="${rating4}"></td>
+    </tr>
+    <tr>
+        <td th:text="${titulo5}"></td>
+        <td th:text="${episodio5}"></td>
+        <td th:text="${rating5}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
