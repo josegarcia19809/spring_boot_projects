@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de la compra</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <img th:src="@{/img/compras.jpg}" width="350">
+    <h3 class="display-3">Detalle de la compra</h3>
+    <h5>Nombre: <small class="text-muted" th:text="${compra.nombre}"></small></h5>
+    <h5>Género: <small class="text-muted" th:text="${compra.genero}"></small></h5>
+    <h5>Ciudad: <small class="text-muted" th:text="${compra.ciudad}"></small></h5>
+    <h5>Frecuencia: <small class="text-muted" th:text="${compra.frecuencia}"></small></h5>
+    <h5>Artículo: <small class="text-muted" th:text="${compra.articulo}"></small></h5>
+    <h5>Gasto: <small class="text-muted" th:text="${compra.gasto}"></small></h5>
+    <div th:if="${compra.gasto > 10}">
+        <p>Fue una gran compra.</p>
+    </div>
+
+    <div th:unless="${compra.gasto > 10}">
+        <p>Fue una compra mínima.</p>
+    </div>
+
+
+</div>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
