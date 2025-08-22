@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Calificaciones</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h2>Lista de Calificaciones</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Asignatura</th>
+            <th>Puntuación</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="calificacion: ${listaCalificaciones}">
+            <td th:text="${calificacion.nombre}"></td>
+            <td th:text="${calificacion.asignatura}"></td>
+            <td th:text="${calificacion.puntuacion}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
