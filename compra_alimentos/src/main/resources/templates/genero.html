@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Género del comprador</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <img th:src="@{/img/compras.jpg}" width="350">
+    <h3 class="display-3">Género del comprador</h3>
+    <h5>Nombre: <small class="text-muted" th:text="${compra.nombre}"></small></h5>
+    <h5>Género: <small class="text-muted" th:text="${compra.genero}"></small></h5>
+    <h5>Ciudad: <small class="text-muted" th:text="${compra.ciudad}"></small></h5>
+    <h5>Frecuencia: <small class="text-muted" th:text="${compra.frecuencia}"></small></h5>
+    <h5>Artículo: <small class="text-muted" th:text="${compra.articulo}"></small></h5>
+    <h5>Gasto: <small class="text-muted" th:text="${compra.gasto}"></small></h5>
+
+    <div class="bg-success">
+        <h4 class="text-white"
+            th:text="${compra.genero.equals('Female') ? 'Comprador Mujer': 'Comprador Hombre'}"></h4>
+    </div>
+
+</div>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

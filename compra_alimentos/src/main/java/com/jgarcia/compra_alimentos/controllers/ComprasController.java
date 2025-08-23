@@ -14,4 +14,22 @@ public class ComprasController {
         model.addAttribute("compra", compra);
         return "detalle";
     }
+
+    @GetMapping("/genero")
+    public String mostrarGenero(Model model) {
+        CompraComida compra = new CompraComida("Rachel", "Female", "Philadelphia",
+                "Seldom", "Sushi", 71.68);
+        model.addAttribute("compra", compra);
+        return "genero";
+    }
+
+    @GetMapping("/frecuencia")
+    public String mostrarFrecuencia(Model model) {
+        CompraComida compra = new CompraComida("Sharon", "Female", "New York", "Daily",
+                "Donut", 25.04);
+        model.addAttribute("compra", compra);
+        return "frecuencia";
+    }
+
+
 }

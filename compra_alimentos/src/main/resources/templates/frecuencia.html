@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Frecuencia de la compra</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <img th:src="@{/img/compras.jpg}" width="350">
+    <h3 class="display-3">Frecuencia de la compra</h3>
+    <h5>Nombre: <small class="text-muted" th:text="${compra.nombre}"></small></h5>
+    <h5>Género: <small class="text-muted" th:text="${compra.genero}"></small></h5>
+    <h5>Ciudad: <small class="text-muted" th:text="${compra.ciudad}"></small></h5>
+    <h5>Frecuencia: <small class="text-muted" th:text="${compra.frecuencia}"></small></h5>
+    <h5>Artículo: <small class="text-muted" th:text="${compra.articulo}"></small></h5>
+    <h5>Gasto: <small class="text-muted" th:text="${compra.gasto}"></small></h5>
+    <hr/>
+
+    <div th:switch="${compra.frecuencia}">
+        <h4 th:case="'Weekly'">Frecuencia: <small class="text-muted">Semanalmente</small></h4>
+        <h4 th:case="'Daily'">Frecuencia: <small class="text-muted">Diariamente</small></h4>
+        <h4 th:case="'Never'">Frecuencia: <small class="text-muted">Nunca</small></h4>
+        <h4 th:case="'Once'">Frecuencia: <small class="text-muted">Una vez</small></h4>
+        <h4 th:case="'Monthly'">Frecuencia: <small class="text-muted">Mensualmente</small></h4>
+        <h4 th:case="'Seldom'">Frecuencia: <small class="text-muted">Raramente</small></h4>
+        <h4 th:case="'Often'">Frecuencia: <small class="text-muted">A menudo</small></h4>
+        <h4 th:case="'Yearly'">Frecuencia: <small class="text-muted">Anualmente</small></h4>
+        <h4 th:case="*">Frecuencia: <small class="text-muted">No hay coincidencias</small></h4>
+    </div>
+</div>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
