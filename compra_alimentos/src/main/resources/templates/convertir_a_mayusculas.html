@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Propósito de la aplicación</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <img th:src="@{/img/compras.jpg}" width="350">
+    <h3 class="display-3">Propósito de la aplicación</h3>
+    <h4 th:text="${#strings.toUpperCase(mensaje)}"></h4>
+
+</div>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
