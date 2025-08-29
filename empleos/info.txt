@@ -1,0 +1,23 @@
+
+Desarrollo web con Spring Framework y MySQL8: Crear la clase de modelo Vacante para representar una oferta de trabajo.
+
+
+05:33
+Agregar un tipo de dato Vacante al modelo y desplegarlo en la vista
+08:30
+Agregar tipo de dato List<Vacante> al modelo y desplegarlos en una tabla HTML.
+12:27
+Integrar Bootstrap en una aplicación web vía CDN.
+08:46
+Condicionales en Thymeleaf - Explicación.
+06:27
+Condicionales en Thymeleaf - Práctica.
+09:30
+Urls Relativas al ContextPath - Explicación
+06:38
+Incluir imágenes estáticas en la vista
+03:54
+Incluir imágenes dinámicas en la vista.
+08:10
+Arquitectura de Spring MVC - Ciclo de vida de una petición HTTP
+06:33
