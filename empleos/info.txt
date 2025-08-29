@@ -1,9 +1,9 @@
 
-Desarrollo web con Spring Framework y MySQL8: Crear la clase de modelo Vacante para representar una oferta de trabajo.
+Desarrollo web con Spring Framework y MySQL8: Agregar un tipo de dato Vacante al modelo y desplegarlo en la vista
 
 
 05:33
-Agregar un tipo de dato Vacante al modelo y desplegarlo en la vista
+
 08:30
 Agregar tipo de dato List<Vacante> al modelo y desplegarlos en una tabla HTML.
 12:27
