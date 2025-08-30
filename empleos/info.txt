@@ -1,5 +1,5 @@
 
-Desarrollo web con Spring Framework y MySQL8: Condicionales en Thymeleaf
+Desarrollo web con Spring Framework y MySQL8: Incluir imágenes estáticas en la vista
 
 
 Urls Relativas al ContextPath - Explicación
