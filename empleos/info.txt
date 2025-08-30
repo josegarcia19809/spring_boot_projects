@@ -1,5 +1,5 @@
 
-Desarrollo web con Spring Framework y MySQL8: Agregar un tipo de dato Vacante al modelo y desplegarlo en la vista
+Desarrollo web con Spring Framework y MySQL8: Agregar tipo de dato List<Vacante> al modelo y desplegarlos en una tabla HTML.
 
 
 05:33
