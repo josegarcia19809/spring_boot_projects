@@ -5,8 +5,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Controller
 public class ComprasController {
+
+    List<CompraComida> listaCompras = Arrays.asList(
+            new CompraComida("Wanda", "Female", "Stamford", "Weekly", "Burger", 15.66),
+            new CompraComida("Eric", "Male", "Stamford", "Daily", "Chalupa", 10.56),
+            new CompraComida("Charles", "Male", "New York", "Never", "Sushi", 42.14),
+            new CompraComida("Anna", "Female", "Philadelphia", "Once", "Ice Cream", 11.01)
+    );
+
     @GetMapping("/detalle")
     public String mostrarDetalle(Model model) {
         CompraComida compra = new CompraComida("Wanda", "Female", "Stamford", "Weekly",
@@ -31,5 +42,9 @@ public class ComprasController {
         return "frecuencia";
     }
 
-
+    @GetMapping("/obtener-compras")
+    public String obtenerCompras(Model model) {
+        model.addAttribute("listaCompras", listaCompras);
+        return "obtener_compras";
+    }
 }

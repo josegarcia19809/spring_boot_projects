@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Compras</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h2>Lista de Compras</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Género</th>
+            <th>Ciudad</th>
+            <th>Frecuencia</th>
+            <th>Artículo</th>
+            <th>Gasto</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="compra: ${listaCompras}">
+            <td th:text="${compra.nombre}"></td>
+            <td th:text="${compra.genero}"></td>
+            <td th:text="${compra.ciudad}"></td>
+            <td th:text="${compra.frecuencia}"></td>
+            <td th:text="${compra.articulo}"></td>
+            <td th:text="${compra.gasto}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
