@@ -1,18 +1,7 @@
 
-Desarrollo web con Spring Framework y MySQL8: Integrar Bootstrap en una aplicación web vía CDN.
+Desarrollo web con Spring Framework y MySQL8: Condicionales en Thymeleaf
 
 
-05:33
-
-08:30
-Agregar tipo de dato List<Vacante> al modelo y desplegarlos en una tabla HTML.
-12:27
-
-08:46
-Condicionales en Thymeleaf - Explicación.
-06:27
-Condicionales en Thymeleaf - Práctica.
-09:30
 Urls Relativas al ContextPath - Explicación
 06:38
 Incluir imágenes estáticas en la vista

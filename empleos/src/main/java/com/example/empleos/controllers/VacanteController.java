@@ -43,6 +43,7 @@ public class VacanteController {
             vacante1.setDescripcion("Se solicita ingeniero para diseñar puente peatonal");
             vacante1.setFecha(sdf.parse("08-02-2019"));
             vacante1.setSalario(8500.00);
+            vacante1.setDestacado(1);
 
             Vacante vacante2 = new Vacante();
             vacante2.setId(2);
@@ -50,6 +51,7 @@ public class VacanteController {
             vacante2.setDescripcion("Empresa importante solicita el contador con cinco años de experiencia titulado");
             vacante2.setFecha(sdf.parse("09-02-2019"));
             vacante2.setSalario(12000.00);
+            vacante2.setDestacado(0);
 
             Vacante vacante3 = new Vacante();
             vacante3.setId(3);
@@ -57,6 +59,7 @@ public class VacanteController {
             vacante3.setDescripcion("Se solicita ingeniero para mantenimiento de la Instalación eléctrica");
             vacante3.setFecha(sdf.parse("10-02-2019"));
             vacante3.setSalario(10500.00);
+            vacante3.setDestacado(0);
 
             Vacante vacante4 = new Vacante();
             vacante4.setId(4);
@@ -64,6 +67,7 @@ public class VacanteController {
             vacante4.setDescripcion("Se solicita diseñador para diseñar Publicidad de la empresa");
             vacante4.setFecha(sdf.parse("11-02-2019"));
             vacante4.setSalario(7500.00);
+            vacante4.setDestacado(1);
 
             listaVacantes.add(vacante1);
             listaVacantes.add(vacante2);

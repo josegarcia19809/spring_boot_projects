@@ -8,6 +8,16 @@ public class Vacante {
     private String descripcion;
     private Date fecha;
     private Double salario;
+    private Integer destacado;
+
+    public Integer getDestacado() {
+        return destacado;
+    }
+
+    public void setDestacado(Integer destacado) {
+        this.destacado = destacado;
+    }
+
     public Vacante() {
     }
 
