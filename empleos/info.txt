@@ -1,12 +1,2 @@
 
-Desarrollo web con Spring Framework y MySQL8: Incluir imágenes estáticas en la vista
-
-
-Urls Relativas al ContextPath - Explicación
-06:38
-Incluir imágenes estáticas en la vista
-03:54
-Incluir imágenes dinámicas en la vista.
-08:10
-Arquitectura de Spring MVC - Ciclo de vida de una petición HTTP
-06:33
+Desarrollo web con Spring Framework y MySQL8: Incluir imágenes dinámicas en la vista.
