@@ -1,5 +1,5 @@
 
-Desarrollo web con Spring Framework y MySQL8: Agregar tipo de dato List<Vacante> al modelo y desplegarlos en una tabla HTML.
+Desarrollo web con Spring Framework y MySQL8: Integrar Bootstrap en una aplicación web vía CDN.
 
 
 05:33
@@ -7,7 +7,7 @@ Desarrollo web con Spring Framework y MySQL8: Agregar tipo de dato List<Vacante>
 08:30
 Agregar tipo de dato List<Vacante> al modelo y desplegarlos en una tabla HTML.
 12:27
-Integrar Bootstrap en una aplicación web vía CDN.
+
 08:46
 Condicionales en Thymeleaf - Explicación.
 06:27
