@@ -1,10 +1,6 @@
 
-Desarrollo web con Spring Framework y MySQL8: Anotación @PathVariable - URLs dinámicas
+Desarrollo web con Spring Framework y MySQL8: Anotación PathVariable - Crear botón HTML que responde a una URL dinámica
 
-
-32. Anotación PathVariable - Crear botón HTML que responde a una URL dinámica
-5 min
-Reproducir
 33. Anotación @RequestParam
 8 min
 Reproducir
