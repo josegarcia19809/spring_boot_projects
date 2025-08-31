@@ -1,11 +1,4 @@
 
-Desarrollo web con Spring Framework y MySQL8: Anotación PathVariable - Crear botón HTML que responde a una URL dinámica
+Desarrollo web con Spring Framework y MySQL8: Anotación @RequestParam - Ejemplo Petición HTTP GET
 
-33. Anotación @RequestParam
-8 min
-Reproducir
-34. Anotación @RequestParam - Ejemplo Petición HTTP GET
-9 min
-Reproducir
-35. Anotación @RequestParam - Ejemplo Petición HTTP POST
-7 min
+Anotación @RequestParam - Ejemplo Petición HTTP POST
