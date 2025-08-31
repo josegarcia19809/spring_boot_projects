@@ -1,4 +1,4 @@
 
-Desarrollo web con Spring Framework y MySQL8: Anotación @RequestParam - Ejemplo Petición HTTP GET
+Desarrollo web con Spring Framework y MySQL8: Anotación @RequestParam - Ejemplo Petición HTTP POST
 
-Anotación @RequestParam - Ejemplo Petición HTTP POST
+
