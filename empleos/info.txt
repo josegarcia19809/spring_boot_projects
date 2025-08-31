@@ -1,13 +1,6 @@
 
-Desarrollo web con Spring Framework y MySQL8: Anotación @RequestMapping a nivel de un método
+Desarrollo web con Spring Framework y MySQL8: Anotación @RequestMapping a nivel de una clase
 
-
- - Práctica
-4 min
-Reproducir
-29. Anotación @RequestMapping a nivel de una clase.
-4 min
-Reproducir
 30. Anotación @PathVariable - URLs dinámicas
 7 min
 Reproducir
