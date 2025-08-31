@@ -4,6 +4,8 @@ import com.example.empleos.models.Vacante;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,7 +15,18 @@ import java.util.List;
 
 
 @Controller
+@RequestMapping("/vacantes")
 public class VacanteController {
+
+    @GetMapping("/view/{id}")
+    public String verDetalle(@PathVariable("id") int idVacante, Model model) {
+        System.out.println("idVacante: " + idVacante);
+        model.addAttribute("idVacante", idVacante);
+
+        // TODO: Buscar los detalles de la vacante en la BD
+        return "vacantes/detalle";
+    }
+
     @GetMapping("/detalle")
     public String mostrarDetalle(Model model) {
         Vacante vacante = new Vacante();
