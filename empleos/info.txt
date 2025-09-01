@@ -1,4 +1,11 @@
 
-Desarrollo web con Spring Framework y MySQL8: Anotación @RequestParam - Ejemplo Petición HTTP POST
+Desarrollo web con Spring Framework y MySQL8: Clase de Servicio VacantesServiceImpl
 
 
+Clase de Servicio VacantesServiceImpl
+07:14
+Anotación @Autowired - Explicación
+04:36
+Anotación @Autowired - Ejemplo de Inyección de Dependencias en un controlador
+04:37
+Implementar método buscarPorId en la clase de servicio.
