@@ -33,10 +33,11 @@ public class VacanteController {
 
     @GetMapping("/view/{id}")
     public String verDetalle(@PathVariable("id") int idVacante, Model model) {
-        System.out.println("idVacante: " + idVacante);
-        model.addAttribute("idVacante", idVacante);
+        // TODO: Buscar los detalles de la vacante en la BD, o en este caso en la listaVacantes
+        Vacante vacanteBuscado = vacanteService.buscarPorId(idVacante);
+        System.out.println(vacanteBuscado);
+        model.addAttribute("vacante", vacanteBuscado);
 
-        // TODO: Buscar los detalles de la vacante en la BD
         return "vacantes/detalle";
     }
 

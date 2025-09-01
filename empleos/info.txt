@@ -1,8 +1,3 @@
 
-Desarrollo web con Spring Framework y MySQL8: Ejemplo de Inyección de Dependencias en un controlador por constructor
+Desarrollo web con Spring Framework y MySQL8: Implementar método buscarPorId en la clase de servicio.
 
-
-
-
-04:37
-Implementar método buscarPorId en la clase de servicio.
