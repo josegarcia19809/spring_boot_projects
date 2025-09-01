@@ -1,12 +1,14 @@
 package com.example.empleos.service;
 
 import com.example.empleos.models.Vacante;
+import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
+@Service
 public class VacanteServiceImpl implements  IVacanteService {
     private List<Vacante> listaVacantes = null;
 
@@ -22,7 +24,7 @@ public class VacanteServiceImpl implements  IVacanteService {
             vacante1.setFecha(sdf.parse("08-02-2019"));
             vacante1.setSalario(8500.00);
             vacante1.setDestacado(1);
-            vacante1.setImagen("imagen_1.png");
+            vacante1.setImagen("empresa1.png");
 
             Vacante vacante2 = new Vacante();
             vacante2.setId(2);
@@ -31,7 +33,7 @@ public class VacanteServiceImpl implements  IVacanteService {
             vacante2.setFecha(sdf.parse("09-02-2019"));
             vacante2.setSalario(12000.00);
             vacante2.setDestacado(0);
-            vacante2.setImagen("imagen_2.png");
+            vacante2.setImagen("empresa2.png");
 
             Vacante vacante3 = new Vacante();
             vacante3.setId(3);
@@ -49,7 +51,7 @@ public class VacanteServiceImpl implements  IVacanteService {
             vacante4.setFecha(sdf.parse("11-02-2019"));
             vacante4.setSalario(7500.00);
             vacante4.setDestacado(1);
-            vacante4.setImagen("imagen_4.png");
+            vacante4.setImagen("empresa3.png");
 
             listaVacantes.add(vacante1);
             listaVacantes.add(vacante2);
