@@ -1,5 +1,7 @@
 package com.jgarcia.compra_alimentos.model;
 
+import java.util.UUID;
+
 public class CompraComida {
     private String nombre;
     private String genero;
@@ -7,6 +9,7 @@ public class CompraComida {
     private String frecuencia;
     private String articulo;
     private double gasto;
+    private String id;
 
     public CompraComida(String nombre, String genero, String ciudad, String frecuencia,
                         String articulo, double gasto) {
@@ -16,9 +19,11 @@ public class CompraComida {
         this.frecuencia = frecuencia;
         this.articulo = articulo;
         this.gasto = gasto;
+        this.id = UUID.randomUUID().toString();
     }
 
     public CompraComida() {
+        this.id = UUID.randomUUID().toString();
     }
 
     public String getNombre() {
@@ -68,4 +73,13 @@ public class CompraComida {
     public void setGasto(double gasto) {
         this.gasto = gasto;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }

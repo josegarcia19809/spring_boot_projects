@@ -1,1 +1,1 @@
-Proyecto: Análisis de compras de alimentos. Actualizar un registro
+Proyecto: Análisis de compras de alimentos. Actualizar un registro mediante un id

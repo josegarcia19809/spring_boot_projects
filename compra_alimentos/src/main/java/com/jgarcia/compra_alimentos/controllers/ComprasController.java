@@ -46,9 +46,10 @@ public class ComprasController {
     }
 
     @GetMapping("/registrar-compra")
-    public String registrarCompra(Model model, @RequestParam(required = false) String nombre) {
+    public String registrarCompra(Model model,
+                                  @RequestParam(required = false) String id) {
         CompraComida compra;
-        int index = obtenerIndexCompra(nombre);
+        int index = obtenerIndexCompra(id);
         if (index == -1) { // Nueva compra
             compra = new CompraComida();
         } else { // Actualizar compra
@@ -60,7 +61,7 @@ public class ComprasController {
 
     @PostMapping("/guardarCompra")
     public String guardarCompra(CompraComida compra) {
-        int index = obtenerIndexCompra(compra.getNombre());
+        int index = obtenerIndexCompra(compra.getId());
         if (index == -1) { // Nueva compra
             listaCompras.add(compra);
         } else { // Actualizar compra
@@ -69,11 +70,9 @@ public class ComprasController {
         return "redirect:/obtener-compras";
     }
 
-
-
-    private Integer obtenerIndexCompra(String nombre) {
+    private Integer obtenerIndexCompra(String id) {
         for (int i = 0; i < listaCompras.size(); i++) {
-            if (listaCompras.get(i).getNombre().equals(nombre)) {
+            if (listaCompras.get(i).getId().equals(id)) {
                 return i;
             }
         }
