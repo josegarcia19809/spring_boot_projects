@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -48,14 +47,36 @@ public class ComprasController {
 
     @GetMapping("/registrar-compra")
     public String registrarCompra(Model model, @RequestParam(required = false) String nombre) {
-        System.out.println(nombre);
-        model.addAttribute("compra", new CompraComida());
+        CompraComida compra;
+        int index = obtenerIndexCompra(nombre);
+        if (index == -1) { // Nueva compra
+            compra = new CompraComida();
+        } else { // Actualizar compra
+            compra = listaCompras.get(index);
+        }
+        model.addAttribute("compra", compra);
         return "form_registrar_compra";
     }
 
     @PostMapping("/guardarCompra")
     public String guardarCompra(CompraComida compra) {
-        listaCompras.add(compra);
+        int index = obtenerIndexCompra(compra.getNombre());
+        if (index == -1) { // Nueva compra
+            listaCompras.add(compra);
+        } else { // Actualizar compra
+            listaCompras.set(index, compra);
+        }
         return "redirect:/obtener-compras";
+    }
+
+
+
+    private Integer obtenerIndexCompra(String nombre) {
+        for (int i = 0; i < listaCompras.size(); i++) {
+            if (listaCompras.get(i).getNombre().equals(nombre)) {
+                return i;
+            }
+        }
+        return -1; // No encontrado
     }
 }
