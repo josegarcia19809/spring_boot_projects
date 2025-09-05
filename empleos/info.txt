@@ -1,3 +1,16 @@
 
 Desarrollo web con Spring Framework y MySQL8: Implementar método buscarPorId en la clase de servicio.
 
+Explicación de la plantilla HTML del proyecto de EmpleosApp
+06:11
+Integrar el diseño de la página principal dinámicamente (Parte 1)
+07:22
+Integrar el diseño de la página principal dinámicamente (Parte 2)
+07:08
+Integrar el diseño para ver los detalles de una Vacante.
+10:03
+Integrar el diseño del formulario HTML para crear una categoría
+05:36
+Thymeleaf – Diseños de Páginas (Page Layouts) - Explicación
+07:02
+Thymeleaf – Page Layouts | Separar el código HTML del menú y el footer

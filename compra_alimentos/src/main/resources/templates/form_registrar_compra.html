@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar compra</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <img th:src="@{/img/compras.jpg}" width="150">
+    <h3 class="display-3">Registrar compra</h3>
+    <div class="col-6">
+        <form method="post" th:action="@{/guardarCompra}" th:object="${compra}">
+        <div class="form-group">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
+            </div>
+            <div class="form-group">
+                <label for="genero" class="form-label">Género</label>
+                <input type="text" class="form-control" id="genero" th:field="*{genero}">
+            </div>
+            <div class="form-group">
+                <label for="ciudad" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="ciudad" th:field="*{ciudad}">
+            </div>
+            <div class="form-group">
+                <label for="frecuencia" class="form-label">Frecuencia</label>
+                <input type="text" class="form-control" id="frecuencia" th:field="*{frecuencia}">
+            </div>
+            <div class="form-group">
+                <label for="articulo" class="form-label">Artículo</label>
+                <input type="text" class="form-control" id="articulo" th:field="*{articulo}">
+            </div>
+
+            <div class="form-group  mb-3">
+                <label for="gasto" class="form-label">Gasto</label>
+                <input type="text" class="form-control" id="gasto" th:field="*{gasto}">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Submit">
+            </div>
+        </form>
+    </div>
+
+</div>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

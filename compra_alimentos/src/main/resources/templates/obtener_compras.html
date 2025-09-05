@@ -27,6 +27,10 @@
             <td th:text="${compra.frecuencia}"></td>
             <td th:text="${compra.articulo}"></td>
             <td th:text="${compra.gasto}"></td>
+            <td><a role="button" class="btn btn-success"
+                   th:href="@{/registrar-compra(nombre=${compra.nombre})}"
+            >Actualizar</a></td>
+
         </tr>
         </tbody>
     </table>

@@ -18,6 +18,9 @@ public class CompraComida {
         this.gasto = gasto;
     }
 
+    public CompraComida() {
+    }
+
     public String getNombre() {
         return nombre;
     }

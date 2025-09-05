@@ -4,19 +4,17 @@ import com.jgarcia.compra_alimentos.model.CompraComida;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @Controller
 public class ComprasController {
 
-    List<CompraComida> listaCompras = Arrays.asList(
-            new CompraComida("Wanda", "Female", "Stamford", "Weekly", "Burger", 15.66),
-            new CompraComida("Eric", "Male", "Stamford", "Daily", "Chalupa", 10.56),
-            new CompraComida("Charles", "Male", "New York", "Never", "Sushi", 42.14),
-            new CompraComida("Anna", "Female", "Philadelphia", "Once", "Ice Cream", 11.01)
-    );
+    List<CompraComida> listaCompras = new ArrayList<>();
 
     @GetMapping("/detalle")
     public String mostrarDetalle(Model model) {
@@ -46,5 +44,18 @@ public class ComprasController {
     public String obtenerCompras(Model model) {
         model.addAttribute("listaCompras", listaCompras);
         return "obtener_compras";
+    }
+
+    @GetMapping("/registrar-compra")
+    public String registrarCompra(Model model, @RequestParam(required = false) String nombre) {
+        System.out.println(nombre);
+        model.addAttribute("compra", new CompraComida());
+        return "form_registrar_compra";
+    }
+
+    @PostMapping("/guardarCompra")
+    public String guardarCompra(CompraComida compra) {
+        listaCompras.add(compra);
+        return "redirect:/obtener-compras";
     }
 }
