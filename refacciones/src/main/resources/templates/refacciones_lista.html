@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar compra</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container mt-4">
+    <img th:src="@{/img/refacciones.jpg}" width="550" class="mb-3">
+    <h3 class="display-3">Registrar compra</h3>
+
+    <!-- Tabla de refacciones -->
+    <div class="mt-4">
+        <h4 class="mb-3">Listado de refacciones disponibles</h4>
+        <table class="table table-striped table-bordered">
+            <thead class="table-light">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Año fabricación</th>
+                <th>Precio unitario</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="refaccion : ${refacciones}">
+                <td th:text="${refaccion.id}"></td>
+                <td th:text="${refaccion.nombre_refaccion}"></td>
+                <td th:text="${refaccion.categoria}"></td>
+                <td th:text="${refaccion.anio_fabricacion}"></td>
+                <td th:text="${#numbers.formatDecimal(refaccion.precio_unitario, 1, 'POINT', 2, 'POINT')}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
