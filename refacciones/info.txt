@@ -1,1 +1,1 @@
-Proyecto Refacciones: Crear botón html que responde a una URL dinámica
+Proyecto Refacciones: Anotación @RequestParam - Ejemplo Petición HTTP GET

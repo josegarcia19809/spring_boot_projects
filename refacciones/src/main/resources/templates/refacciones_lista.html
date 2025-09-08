@@ -22,6 +22,7 @@
                 <th>Año fabricación</th>
                 <th>Precio unitario</th>
                 <th>Detalle</th>
+                <th>Borrar</th>
             </tr>
             </thead>
             <tbody>
@@ -30,10 +31,16 @@
                 <td th:text="${refaccion.nombre_refaccion}"></td>
                 <td th:text="${refaccion.categoria}"></td>
                 <td th:text="${refaccion.anio_fabricacion}"></td>
-                <td th:text="${#numbers.formatDecimal(refaccion.precio_unitario, 1, 'POINT', 2, 'POINT')}"></td>
+                <td th:text="${#numbers.formatDecimal(refaccion.precio_unitario, 1, 'POINT', 2, 'POINT')}">
+
+                </td>
                 <td>
                     <a th:href="@{/automoviles/view/{id} (id=${refaccion.id}) }"
                        class="btn btn-success">Detalle</a>
+                </td>
+                <td>
+                    <a th:href="@{/automoviles/delete(id=${refaccion.id}) }"
+                       class="btn btn-danger">Borrar</a>
                 </td>
 
             </tr>
