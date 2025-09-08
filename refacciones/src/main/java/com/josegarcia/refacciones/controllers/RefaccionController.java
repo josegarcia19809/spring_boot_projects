@@ -3,10 +3,7 @@ package com.josegarcia.refacciones.controllers;
 import com.josegarcia.refacciones.models.Refaccion;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +34,21 @@ public class RefaccionController {
         return "borrar";
     }
 
+    @GetMapping("/crear")
+    public String crear(Model model) {
+        return "formRefaccionaria";
+    }
+
+    @PostMapping("/guardar")
+    public String guardar(@RequestParam("nombre") String nombre,
+                          @RequestParam("direccion") String direccion,
+                          Model model) {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Dirección: " + direccion);
+        model.addAttribute("nombre", nombre);
+        model.addAttribute("direccion", direccion);
+        return "mostrarRefaccionaria";
+    }
 
 
     // Método que llena un ArrayList con objetos Refaccion (demo)

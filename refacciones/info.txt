@@ -1,1 +1,1 @@
-Proyecto Refacciones: Anotación @RequestParam - Ejemplo Petición HTTP GET
+Proyecto Refacciones: Anotación @RequestParam - Ejemplo Petición HTTP POST

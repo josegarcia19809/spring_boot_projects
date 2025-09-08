@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar refaccionaria</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container mt-4">
+    <img th:src="@{/img/refacciones.jpg}" width="550" class="mb-3">
+    <h3 class="display-3 mb-4">Registrar refaccionaria</h3>
+
+    <form th:action="@{/automoviles/guardar}" method="post" class="needs-validation" novalidate>
+
+        <!-- Campo Nombre -->
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresa el nombre" required>
+        </div>
+
+        <!-- Campo Dirección -->
+        <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingresa la dirección" required>
+        </div>
+
+        <!-- Botón -->
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
