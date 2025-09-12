@@ -5,6 +5,11 @@
     <title>Detalle de la Refacción</title>
 </head>
 <body>
-<h1 th:text="'idRefaccion: '+${idRefaccion}"></h1>
+<h1>Detalle de la Refacción</h1>
+<h3 th:text="'Nombre: '+ ${refaccion.nombre_refaccion}"></h3>
+<h3 th:text="'Categoría: '+ ${refaccion.categoria}"></h3>
+<h3 th:text="'Año de fabricación: '+ ${refaccion.anio_fabricacion}"></h3>
+<h3 th:text="'Precio unitario: '+ ${refaccion.precio_unitario}"></h3>
+
 </body>
 </html>

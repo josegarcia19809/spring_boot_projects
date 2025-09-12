@@ -1,1 +1,1 @@
-Proyecto Refacciones: Ejemplo de Inyección de Dependencias en un controlador
+Proyecto Refacciones: Implementar método buscarPorId en la clase de servicio.

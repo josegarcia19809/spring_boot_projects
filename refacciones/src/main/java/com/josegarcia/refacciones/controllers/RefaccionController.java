@@ -29,8 +29,8 @@ public class RefaccionController {
 
     @GetMapping("/view/{id}")
     public String verDetalle(@PathVariable("id") int idRefaccion, Model model) {
-        System.out.println("idRefaccion: " + idRefaccion);
-        model.addAttribute("idRefaccion", idRefaccion);
+        Refaccion refaccionBuscada = refaccionService.buscarPorId(idRefaccion);
+        model.addAttribute("refaccion", refaccionBuscada);
         return "detalle";
     }
 

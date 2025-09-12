@@ -23,4 +23,14 @@ public class RefaccionServiceImpl implements IRefaccionService {
     public List<Refaccion> buscarTodas() {
         return listaRefacciones;
     }
+
+    @Override
+    public Refaccion buscarPorId(int idRefaccion) {
+        for (Refaccion refaccion : listaRefacciones) {
+            if (refaccion.getId() == idRefaccion) {
+                return refaccion;
+            }
+        }
+        return null;
+    }
 }

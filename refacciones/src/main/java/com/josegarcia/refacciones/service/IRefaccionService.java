@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IRefaccionService {
     List<Refaccion> buscarTodas();
+    Refaccion buscarPorId(int idRefaccion);
 }
