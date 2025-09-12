@@ -1,1 +1,1 @@
-Proyecto Refacciones: Clase de Servicio RefaccionServiceImpl
+Proyecto Refacciones: Ejemplo de Inyección de Dependencias en un controlador

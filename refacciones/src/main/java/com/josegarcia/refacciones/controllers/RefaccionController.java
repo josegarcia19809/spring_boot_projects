@@ -1,6 +1,7 @@
 package com.josegarcia.refacciones.controllers;
 
 import com.josegarcia.refacciones.models.Refaccion;
+import com.josegarcia.refacciones.service.IRefaccionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +12,17 @@ import java.util.List;
 @Controller
 @RequestMapping("/automoviles")
 public class RefaccionController {
+    private final IRefaccionService refaccionService;
+
+    // ✅ Inyección por constructor
+    public RefaccionController(IRefaccionService refaccionService) {
+        this.refaccionService = refaccionService;
+    }
 
     // Ruta que "llena" la lista y la manda a la vista
     @GetMapping("/refacciones")
     public String listarRefacciones(Model model) {
-        List<Refaccion> refacciones = cargarRefaccionesDemo();
+        List<Refaccion> refacciones = refaccionService.buscarTodas();
         model.addAttribute("refacciones", refacciones);
         return "refacciones_lista"; // nombre del template Thymeleaf (sin .html)
     }
