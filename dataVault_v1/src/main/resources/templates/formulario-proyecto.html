@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Proyecto</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<div th:object="${proyecto}">
+    <h2 th:text="${#fields.hasErrors()} ? 'Corrige los errores' : (${proyecto.id} != null ? 'Editar Proyecto' : 'Nuevo Proyecto')"></h2>
+
+    <!-- FORM CREAR -->
+    <form th:if="${proyecto.id} == null"
+          th:action="@{/proyectos/guardar}"
+          method="post">
+
+        <!-- NOMBRE -->
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" th:field="*{nombre}" placeholder="Nombre del proyecto"/>
+            <div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" style="color:red"></div>
+        </div>
+
+        <!-- EMPRESA -->
+        <div>
+            <label for="empresa">Empresa:</label>
+            <input type="text" id="empresa" th:field="*{empresa}" placeholder="Empresa responsable"/>
+            <div th:if="${#fields.hasErrors('empresa')}" th:errors="*{empresa}" style="color:red"></div>
+        </div>
+
+        <!-- DESCRIPCIÓN -->
+        <div>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" th:field="*{descripcion}" placeholder="Breve descripción"></textarea>
+            <div th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" style="color:red"></div>
+        </div>
+
+        <!-- ERRORES GLOBALES (opcional) -->
+        <div th:if="${#fields.hasGlobalErrors()}" style="color:red" th:each="e : ${#fields.globalErrors()}" th:text="${e}"></div>
+
+        <!-- BOTONES -->
+        <div>
+            <button type="submit">Guardar</button>
+            <a th:href="@{/proyectos}">Cancelar</a>
+        </div>
+    </form>
+
+    <!-- FORM EDITAR -->
+    <form th:if="${proyecto.id} != null"
+          th:action="@{'/proyectos/editar/' + ${proyecto.id}}"
+          method="post">
+
+        <!-- NOMBRE -->
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" th:field="*{nombre}" placeholder="Nombre del proyecto"/>
+            <div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" style="color:red"></div>
+        </div>
+
+        <!-- EMPRESA -->
+        <div>
+            <label for="empresa">Empresa:</label>
+            <input type="text" id="empresa" th:field="*{empresa}" placeholder="Empresa responsable"/>
+            <div th:if="${#fields.hasErrors('empresa')}" th:errors="*{empresa}" style="color:red"></div>
+        </div>
+
+        <!-- DESCRIPCIÓN -->
+        <div>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" th:field="*{descripcion}" placeholder="Breve descripción"></textarea>
+            <div th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" style="color:red"></div>
+        </div>
+
+        <!-- ERRORES GLOBALES (opcional) -->
+        <div th:if="${#fields.hasGlobalErrors()}" style="color:red" th:each="e : ${#fields.globalErrors()}" th:text="${e}"></div>
+
+        <!-- BOTONES -->
+        <div>
+            <button type="submit">Actualizar</button>
+            <a th:href="@{/proyectos}">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

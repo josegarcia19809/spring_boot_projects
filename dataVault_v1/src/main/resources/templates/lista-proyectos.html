@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Proyectos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<h2>📋 Lista de Proyectos</h2>
+
+<!-- Mensajes flash -->
+<div th:if="${exito}" style="color:green;" th:text="${exito}"></div>
+<div th:if="${error}" style="color:red;" th:text="${error}"></div>
+
+<!-- Botón para nuevo proyecto -->
+<div>
+    <a th:href="@{/proyectos/nuevo}">➕ Nuevo Proyecto</a>
+</div>
+
+<!-- Tabla de proyectos -->
+<table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Empresa</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="proyecto : ${proyectos}">
+        <td th:text="${proyecto.id}">1</td>
+        <td th:text="${proyecto.nombre}">Plataforma Educativa</td>
+        <td th:text="${proyecto.empresa}">EduTech</td>
+        <td th:text="${proyecto.descripcion}">Descripción del proyecto</td>
+        <td>
+            <!-- Editar -->
+            <a th:href="@{'/proyectos/editar/' + ${proyecto.id}}">✏️ Editar</a>
+
+            <!-- Eliminar (POST con confirmación) -->
+            <form th:action="@{'/proyectos/eliminar/' + ${proyecto.id}}"
+                  method="post"
+                  style="display:inline;"
+                  onsubmit="return confirm('¿Estás seguro de eliminar este proyecto?');">
+                <button type="submit">🗑️ Eliminar</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
