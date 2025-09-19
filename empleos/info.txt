@@ -1,5 +1,5 @@
 
-Desarrollo web con Spring Framework y MySQL8: Implementar método buscarPorId en la clase de servicio.
+Desarrollo web con Spring Framework y MySQL8: Integrar el diseño de la página principal dinámicamente (Parte 1)
 
 Explicación de la plantilla HTML del proyecto de EmpleosApp
 06:11
