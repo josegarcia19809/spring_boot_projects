@@ -1,1 +1,1 @@
-Spring Boot. Bóveda de datos: Creación
+Spring Boot. Bóveda de datos: Creación de entidades
