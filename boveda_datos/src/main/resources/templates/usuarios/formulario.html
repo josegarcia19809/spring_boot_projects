@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario de Usuario</title>
+</head>
+<body>
+<h1 th:text="${usuario.id != null} ? 'Editar Usuario' : 'Nuevo Usuario'"></h1>
+
+<form th:action="@{${usuario.id} != null ? '/usuarios/actualizar/' + ${usuario.id} : '/usuarios'}"
+      th:object="${usuario}" method="post">
+
+    <label>Nombre de Usuario:</label>
+    <input type="text" th:field="*{nombreUsuario}"/>
+    <div th:if="${#fields.hasErrors('nombreUsuario')}" th:errors="*{nombreUsuario}"></div>
+    <br/>
+
+    <label>Correo:</label>
+    <input type="email" th:field="*{correo}"/>
+    <div th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></div>
+    <br/>
+
+    <label>Contraseña:</label>
+    <input type="password" th:field="*{password}"/>
+    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+    <br/>
+
+    <label>Nombre Completo:</label>
+    <input type="text" th:field="*{nombreCompleto}"/>
+    <div th:if="${#fields.hasErrors('nombreCompleto')}" th:errors="*{nombreCompleto}"></div>
+    <br/>
+
+    <label>Tipo de Usuario:</label>
+    <select th:field="*{tipo}">
+        <option value="">-- Selecciona --</option>
+        <option th:each="tipo : ${tipos}" th:value="${tipo}" th:text="${tipo}"></option>
+    </select>
+    <div th:if="${#fields.hasErrors('tipo')}" th:errors="*{tipo}"></div>
+    <br/>
+
+    <label>Activo:</label>
+    <input type="checkbox" th:field="*{activo}"/><br/>
+
+    <button type="submit">Guardar</button>
+</form>
+
+
+<a th:href="@{/usuarios}">Volver</a>
+</body>
+</html>
