@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Documentos</title>
+</head>
+<body>
+
+<h2>Documentos</h2>
+<a th:href="@{/documentos/nuevo}" class="boton nuevo">+ Nuevo Documento</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Proyecto</th>
+        <th>Usuario</th>
+        <th>Fecha</th>
+        <th>Acciones</th>
+        <th>Descargar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="documento : ${documentos}">
+        <td th:text="${documento.nombre}">Documento</td>
+        <td th:text="${documento.tipo}">PDF</td>
+        <td th:text="${documento.proyecto != null ? documento.proyecto.nombre : 'Sin proyecto'}">Proyecto A</td>
+        <td th:text="${documento.autor != null ? documento.autor.nombreCompleto : 'Sin usuario'}">juan</td>
+        <td th:text="${#temporals.format(documento.fechaSubida, 'yyyy-MM-dd HH:mm')}">fecha</td>
+        <td>
+            <a th:href="@{/documentos/editar/{id}(id=${documento.id})}" class="boton editar">Editar</a>
+            <a th:href="@{/documentos/eliminar/{id}(id=${documento.id})}" class="boton eliminar"
+               onclick="return confirm('¿Eliminar este documento?')">Eliminar</a>
+        </td>
+        <td>
+            <a th:if="${documento.archivo != null}"
+               th:href="@{/uploads/{archivo}(archivo=${documento.archivo})}"
+               class="boton descargar"
+               target="_blank" download>Descargar</a>
+            <span th:if="${documento.archivo == null}">No disponible</span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

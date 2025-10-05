@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario de Documento</title>
+</head>
+<body>
+
+<h2 th:text="${documento.id != null} ? 'Editar Documento' : 'Nuevo Documento'"></h2>
+
+<form th:action="@{/documentos/guardar}" th:object="${documento}" method="post"
+      enctype="multipart/form-data">
+    <div>
+        <label for="nombre">Nombre del documento</label>
+        <input type="text" th:field="*{nombre}" id="nombre">
+        <div th:errors="*{nombre}"></div>
+    </div>
+
+    <div>
+        <label for="descripcion">Descripción</label>
+        <textarea th:field="*{descripcion}" id="descripcion" rows="3"></textarea>
+        <div th:errors="*{descripcion}"></div>
+    </div>
+
+    <div>
+        <label for="tipo">Tipo de archivo</label>
+        <input type="text" th:field="*{tipo}" id="tipo" placeholder="PDF, DOCX, etc.">
+        <div th:errors="*{tipo}"></div>
+    </div>
+
+    <div>
+        <label for="archivoSubido">Seleccionar archivo</label>
+        <input type="file" name="archivoSubido" id="archivoSubido">
+        <div th:if="${errorArchivo}" th:text="${errorArchivo}"></div>
+    </div>
+
+
+    <div>
+        <label for="proyecto">Proyecto</label>
+        <select th:field="*{proyecto}" id="proyecto">
+            <option value="">-- Selecciona un proyecto --</option>
+            <option th:each="p : ${proyectos}"
+                    th:value="${p.id}"
+                    th:text="${p.nombre}"></option>
+        </select>
+        <div th:errors="*{proyecto}"></div>
+    </div>
+
+    <div>
+        <label for="usuario">Usuario que sube</label>
+        <select th:field="*{autor}" id="usuario">
+            <option value="">-- Selecciona un usuario --</option>
+            <option th:each="u : ${usuarios}"
+                    th:value="${u.id}"
+                    th:text="${u.nombreCompleto}"></option>
+        </select>
+        <div th:errors="*{autor}"></div>
+    </div>
+
+    <div>
+        <input type="checkbox" th:field="*{activo}" id="activo">
+        <label for="activo">Activo</label>
+    </div>
+
+    <button type="submit">Guardar</button>
+    <a th:href="@{/documentos}">Cancelar</a>
+</form>
+
+</body>
+</html>

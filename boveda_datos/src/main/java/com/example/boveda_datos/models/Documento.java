@@ -1,7 +1,10 @@
 package com.example.boveda_datos.models;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
+
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
@@ -17,18 +20,18 @@ public class Documento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @NotBlank
     private String nombre;
 
-    @Column(nullable = false)
     private String archivo;
 
     @Column(length = 500)
     private String descripcion;
 
+    @NotBlank
     private String tipo; // Ej: "PDF", "Word", etc.
 
-    private LocalDateTime fechaSubida;
+    private LocalDateTime fechaSubida = LocalDateTime.now();
 
     private boolean activo = true;
 
