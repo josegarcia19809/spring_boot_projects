@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Proyectos</title>
+</head>
+<body>
+<h1>Proyectos</h1>
+<a th:href="@{/proyectos/nuevo}">Nuevo Proyecto</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Empresa</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="proyecto : ${proyectos}">
+        <td th:text="${proyecto.nombre}"></td>
+        <td th:text="${proyecto.empresa}"></td>
+        <td th:text="${proyecto.descripcion}"></td>
+        <td>
+            <a th:href="@{/proyectos/editar/{id}(id=${proyecto.id})}">Editar</a> |
+            <a th:href="@{/proyectos/eliminar/{id}(id=${proyecto.id})}"
+               onclick="return confirm('¿Estás seguro de eliminar este proyecto?');">Eliminar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
