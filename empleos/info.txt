@@ -1,7 +1,4 @@
 
-Desarrollo web con Spring Framework y MySQL8: Integrar el diseño del formulario HTML para crear una categoría
+Desarrollo web con Spring Framework y MySQL8: Thymeleaf – Page Layouts | Separar el código HTML del menú y el footer
 
 
-Thymeleaf – Diseños de Páginas (Page Layouts) - Explicación
-07:02
-Thymeleaf – Page Layouts | Separar el código HTML del menú y el footer
