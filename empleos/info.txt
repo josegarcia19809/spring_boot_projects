@@ -1,10 +1,7 @@
 
-Desarrollo web con Spring Framework y MySQL8: Integrar el diseño para ver los detalles de una Vacante.
+Desarrollo web con Spring Framework y MySQL8: Integrar el diseño del formulario HTML para crear una categoría
 
 
-10:03
-Integrar el diseño del formulario HTML para crear una categoría
-05:36
 Thymeleaf – Diseños de Páginas (Page Layouts) - Explicación
 07:02
 Thymeleaf – Page Layouts | Separar el código HTML del menú y el footer
