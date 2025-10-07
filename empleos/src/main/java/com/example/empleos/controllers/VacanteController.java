@@ -37,7 +37,6 @@ public class VacanteController {
         Vacante vacanteBuscado = vacanteService.buscarPorId(idVacante);
         System.out.println(vacanteBuscado);
         model.addAttribute("vacante", vacanteBuscado);
-
         return "vacantes/detalle";
     }
 
@@ -49,7 +48,7 @@ public class VacanteController {
         vacante.setFecha(new Date());
         vacante.setSalario(9700.00);
         model.addAttribute("vacante", vacante);
-        return "detalle";
+        return "vacantes/detalle";
     }
 
     @GetMapping("/tabla")
