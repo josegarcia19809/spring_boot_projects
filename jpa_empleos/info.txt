@@ -1,1 +1,1 @@
-Spring Boot 3 - Desarrollo web con Spring Framework y MySQL8: JPA. Creación de entidades
+Spring Boot 3 - Desarrollo web con Spring Framework y MySQL8: JPA - Crear un repositorio JPA
