@@ -6,6 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
 
 @SpringBootApplication
@@ -23,7 +25,22 @@ public class JpaEmpleosApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        borrarTodos();
+        encontrarVariasPorId();
+    }
+
+    /**
+     * Método findAllById - Interfaz CrudRepository
+     */
+    private void encontrarVariasPorId() {
+        List<Integer> listaCategorias = new LinkedList<>();
+        listaCategorias.add(14);
+        listaCategorias.add(16);
+        listaCategorias.add(18);
+
+        Iterable<Categoria> categorias = categoriasRepo.findAllById(listaCategorias);
+        for (Categoria categoria : categorias) {
+            System.out.println(categoria);
+        }
     }
 
     /**

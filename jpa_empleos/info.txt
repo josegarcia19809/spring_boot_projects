@@ -1,1 +1,51 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Eliminar todas las entidades
+Desarrollo web con Spring Framework y MySQL8: JPA - Recuperar varias entidades por Id
+
+
+Método findAll - Recuperar todas las entidades Iterable<T>
+
+Método existsById - Verificar si existe una entidad con un id en particular
+
+Método saveAll - Guardar una colección de Entidades
+
+
+Interfaces que extienden CrudRepository
+07:13
+Método findAll - Recuperar todas las entidades List<T>
+04:16
+Método deleteAllInBatch - Eliminar todos los registros en lote
+02:45
+Método findAll con ordenamiento (order by) - Ejemplo 1
+05:47
+Método findAll con paginación
+07:48
+Método findAll con paginación y ordenamiento
+
+
+Crear repositorio para entidades de tipo Vacante
+03:10
+Anotación @Transient de JPA
+10:24
+Anotación @OneToOne - Relación Uno a Uno
+07:53
+Guardar una nueva Vacante
+06:58
+Repositorios para entidades de tipo Usuario y Perfil
+05:22
+Crear los ROLES/PERFILES de la aplicación de Empleos
+03:52
+Anotación @ManyToMany - Relación Muchos a Muchos
+05:42
+Crear un usuario 2 perfiles (ADMINISTRADOR, USUARIO)
+09:47
+Buscar usuario y desplegar sus Perfiles asociados
+
+
+¿Qué son los Query Methods?
+06:01
+Keyword findBy
+06:49
+Keyword And
+04:41
+Keyword Between
+03:46
+Keyword In
