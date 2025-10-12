@@ -23,10 +23,16 @@ public class JpaEmpleosApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        eliminar();
+        conteo();
     }
 
-
+    /**
+     * Método count - Interfaz CrudRepository
+     */
+    private void conteo() {
+        Long numRegistros = categoriasRepo.count();
+        System.out.println("Total de categorías: " + numRegistros);
+    }
 
 
     /**

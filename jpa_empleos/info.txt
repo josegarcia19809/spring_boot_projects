@@ -1,1 +1,1 @@
-Spring Boot 3 - Desarrollo web con Spring Framework y MySQL8: JPA - Eliminar una entidad
+Spring Boot 3 - Desarrollo web con Spring Framework y MySQL8: JPA - Obtener cantidad de entidades
