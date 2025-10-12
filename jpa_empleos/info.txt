@@ -1,1 +1,1 @@
-Spring Boot 3 - Desarrollo web con Spring Framework y MySQL8: JPA - Recuperar una entidad por ID
+Spring Boot 3 - Desarrollo web con Spring Framework y MySQL8: JPA - Actualizar una entidad
