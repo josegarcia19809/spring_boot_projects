@@ -23,7 +23,15 @@ public class JpaEmpleosApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        conteo();
+        borrarTodos();
+    }
+
+    /**
+     * Método deleteAll - Interfaz CrudRepository
+     */
+    private void borrarTodos() {
+        categoriasRepo.deleteAll();
+        System.out.println("Todos los registros se han borrado...");
     }
 
     /**
