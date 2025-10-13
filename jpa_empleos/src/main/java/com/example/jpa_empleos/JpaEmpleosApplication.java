@@ -25,7 +25,16 @@ public class JpaEmpleosApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        encontrarTodos();
+        existeId();
+    }
+
+    /**
+     * Método existsById - Interfaz CrudRepository
+     */
+    private void existeId() {
+        int id = 150;
+        boolean existe = categoriasRepo.existsById(id);
+        System.out.println("Existe la categoría " + id + ": " + existe);
     }
 
     /**
