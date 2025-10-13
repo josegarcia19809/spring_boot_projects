@@ -1,6 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Verificar si existe una entidad con un id en particular
-
-Método saveAll - Guardar una colección de Entidades
+Desarrollo web con Spring Framework y MySQL8: JPA - Guardar una colección de Entidades
 
 
 Interfaces que extienden CrudRepository

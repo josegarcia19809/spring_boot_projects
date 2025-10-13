@@ -25,7 +25,48 @@ public class JpaEmpleosApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        existeId();
+        guardarTodas();
+    }
+
+    /**
+     * Método saveAll - Interfaz CrudRepository
+     */
+    private void guardarTodas() {
+        List<Categoria> nuevasCategorias = obtenerCategorias();
+        categoriasRepo.saveAll(nuevasCategorias);
+        System.out.println("Categorías guardadas...");
+    }
+
+    // Método que devuelve una lista de categorías
+    public List<Categoria> obtenerCategorias() {
+        List<Categoria> categorias = new LinkedList<>();
+
+        Categoria c1 = new Categoria();
+        c1.setNombre("Tecnología");
+        c1.setDescripcion("Empleos relacionados con software, hardware y redes.");
+        categorias.add(c1);
+
+        Categoria c2 = new Categoria();
+        c2.setNombre("Educación");
+        c2.setDescripcion("Puestos en docencia, investigación y capacitación.");
+        categorias.add(c2);
+
+        Categoria c3 = new Categoria();
+        c3.setNombre("Salud");
+        c3.setDescripcion("Trabajos en hospitales, clínicas y laboratorios.");
+        categorias.add(c3);
+
+        Categoria c4 = new Categoria();
+        c4.setNombre("Construcción");
+        c4.setDescripcion("Empleos en obras civiles, arquitectura e ingeniería.");
+        categorias.add(c4);
+
+        Categoria c5 = new Categoria();
+        c5.setNombre("Finanzas");
+        c5.setDescripcion("Puestos en contabilidad, banca y administración financiera.");
+        categorias.add(c5);
+
+        return categorias;
     }
 
     /**
