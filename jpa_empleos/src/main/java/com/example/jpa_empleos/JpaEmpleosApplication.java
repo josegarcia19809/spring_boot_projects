@@ -25,7 +25,17 @@ public class JpaEmpleosApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        encontrarVariasPorId();
+        encontrarTodos();
+    }
+
+    /**
+     * Método findAll - Interfaz CrudRepository
+     */
+    private void encontrarTodos() {
+        Iterable<Categoria> categorias = categoriasRepo.findAll();
+        for (Categoria categoria : categorias) {
+            System.out.println(categoria);
+        }
     }
 
     /**
