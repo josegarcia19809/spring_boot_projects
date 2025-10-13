@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Horarios 🎞️</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <style>
+        /* ---- FOOTER ---- */
+        footer {
+            background-color: #111;
+            color: #ccc;
+            text-align: center;
+            padding: 25px 0;
+            border-top: 2px solid #f1c40f;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        footer .iconos {
+            margin-top: 10px;
+        }
+
+        footer .iconos img {
+            width: 28px;
+            margin: 0 10px;
+            vertical-align: middle;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        footer .iconos img:hover {
+            opacity: 1;
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 768px) {
+            .lista-horarios {
+                width: 85%;
+            }
+            .texto-banner h3 {
+                font-size: 1.5rem;
+            }
+        }
+        /* ---- BANNER ---- */
+        .banner {
+            position: relative;
+            text-align: center;
+        }
+
+        .imagen-banner {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .texto-banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px 30px;
+            border-radius: 12px;
+        }
+
+        .texto-banner h3 {
+            font-size: 2rem;
+            color: #f1c40f;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="encabezado">
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/cartelera">Cartelera</a>
+        <a href="/horarios" class="activo">Horarios</a>
+    </nav>
+</header>
+
+<main class="contenido">
+    <section class="banner">
+        <img src="/img/sala-cine.jpg" alt="Sala de cine" class="imagen-banner">
+        <div class="texto-banner">
+            <h3>🕒 Horarios</h3>
+            <p>Disfruta nuestras funciones del día 🎟️</p>
+        </div>
+    </section>
+
+    <section class="lista-horarios">
+        <h4>📅 Funciones disponibles</h4>
+        <ul>
+            <li>🎥 12:00 - Matiné familiar</li>
+            <li>🎥 15:00 - Aventura y acción</li>
+            <li>🎥 18:00 - Cine para todos</li>
+            <li>🎥 21:00 - Noche de estreno 🌙</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Cine Virtual. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

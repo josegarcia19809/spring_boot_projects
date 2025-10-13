@@ -6,12 +6,17 @@ import org.springframework.web.bind.annotation.GetMapping
 @Controller
 class CineController {
     @GetMapping("/")
-    fun index(): String{
+    fun index(): String {
         return "index"
     }
 
     @GetMapping("/cartelera")
-    fun cartelera(): String{
+    fun cartelera(): String {
         return "cartelera"
+    }
+
+    @GetMapping("/horarios")
+    fun horarios(): String {
+        return "horarios"
     }
 }
