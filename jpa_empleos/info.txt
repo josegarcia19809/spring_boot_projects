@@ -1,8 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Método findAll con paginación
+Desarrollo web con Spring Framework y MySQL8: JPA - Método findAll con paginación y ordenamiento
 
-Método findAll con paginación
-07:48
-Método findAll con paginación y ordenamiento
 
 
 Crear repositorio para entidades de tipo Vacante

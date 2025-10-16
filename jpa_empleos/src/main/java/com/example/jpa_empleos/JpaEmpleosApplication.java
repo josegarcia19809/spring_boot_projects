@@ -32,7 +32,20 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        buscarTodosPaginacion();
+        buscarTodosPaginacionOrdenados();
+    }
+
+    /**
+     * Metodo findAll [Con paginacion y Ordenados] - Interfaz PagingAndSortingRepository
+     */
+    private void buscarTodosPaginacionOrdenados() {
+        Page<Categoria> page = categoriasJPARepo.findAll(PageRequest.of(0, 5,
+                Sort.by("nombre").descending()));
+        System.out.println("Total Registros: " + page.getTotalElements());
+        System.out.println("Total Paginas: " + page.getTotalPages());
+        for (Categoria c : page.getContent()) {
+            System.out.println(c.getId() + " " + c.getNombre());
+        }
     }
 
     /**
