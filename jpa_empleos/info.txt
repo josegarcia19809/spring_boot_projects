@@ -1,9 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Método findAll - Recuperar todas las entidades List<T>
+Desarrollo web con Spring Framework y MySQL8: JPA - Método findAll con ordenamiento (order by)
 
-Método deleteAllInBatch - Eliminar todos los registros en lote
-02:45
-Método findAll con ordenamiento (order by) - Ejemplo 1
-05:47
 Método findAll con paginación
 07:48
 Método findAll con paginación y ordenamiento
