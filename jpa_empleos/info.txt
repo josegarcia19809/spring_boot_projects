@@ -1,10 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Guardar una colección de Entidades
+Desarrollo web con Spring Framework y MySQL8: JPA - Método findAll - Recuperar todas las entidades List<T>
 
-
-Interfaces que extienden CrudRepository
-07:13
-Método findAll - Recuperar todas las entidades List<T>
-04:16
 Método deleteAllInBatch - Eliminar todos los registros en lote
 02:45
 Método findAll con ordenamiento (order by) - Ejemplo 1
