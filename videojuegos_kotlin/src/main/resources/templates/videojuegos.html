@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Videojuegos</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root{
+            --bg: #0f1720;
+            --card: #0b1220;
+            --muted: #9aa4b2;
+            --accent: #7c5cff;
+            --glass: rgba(255,255,255,0.04);
+            --accent-2: #22d3ee;
+            --radius: 12px;
+            --txt: #e6eef8;
+        }
+
+        /* Reset rápido */
+        *{box-sizing: border-box;margin:0;padding:0}
+        html,body{height:100%}
+
+        body{
+            background: linear-gradient(180deg, #071021 0%, var(--bg) 100%);
+            color: var(--txt);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            padding: 32px;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:16px;
+            margin-bottom:24px;
+        }
+
+        h1{
+            font-size:1.8rem;
+            letter-spacing: -0.02em;
+            color: linear-gradient(90deg, #fff, #e3eaf6);
+            background: linear-gradient(90deg, #ffffff, #cfd8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin:0;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size:0.95rem;
+        }
+
+        /* Contenedor principal */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            align-items: start;
+        }
+
+        /* Tarjeta de juego */
+        .card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.18));
+            border: 1px solid rgba(255,255,255,0.03);
+            padding: 14px;
+            border-radius: var(--radius);
+            box-shadow: 0 6px 18px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+            transition: transform .18s ease, box-shadow .18s ease;
+            overflow: hidden;
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+            min-height: 360px;
+        }
+
+        .card:hover{
+            transform: translateY(-6px);
+            box-shadow: 0 14px 36px rgba(12,10,40,0.6);
+            border-color: rgba(124,92,255,0.18);
+        }
+
+        .thumb {
+            width:100%;
+            height:160px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(10,12,20,0.6), rgba(0,0,0,0.6));
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .thumb img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            display:block;
+            transform: scale(1);
+            transition: transform .45s ease;
+        }
+
+        .card:hover .thumb img{
+            transform: scale(1.03);
+        }
+
+        .info {
+            display:flex;
+            flex-direction:column;
+            gap:6px;
+            flex:1;
+        }
+
+        .title {
+            font-weight:600;
+            font-size:1.05rem;
+        }
+
+        .meta {
+            display:flex;
+            gap:8px;
+            flex-wrap:wrap;
+            color:var(--muted);
+            font-size:0.9rem;
+        }
+
+        .chip {
+            background: var(--glass);
+            padding:6px 10px;
+            border-radius:999px;
+            font-size:0.85rem;
+            color:var(--muted);
+            border: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .year {
+            margin-left:auto;
+            font-weight:600;
+            color: var(--accent-2);
+            background: linear-gradient(90deg, rgba(34,211,238,0.06), transparent);
+            padding:4px 8px;
+            border-radius:8px;
+            font-size:0.9rem;
+        }
+
+        hr{
+            border: none;
+            height:1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            margin-top:8px;
+        }
+
+        /* Pie de tarjeta */
+        .actions {
+            display:flex;
+            gap:10px;
+            align-items:center;
+            margin-top:8px;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, rgba(124,92,255,0.14), rgba(124,92,255,0.06));
+            border:1px solid rgba(124,92,255,0.18);
+            padding:8px 12px;
+            border-radius:10px;
+            font-weight:600;
+            font-size:0.9rem;
+            cursor:pointer;
+            color:var(--txt);
+        }
+
+        .btn.secondary{
+            background: transparent;
+            border:1px solid rgba(255,255,255,0.04);
+            color:var(--muted);
+            font-weight:500;
+        }
+
+        /* Responsivo */
+        @media (max-width:640px){
+            body{padding:16px}
+            .thumb{height:140px}
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div>
+        <h1 th:text="${titulo}">Mis videojuegos</h1>
+        <div class="subtitle">Colección — Explora tus títulos favoritos</div>
+    </div>
+    <!-- espacio para un control o botón (opcional) -->
+    <div style="display:flex;align-items:center;gap:8px">
+        <button class="btn">Agregar</button>
+        <button class="btn secondary">Filtrar</button>
+    </div>
+</header>
+
+<main>
+    <section class="grid">
+        <!-- Cada tarjeta de videojuego -->
+        <div class="card" th:each="juego : ${listaVideojuegos}">
+            <div class="thumb">
+                <!-- Carga la imagen desde static/img usando Thymeleaf -->
+                <img th:src="@{/img/{imagen}(imagen=${juego.imagen})}" th:alt="${juego.titulo} + ' poster'" onerror="this.src='/img/placeholder.png'">
+            </div>
+
+            <div class="info">
+                <div class="title" th:text="${juego.titulo}">Título del juego</div>
+
+                <div class="meta">
+                    <div class="chip" th:text="${juego.genero}">Género</div>
+                    <div class="chip" th:text="${juego.plataforma}">Plataforma</div>
+                    <div class="year" th:text="${juego.anio}">Año</div>
+                </div>
+
+                <hr>
+
+                <!-- si quieres mostrar el nombre del archivo de imagen (opcional): -->
+                <!-- <div class="chip" th:text="${juego.imagen}"></div> -->
+
+                <div class="actions">
+                    <button class="btn">Ver detalles</button>
+                    <button class="btn secondary">Compartir</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
