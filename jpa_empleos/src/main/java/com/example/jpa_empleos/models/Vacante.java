@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 
 @Entity
@@ -26,7 +27,7 @@ public class Vacante {
     private String descripcion;
 
     @Column(name = "fecha", nullable = false)
-    private LocalDate fecha;
+    private Date fecha;
 
     @Column(name = "salario", nullable = false)
     private Double salario;

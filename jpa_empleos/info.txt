@@ -1,8 +1,8 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - ManyToOne - Relación Muchos a uno
+Desarrollo web con Spring Framework y MySQL8: JPA - Guardar una nueva Vacante
 
 
 07:53
-Guardar una nueva Vacante
+
 06:58
 Repositorios para entidades de tipo Usuario y Perfil
 05:22

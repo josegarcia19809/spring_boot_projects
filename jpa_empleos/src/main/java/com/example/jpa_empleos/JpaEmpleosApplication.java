@@ -1,6 +1,7 @@
 package com.example.jpa_empleos;
 
 import com.example.jpa_empleos.models.Categoria;
+import com.example.jpa_empleos.models.EstatusVacante;
 import com.example.jpa_empleos.models.Vacante;
 import com.example.jpa_empleos.repository.CategoriasJPARepository;
 import com.example.jpa_empleos.repository.CategoriasRepository;
@@ -12,8 +13,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -38,7 +39,33 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        buscarVacantes();
+        guardarVacante();
+    }
+
+    /**
+     * Guardar una vacante
+     */
+
+    private void guardarVacante(){
+        Vacante vacante = new Vacante();
+        vacante.setNombre("Desarrollador Java PRO");
+        vacante.setDescripcion("Se busca desarrollador con experiencia en Spring Boot y JPA.");
+        vacante.setFecha(new Date());
+        vacante.setSalario(25000.0);
+        vacante.setEstatus(EstatusVacante.Creada); // Enum, asegúrate que exista en tu proyecto
+        vacante.setDestacado(1);
+        vacante.setImagen("logo_empresa.png");
+        vacante.setDetalles("Trabajo remoto con horario flexible. Beneficios y capacitación incluidos.");
+
+        // Crear una categoría asociada
+        Categoria categoria = new Categoria();
+        categoria.setId(1); // Si ya existe en la BD, solo asignas el id
+        // o puedes crear una nueva:
+        // categoria.setNombre("Tecnología");
+        // categoria.setDescripcion("Empleos relacionados con desarrollo y TI.");
+
+        vacante.setCategoria(categoria);
+        vacantesRepo.save(vacante);
     }
 
     /**
