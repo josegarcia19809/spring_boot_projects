@@ -3,9 +3,12 @@ package com.example.jpa_empleos.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Categorias")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -20,5 +23,9 @@ public class Categoria {
 
     @Column(name = "descripcion", columnDefinition = "text")
     private String descripcion;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Vacante> vacantes;
+
 }
 

@@ -2,11 +2,14 @@ package com.example.jpa_empleos.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.time.LocalDate;
+
 
 @Entity
 @Table(name = "Vacantes")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -42,9 +45,9 @@ public class Vacante {
     @Column(name = "detalles", columnDefinition = "text")
     private String detalles;
 
-    // FK a Categorias (idCategoria)
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idCategoria", nullable = false)
+    // FK a Categorias (id_categoria)
+    @ManyToOne
+    @JoinColumn(name = "idCategoria")
     private Categoria categoria;
 }
 

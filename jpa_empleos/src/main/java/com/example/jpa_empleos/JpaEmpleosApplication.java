@@ -5,12 +5,14 @@ import com.example.jpa_empleos.models.Vacante;
 import com.example.jpa_empleos.repository.CategoriasJPARepository;
 import com.example.jpa_empleos.repository.CategoriasRepository;
 import com.example.jpa_empleos.repository.VacantesRepository;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -42,10 +44,11 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     /**
      * Método findAll - Interfaz JPARepository
      */
-    private void buscarVacantes() {
+    public void buscarVacantes() {
         List<Vacante> vacantes = vacantesRepo.findAll();
         for (Vacante vacante : vacantes) {
-            System.out.println(vacante.getId() + ". " + vacante.getNombre());
+            System.out.println(vacante.getId() + ". " + vacante.getNombre() +
+                    " -> " + vacante.getCategoria().getNombre());
         }
     }
 

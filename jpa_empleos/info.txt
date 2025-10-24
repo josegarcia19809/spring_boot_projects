@@ -1,12 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Recuperar Vacantes
+Desarrollo web con Spring Framework y MySQL8: JPA - ManyToOne - Relación Muchos a uno
 
 
-
-Crear repositorio para entidades de tipo Vacante
-03:10
-Anotación @Transient de JPA
-10:24
-Anotación @OneToOne - Relación Uno a Uno
 07:53
 Guardar una nueva Vacante
 06:58
