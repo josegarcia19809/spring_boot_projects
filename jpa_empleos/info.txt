@@ -1,4 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Crear repositorio para entidades de tipo Vacante
+Desarrollo web con Spring Framework y MySQL8: JPA - Recuperar Vacantes
 
 
 
