@@ -2,6 +2,7 @@ package com.example.jpa_empleos;
 
 import com.example.jpa_empleos.models.Categoria;
 import com.example.jpa_empleos.models.EstatusVacante;
+import com.example.jpa_empleos.models.Perfil;
 import com.example.jpa_empleos.models.Vacante;
 import com.example.jpa_empleos.repository.*;
 
@@ -41,14 +42,42 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        guardarVacante();
+        crearPefiles();
     }
+
+    /**
+     * Método para crear los perfiles
+     */
+    private void crearPefiles() {
+        perfilesRepo.saveAll(obtenerPerfiles());
+    }
+
+    /**
+     * Método que regresa una lista de Perfiles que se tienen en la aplicación de empleos
+     */
+    private List<Perfil> obtenerPerfiles() {
+        List<Perfil> perfiles = new LinkedList<>();
+        Perfil perfil1 = new Perfil();
+        perfil1.setPerfil("SUPERVISOR");
+
+        Perfil perfil2 = new Perfil();
+        perfil2.setPerfil("ADMINISTRADOR");
+
+        Perfil perfil3 = new Perfil();
+        perfil3.setPerfil("USUARIO");
+
+        perfiles.add(perfil1);
+        perfiles.add(perfil2);
+        perfiles.add(perfil3);
+        return perfiles;
+    }
+
 
     /**
      * Guardar una vacante
      */
 
-    private void guardarVacante(){
+    private void guardarVacante() {
         Vacante vacante = new Vacante();
         vacante.setNombre("Desarrollador Java PRO");
         vacante.setDescripcion("Se busca desarrollador con experiencia en Spring Boot y JPA.");

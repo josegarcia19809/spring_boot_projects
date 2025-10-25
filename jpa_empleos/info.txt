@@ -1,4 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Repositorios para entidades de tipo Usuario y Perfil
+Desarrollo web con Spring Framework y MySQL8: JPA - Crear los ROLES/PERFILES de la aplicación de Empleos
 
 
 Crear los ROLES/PERFILES de la aplicación de Empleos
