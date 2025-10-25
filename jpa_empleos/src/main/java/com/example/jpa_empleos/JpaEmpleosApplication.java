@@ -3,9 +3,7 @@ package com.example.jpa_empleos;
 import com.example.jpa_empleos.models.Categoria;
 import com.example.jpa_empleos.models.EstatusVacante;
 import com.example.jpa_empleos.models.Vacante;
-import com.example.jpa_empleos.repository.CategoriasJPARepository;
-import com.example.jpa_empleos.repository.CategoriasRepository;
-import com.example.jpa_empleos.repository.VacantesRepository;
+import com.example.jpa_empleos.repository.*;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,11 +23,15 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     private final CategoriasRepository categoriasRepo;
     private final CategoriasJPARepository categoriasJPARepo;
     private final VacantesRepository vacantesRepo;
+    private final PerfilesRepository perfilesRepo;
+    private final UsuarioRepository usuarioRepo;
 
-    public JpaEmpleosApplication(CategoriasRepository categoriasRepo, CategoriasJPARepository categoriasJPARepo, VacantesRepository vacantesRepo) {
+    public JpaEmpleosApplication(CategoriasRepository categoriasRepo, CategoriasJPARepository categoriasJPARepo, VacantesRepository vacantesRepo, PerfilesRepository perfilesRepo, UsuarioRepository usuarioRepo) {
         this.categoriasRepo = categoriasRepo;
         this.categoriasJPARepo = categoriasJPARepo;
         this.vacantesRepo = vacantesRepo;
+        this.perfilesRepo = perfilesRepo;
+        this.usuarioRepo = usuarioRepo;
     }
 
     public static void main(String[] args) {

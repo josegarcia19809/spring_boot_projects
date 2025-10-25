@@ -1,11 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Guardar una nueva Vacante
+Desarrollo web con Spring Framework y MySQL8: JPA - Repositorios para entidades de tipo Usuario y Perfil
 
 
-07:53
-
-06:58
-Repositorios para entidades de tipo Usuario y Perfil
-05:22
 Crear los ROLES/PERFILES de la aplicación de Empleos
 03:52
 Anotación @ManyToMany - Relación Muchos a Muchos
