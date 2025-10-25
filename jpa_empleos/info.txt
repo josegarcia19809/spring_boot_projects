@@ -1,7 +1,7 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Keyword findBy
+Desarrollo web con Spring Framework y MySQL8: JPA - Keyword And
 
 
-Keyword And
+
 04:41
 Keyword Between
 03:46
