@@ -2,6 +2,7 @@ package com.example.jpa_empleos.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,7 +13,8 @@ import java.util.Set;
                 @UniqueConstraint(columnNames = "username"),
                 @UniqueConstraint(columnNames = "email")
         })
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -41,12 +43,12 @@ public class Usuario {
     private LocalDate fechaRegistro;
 
     // Relación ManyToMany con Perfiles usando la tabla UsuarioPerfil
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "UsuarioPerfil",
             joinColumns = @JoinColumn(name = "idUsuario"),
             inverseJoinColumns = @JoinColumn(name = "idPerfil"),
-            uniqueConstraints = @UniqueConstraint(columnNames = {"idUsuario","idPerfil"})
+            uniqueConstraints = @UniqueConstraint(columnNames = {"idUsuario", "idPerfil"})
     )
     @Builder.Default
     private Set<Perfil> perfiles = new HashSet<>();
