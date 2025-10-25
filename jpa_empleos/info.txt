@@ -1,12 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Anotación @ManyToMany - Relación Muchos a Muchos
+Desarrollo web con Spring Framework y MySQL8: JPA - Crear un usuario 2 perfiles (ADMINISTRADOR, USUARIO)
 
-
-Crear los ROLES/PERFILES de la aplicación de Empleos
-03:52
-
-05:42
-Crear un usuario 2 perfiles (ADMINISTRADOR, USUARIO)
-09:47
 Buscar usuario y desplegar sus Perfiles asociados
 
 
