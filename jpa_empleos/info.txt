@@ -1,4 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Buscar usuario y desplegar sus Perfiles asociados
+Desarrollo web con Spring Framework y MySQL8: JPA - Usuario no encontrado
 
 
 

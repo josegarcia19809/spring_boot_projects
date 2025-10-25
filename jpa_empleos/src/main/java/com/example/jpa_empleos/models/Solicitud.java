@@ -2,15 +2,17 @@ package com.example.jpa_empleos.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "Solicitudes",
         uniqueConstraints = {
                 @UniqueConstraint(name = "Vacante_Usuario_UNIQUE",
-                        columnNames = {"idVacante","idUsuario"})
+                        columnNames = {"idVacante", "idUsuario"})
         })
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
