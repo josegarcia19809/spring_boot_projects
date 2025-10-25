@@ -1,6 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Crear un usuario 2 perfiles (ADMINISTRADOR, USUARIO)
+Desarrollo web con Spring Framework y MySQL8: JPA - Buscar usuario y desplegar sus Perfiles asociados
 
-Buscar usuario y desplegar sus Perfiles asociados
+
 
 
 ¿Qué son los Query Methods?

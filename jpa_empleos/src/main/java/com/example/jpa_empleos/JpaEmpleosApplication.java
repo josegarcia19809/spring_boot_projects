@@ -37,13 +37,27 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        crearUsuarioConPerfiles();
+        buscarUsuario();
+    }
+
+    /**
+     * Método para buscar un usuario y sus métodos asociados
+     */
+    public void buscarUsuario() {
+        Optional<Usuario> usuarioOptional = usuarioRepo.findById(1);
+        if (usuarioOptional.isPresent()) {
+            Usuario usuario = usuarioOptional.get();
+            System.out.println("Nombre: " + usuario.getNombre());
+            System.out.println("Perfiles asignados");
+            for (Perfil perfil : usuario.getPerfiles()) {
+                System.out.println(perfil.getPerfil());
+            }
+        }
     }
 
     /**
      * Crear usuario con 2 perfiles ADMINISTRADOR=2, USUARIO=3
      */
-
     private void crearUsuarioConPerfiles() {
         Usuario nuevoUsuario = new Usuario();
         nuevoUsuario.setNombre("José García");
@@ -54,10 +68,10 @@ public class JpaEmpleosApplication implements CommandLineRunner {
         nuevoUsuario.setFechaRegistro(LocalDate.now()); // 👈 fecha actual
 
         // Supongamos que ya tienes dos perfiles obtenidos del repositorio
-        Perfil perfil1= new Perfil();
+        Perfil perfil1 = new Perfil();
         perfil1.setId(2);
 
-        Perfil perfil2= new Perfil();
+        Perfil perfil2 = new Perfil();
         perfil2.setId(3);
 
         // Crear el conjunto de perfiles y asignarlo
