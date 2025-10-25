@@ -37,7 +37,21 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        buscarUsuario();
+        buscarVacantesPorEstatus();
+    }
+
+    /**
+     * Query Method: Buscar Vacantes por Estatus
+     */
+    private void buscarVacantesPorEstatus() {
+        List<Vacante> vacantesAprobadas = vacantesRepo
+                .findByEstatus(EstatusVacante.Aprobada);
+        System.out.println("Registros encontrados: " + vacantesAprobadas.size());
+
+        for (Vacante vacante : vacantesAprobadas) {
+            System.out.println(vacante.getId() + ": " + vacante.getNombre() + " - " +
+                    vacante.getEstatus());
+        }
     }
 
     /**
