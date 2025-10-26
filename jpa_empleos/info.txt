@@ -1,4 +1,2 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Keyword Between
+Desarrollo web con Spring Framework y MySQL8: JPA - Keyword In
 
-
-Keyword In
