@@ -1,8 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Keyword And
+Desarrollo web con Spring Framework y MySQL8: JPA - Keyword Between
 
 
-
-04:41
-Keyword Between
-03:46
 Keyword In
