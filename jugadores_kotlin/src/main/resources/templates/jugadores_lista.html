@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jugadores Top 7</title></head>
+<body>
+<div><h1>⚽️ Jugadores Top 7 🔝</h1>
+    <div th:each="jugador: ${jugadores}">
+        <p th:text="${jugador.id}"></p>
+        <p th:text="${jugador.nombre}"></p>
+        <p th:text="${jugador.club}"></p>
+        <p th:text="${jugador.posicion}"></p>
+        <p th:text="${jugador.rating}"></p>
+        <p th:text="${jugador.imagen}"></p></div>
+</div>
+</body>
+</html>
