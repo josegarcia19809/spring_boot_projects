@@ -1,4 +1,4 @@
-Spring Boot - Restful Web Services: Crear el Repositorio JPA para la clase Album
+Spring Boot - Restful Web Services: Crear la clase de Servicio para la entidad Album
 
 
 Crear el proyecto base para el proyecto Music API
