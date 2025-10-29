@@ -1,1 +1,26 @@
-Spring Boot - Restful Web Services: Crear la clase Entity para mapear la tabla Albums de la base de datos.
+Spring Boot - Restful Web Services: Crear el Repositorio JPA para la clase Album
+
+
+Crear el proyecto base para el proyecto Music API
+05:10
+Creación de la base de datos y la tabla para guardar los Albums de canciones.
+04:43
+Crear la clase Entity para mapear la tabla Albums de la base de datos.
+04:51
+Crear el Repositorio JPA para la clase Album
+01:55
+Crear la clase de Servicio para la entidad Album
+04:52
+Configurar el Datasource de conexión a la base de datos MySQL
+05:32
+Anotación @RestController: Crear nuestro primer controlador tipo REST.
+13:32
+Instalar el cliente gráfico PostMan
+03:09
+Petición HTTP GET - Recuperar el listado de Albums
+05:36
+Petición HTTP POST - Guardar un album | Anotación @RequestBody
+13:20
+Petición HTTP PUT - Actualizar un Album existente
+06:56
+Petición HTTP DELETE- Borrar un Album existente
