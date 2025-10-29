@@ -1,0 +1,1 @@
+Spring Boot - Restful Web Services: Crear la clase Entity para mapear la tabla Albums de la base de datos.
