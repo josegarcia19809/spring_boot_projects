@@ -1,4 +1,4 @@
-Spring Boot - Restful Web Services: Crear la clase de Servicio para la entidad Album
+Spring Boot - Restful Web Services: Anotación @RestController: Crear nuestro primer controlador tipo REST
 
 
 Crear el proyecto base para el proyecto Music API
