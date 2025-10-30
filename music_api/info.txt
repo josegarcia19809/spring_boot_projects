@@ -1,4 +1,4 @@
-Spring Boot - Restful Web Services: Anotación @RestController: Crear nuestro primer controlador tipo REST
+Spring Boot - Restful Web Services: Anotación @RestController: Petición HTTP POST - Guardar un album | Anotación @RequestBody
 
 
 Crear el proyecto base para el proyecto Music API

@@ -3,9 +3,7 @@ package com.example.music_api.controllers;
 import com.example.music_api.models.Album;
 import com.example.music_api.service.AlbumService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +16,11 @@ public class AlbumController {
     @GetMapping("/albums")
     public List<Album> buscarTodos() {
         return albumService.buscarTodos();
+    }
+
+    @PostMapping("/albums")
+    public Album guardar(@RequestBody Album album) {
+        albumService.guardar(album);
+        return album;
     }
 }
