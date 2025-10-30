@@ -1,1 +1,1 @@
-API REST CAFE: Inicio de proyecto
+API REST CAFE: Modelo de la API
