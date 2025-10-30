@@ -1,4 +1,4 @@
-Spring Boot - Restful Web Services:  Petición HTTP DELETE- Borrar un Album existente
+Spring Boot - Restful Web Services:  CrossOrigin
 
 
 Crear el proyecto base para el proyecto Music API
