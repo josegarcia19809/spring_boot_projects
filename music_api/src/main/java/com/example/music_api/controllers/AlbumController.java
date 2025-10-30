@@ -23,4 +23,10 @@ public class AlbumController {
         albumService.guardar(album);
         return album;
     }
+
+    @PutMapping("/albums")
+    public Album editar(@RequestBody Album album) {
+        albumService.guardar(album);
+        return album;
+    }
 }
