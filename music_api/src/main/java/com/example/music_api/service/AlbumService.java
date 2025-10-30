@@ -22,4 +22,9 @@ public class AlbumService implements IAlbumService {
     public void guardar(Album album) {
         albumRepository.save(album);
     }
+
+    @Override
+    public void eliminar(int idAlbum) {
+        albumRepository.deleteById(idAlbum);
+    }
 }

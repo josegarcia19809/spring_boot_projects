@@ -29,4 +29,10 @@ public class AlbumController {
         albumService.guardar(album);
         return album;
     }
+
+    @DeleteMapping("/albums/{id}")
+    public String eliminar(@PathVariable int id) {
+        albumService.eliminar(id);
+        return "Album eliminado exitosamente";
+    }
 }

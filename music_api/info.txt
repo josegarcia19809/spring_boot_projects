@@ -1,4 +1,4 @@
-Spring Boot - Restful Web Services:  Petición HTTP PUT - Actualizar un Album existente
+Spring Boot - Restful Web Services:  Petición HTTP DELETE- Borrar un Album existente
 
 
 Crear el proyecto base para el proyecto Music API

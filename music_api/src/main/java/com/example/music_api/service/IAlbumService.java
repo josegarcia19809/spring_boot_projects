@@ -7,4 +7,5 @@ import java.util.List;
 public interface IAlbumService {
     List<Album> buscarTodos();
     void guardar(Album album);
+    void eliminar(int idAlbum);
 }
