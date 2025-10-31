@@ -1,9 +1,7 @@
 package com.josegarcia.miPrimerApi.controllers;
 
 import com.josegarcia.miPrimerApi.models.Cafe;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,5 +34,12 @@ public class RestApiCafeController {
         }
         return Optional.empty();
     }
+
+    @PostMapping("/coffees")
+    Cafe postCoffee(@RequestBody Cafe nuevoCafe) {
+        coffees.add(nuevoCafe);
+        return nuevoCafe;
+    }
+
 
 }
