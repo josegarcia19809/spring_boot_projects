@@ -1,6 +1,8 @@
 package com.josegarcia.miPrimerApi.controllers;
 
 import com.josegarcia.miPrimerApi.models.Cafe;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -8,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/coffees")
 public class RestApiCafeController {
     private List<Cafe> coffees = new ArrayList<>();
 
@@ -20,12 +23,12 @@ public class RestApiCafeController {
         ));
     }
 
-    @GetMapping("/coffees")
+    @GetMapping
     Iterable<Cafe> mostrarCafes() {
         return coffees;
     }
 
-    @GetMapping("/coffees/{id}")
+    @GetMapping("/{id}")
     Optional<Cafe> obtenerCafePorId(@PathVariable String id) {
         for (Cafe c : coffees) {
             if (c.getId().equals(id)) {
@@ -35,14 +38,14 @@ public class RestApiCafeController {
         return Optional.empty();
     }
 
-    @PostMapping("/coffees")
-    Cafe AgregarCafe(@RequestBody Cafe nuevoCafe) {
+    @PostMapping
+    Cafe agregarCafe(@RequestBody Cafe nuevoCafe) {
         coffees.add(nuevoCafe);
         return nuevoCafe;
     }
 
-    @PutMapping("/coffees/{id}")
-    Cafe ActualizarCafe(@PathVariable String id, @RequestBody Cafe coffee) {
+    @PutMapping("/{id}")
+    ResponseEntity<Cafe> actualizarCafe(@PathVariable String id, @RequestBody Cafe coffee) {
         int coffeeIndex = -1;
 
         for (Cafe c : coffees) {
@@ -53,10 +56,13 @@ public class RestApiCafeController {
             }
         }
 
-        if (coffeeIndex == -1) {
-            return null;
-        }
+        return (coffeeIndex == -1)
+                ? new ResponseEntity<>(null, HttpStatus.NOT_FOUND) // No se encontró el café
+                : new ResponseEntity<>(coffee, HttpStatus.OK); // Café actualizado con éxito
+    }
 
-        return coffee;
+    @DeleteMapping("/{id}")
+    void borrarCafe(@PathVariable String id) {
+        coffees.removeIf(c -> c.getId().equals(id));
     }
 }
