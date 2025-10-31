@@ -1,1 +1,1 @@
-API REST CAFE: Creando un nuevo recurso con POST
+API REST CAFE: Actualizando con PUT

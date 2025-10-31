@@ -36,10 +36,27 @@ public class RestApiCafeController {
     }
 
     @PostMapping("/coffees")
-    Cafe postCoffee(@RequestBody Cafe nuevoCafe) {
+    Cafe AgregarCafe(@RequestBody Cafe nuevoCafe) {
         coffees.add(nuevoCafe);
         return nuevoCafe;
     }
 
+    @PutMapping("/coffees/{id}")
+    Cafe ActualizarCafe(@PathVariable String id, @RequestBody Cafe coffee) {
+        int coffeeIndex = -1;
 
+        for (Cafe c : coffees) {
+            if (c.getId().equals(id)) {
+                coffeeIndex = coffees.indexOf(c);
+                coffees.set(coffeeIndex, coffee);
+                break;
+            }
+        }
+
+        if (coffeeIndex == -1) {
+            return null;
+        }
+
+        return coffee;
+    }
 }
