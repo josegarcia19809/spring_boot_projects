@@ -1,11 +1,14 @@
 package com.josegarcia.miPrimerApi.models;
 
-import lombok.Data;
-import java.util.UUID;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class Cafe {
-    private final String id;
+    private String id;
     private String nombre;
     private double precio;
 
@@ -14,10 +17,5 @@ public class Cafe {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
-    }
-
-    // Constructor que genera automáticamente un id
-    public Cafe(String nombre, double precio) {
-        this(UUID.randomUUID().toString(), nombre, precio);
     }
 }
