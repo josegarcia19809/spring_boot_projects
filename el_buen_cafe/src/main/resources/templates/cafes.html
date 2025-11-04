@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cafetería</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3e5ab; /* color crema */
+            color: #3e2723; /* marrón oscuro */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4e342e;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .tarjeta {
+            background-color: #fff8e1;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .tarjeta:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .tarjeta img {
+            width: 220px;
+            height: 180px;
+            object-fit: cover; /* 🔸 asegura que todas las imágenes tengan la misma proporción */
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+        }
+
+        .tarjeta h2 {
+            color: #5d4037;
+            margin: 0.5rem 0;
+        }
+
+        .tarjeta p {
+            margin: 0.3rem 0;
+        }
+
+        .tarjeta a {
+            display: inline-block;
+            margin-top: 0.7rem;
+            text-decoration: none;
+            background-color: #6d4c41;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tarjeta a:hover {
+            background-color: #8d6e63;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #4e342e;
+        }
+    </style>
+</head>
+<body>
+
+<header>☕ Cafetería Dulce Aroma</header>
+
+<div class="contenedor">
+    <div class="tarjeta" th:each="cafe : ${listaCafes}">
+        <img th:src="@{/images/{img}(img=${cafe.imagen})}" alt="Imagen de café">
+        <h2 th:text="${cafe.nombre}"></h2>
+        <p><strong>Tipo:</strong> <span th:text="${cafe.tipo}"></span></p>
+        <p><strong>Precio:</strong> $<span th:text="${cafe.precio}"></span></p>
+        <p><strong>ID:</strong> <span th:text="${cafe.id}"></span></p>
+        <a th:href="@{/cafes/{id}(id=${cafe.id})}">🔍 Ver detalle</a>
+    </div>
+</div>
+
+<footer>
+    © 2025 Cafetería Dulce Aroma ☕ – Disfruta el aroma de un buen café.
+</footer>
+
+</body>
+</html>

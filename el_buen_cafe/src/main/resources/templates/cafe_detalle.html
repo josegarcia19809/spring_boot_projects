@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Café ☕</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3e5ab; /* crema cálido */
+            color: #3e2723; /* marrón oscuro */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4e342e;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .detalle {
+            max-width: 600px;
+            margin: 2rem auto;
+            background-color: #fff8e1;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .detalle img {
+            width: 80%;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .detalle h2 {
+            color: #5d4037;
+            margin-bottom: 1rem;
+        }
+
+        .detalle p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        .boton-volver {
+            display: inline-block;
+            margin-top: 1.5rem;
+            text-decoration: none;
+            background-color: #6d4c41;
+            color: #fff;
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .boton-volver:hover {
+            background-color: #8d6e63;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #4e342e;
+        }
+    </style>
+</head>
+<body>
+
+<header>☕ Detalle del Café</header>
+
+<div class="detalle">
+    <img th:src="@{/images/{img}(img=${cafe.imagen})}" alt="Imagen del café">
+    <h2 th:text="${cafe.nombre}"></h2>
+    <p><strong>Tipo:</strong> <span th:text="${cafe.tipo}"></span></p>
+    <p><strong>Precio:</strong> $<span th:text="${cafe.precio}"></span></p>
+    <p><strong>ID:</strong> <span th:text="${cafe.id}"></span></p>
+
+    <a class="boton-volver" th:href="@{/cafes}">⬅ Volver a la lista</a>
+</div>
+
+<footer>
+    © 2025 Cafetería Dulce Aroma ☕ – Hecho con amor y buen café.
+</footer>
+
+</body>
+</html>
