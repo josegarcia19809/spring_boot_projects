@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${platillo.nombre}">Detalle del Platillo</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5efe6;
+            color: #3e2723;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6f4e37;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+        }
+
+        .contenedor {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .imagen {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .contenido {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .contenido h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .descripcion {
+            font-size: 16px;
+            color: #5d4037;
+            margin-bottom: 15px;
+        }
+
+        .precio {
+            font-size: 22px;
+            color: #6f4e37;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .categoria {
+            background-color: #d7ccc8;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            color: #3e2723;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .estado {
+            font-size: 16px;
+            font-weight: bold;
+            color: green;
+            margin-bottom: 20px;
+        }
+
+        .estado.no-disponible {
+            color: red;
+        }
+
+        .boton {
+            display: inline-block;
+            background-color: #8d6e63;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .boton:hover {
+            background-color: #6f4e37;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #6d4c41;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header th:text="${platillo.nombre}">Detalle del Platillo</header>
+
+<div class="contenedor">
+    <img class="imagen" th:src="@{/images/{img}(img=${platillo.imagen})}" th:alt="${platillo.nombre}">
+    <div class="contenido">
+        <h2 th:text="${platillo.nombre}">Nombre del Platillo</h2>
+        <p class="descripcion" th:text="${platillo.descripcion}">Descripción del platillo</p>
+        <div class="categoria" th:text="${platillo.categoria}">Categoría</div>
+        <div class="precio" th:text="'$' + ${platillo.precio}">Precio</div>
+
+        <div th:if="${platillo.disponible}" class="estado">Disponible ✅</div>
+        <div th:if="${!platillo.disponible}" class="estado no-disponible">No disponible ❌</div>
+
+        <a th:href="@{/platillos}" class="boton">⬅️ Volver al menú</a>
+    </div>
+</div>
+
+<footer>© 2025 Cafetería Tradicional Mexicana ☕</footer>
+
+</body>
+</html>

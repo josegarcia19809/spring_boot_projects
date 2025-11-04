@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú de Platillos 🍽️</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5efe6;
+            color: #3e2723;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6f4e37;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .tarjeta {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* mantiene el tamaño uniforme */
+        }
+
+        .info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .info h3 {
+            margin: 10px 0 5px;
+            font-size: 20px;
+        }
+
+        .info p {
+            font-size: 14px;
+            color: #5d4037;
+        }
+
+        .precio {
+            font-weight: bold;
+            color: #6f4e37;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .boton {
+            background-color: #8d6e63;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .boton:hover {
+            background-color: #6f4e37;
+        }
+    </style>
+</head>
+<body>
+
+<header>Menú de Platillos Mexicanos 🇲🇽</header>
+
+<div class="contenedor">
+    <div class="tarjeta" th:each="platillo : ${listaPlatillos}">
+        <img th:src="@{/images/{img}(img=${platillo.imagen})}" th:alt="${platillo.nombre}">
+        <div class="info">
+            <h3 th:text="${platillo.nombre}">Nombre del platillo</h3>
+            <p th:text="${platillo.descripcion}">Descripción del platillo</p>
+            <div class="precio" th:text="'$' + ${platillo.precio}"></div>
+            <a th:href="@{'/platillos/' + ${platillo.id}}" class="boton">Ver detalle</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
