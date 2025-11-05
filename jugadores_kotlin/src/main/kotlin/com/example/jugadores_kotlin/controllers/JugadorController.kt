@@ -4,6 +4,7 @@ import com.example.jugadores_kotlin.models.Jugador
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 
 @Controller
 class JugadorController {
@@ -68,8 +69,45 @@ class JugadorController {
 
     // Método para listar a todos los jugadores
     @GetMapping("/jugadores")
-    fun listarJugadores(model: Model): String{
+    fun listarJugadores(model: Model): String {
         model.addAttribute("jugadores", jugadores)
         return "jugadores_lista"
     }
+
+    // Método para buscar un jugador por id
+    fun buscarPorId(id: Int): Jugador? {
+        return jugadores.find { it.id == id }
+    }
+
+    // Método para ver detalle de un jugador por id
+    @GetMapping("/jugadores/{id}")
+    fun verDetalle(
+        @PathVariable id: Int,
+        model: Model
+    ): String {
+        var jugador = buscarPorId(id)
+        return if (jugador != null) {
+            model.addAttribute("jugador", jugador)
+            "jugador_detalle"
+        } else {
+            model.addAttribute("mensaje", "El jugador con id $id no existe")
+            "error"
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

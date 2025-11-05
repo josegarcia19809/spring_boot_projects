@@ -4,91 +4,92 @@
     <meta charset="UTF-8">
     <title>Jugadores Top 7</title>
     <style>
+        /* 🎨 Estilos generales en modo oscuro */
         body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f9f9f9, #e0eafc);
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
             margin: 0;
             padding: 0;
         }
 
         h1 {
             text-align: center;
-            color: #1a73e8;
+            color: #00bfa6;
             margin-top: 30px;
-            font-size: 2.2em;
-            letter-spacing: 1px;
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* 📦 Contenedor general */
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
         }
 
+        /* 🧩 Tarjeta de jugador */
         .card {
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background-color: #1e1e1e;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            width: 260px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 191, 166, 0.4);
         }
 
+        /* 🖼 Imagen redondeada */
         .card img {
-            width: 100%;
-            height: 220px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
             object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #00bfa6;
         }
 
-        .info {
-            padding: 15px 20px;
-        }
-
-        .info h2 {
-            font-size: 1.3em;
+        /* 🔠 Texto dentro de la tarjeta */
+        .card p {
             margin: 5px 0;
-            color: #111;
+            font-size: 15px;
         }
 
-        .info p {
-            margin: 4px 0;
-            font-size: 0.95em;
-            color: #555;
-        }
-
-        .rating {
-            background-color: #1a73e8;
-            color: white;
+        /* 🔗 Enlace de detalle */
+        .card a {
             display: inline-block;
-            padding: 5px 10px;
+            margin-top: 10px;
+            background-color: #00bfa6;
+            color: #121212;
+            padding: 8px 15px;
             border-radius: 8px;
+            text-decoration: none;
             font-weight: bold;
-            font-size: 0.9em;
-            margin-top: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: #00a48f;
         }
     </style>
 </head>
 <body>
 <h1>⚽️ Jugadores Top 7 🔝</h1>
-
-<div class="container">
-    <div class="card" th:each="jugador : ${jugadores}">
+<div>
+    <div class="card" th:each="jugador: ${jugadores}">
         <img th:src="@{'/img/' + ${jugador.imagen}}" th:alt="${jugador.nombre}">
-        <div class="info">
-            <h2 th:text="${jugador.nombre}"></h2>
-            <p><strong>Club:</strong> <span th:text="${jugador.club}"></span></p>
-            <p><strong>Posición:</strong> <span th:text="${jugador.posicion}"></span></p>
-            <span class="rating" th:text="'⭐ ' + ${jugador.rating}"></span>
-        </div>
+        <p th:text="${jugador.nombre}"></p>
+        <p th:text="${jugador.club}"></p>
+        <p th:text="${jugador.posicion}"></p>
+        <p>⭐ <span th:text="${jugador.rating}"></span></p>
+        <a th:href="@{'/jugadores/'+ ${jugador.id}}">Ver detalle</a>
     </div>
 </div>
 </body>
 </html>
+
