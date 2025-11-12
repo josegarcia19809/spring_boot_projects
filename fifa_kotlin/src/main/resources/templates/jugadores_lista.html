@@ -1,28 +1,32 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Lista de Jugadores</title>
     <!-- CDN Bootstrap opcional para estilo rápido -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
           integrity="sha384-..." crossorigin="anonymous">
     <style>
         /* Estilos sencillos para mejorar la legibilidad */
-        body { padding: 1.5rem; }
-        .tabla-jugadores th, .tabla-jugadores td { vertical-align: middle; }
-        .badge-goles { font-weight: 600; }
+        body {
+            padding: 1.5rem;
+        }
+
+        .tabla-jugadores th, .tabla-jugadores td {
+            vertical-align: middle;
+        }
+
+        .badge-goles {
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <header class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3">Jugadores ⚽</h1>
-        <!-- Ejemplo de botón para volver o agregar (ruta a adaptar) -->
-        <div>
-            <a href="/" class="btn btn-outline-secondary btn-sm">Inicio</a>
-            <!-- <a href="/jugadores/nuevo" class="btn btn-primary btn-sm">Agregar jugador</a> -->
-        </div>
     </header>
 
     <!-- Mensaje si la lista está vacía -->
@@ -49,8 +53,10 @@
                 <td th:text="${jugador.posicion}">Delantero</td>
                 <td>
                     <!-- Mostrar un badge si tiene goles, sino mostrar 0 -->
-                    <span th:if="${jugador.goles > 0}" class="badge bg-success badge-goles" th:text="${jugador.goles}">5</span>
-                    <span th:if="${jugador.goles == 0}" class="text-muted" th:text="${jugador.goles}">0</span>
+                    <span th:if="${jugador.goles > 0}" class="badge bg-success badge-goles"
+                          th:text="${jugador.goles}">5</span>
+                    <span th:if="${jugador.goles == 0}" class="text-muted"
+                          th:text="${jugador.goles}">0</span>
                 </td>
             </tr>
             </tbody>

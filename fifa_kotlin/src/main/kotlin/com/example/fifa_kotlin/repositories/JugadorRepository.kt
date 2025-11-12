@@ -35,11 +35,11 @@ class JugadorRepository {
         println("Se cargaron ${jugadores.size} jugadores desde el CSV ✅")
     }
 
-    fun obtenerJugadores(): ArrayList<Jugador>{
+    fun obtenerJugadores(): ArrayList<Jugador> {
         return jugadores
     }
 
-    fun obtenerCantidadJugadores(): Int{
+    fun obtenerCantidadJugadores(): Int {
         return jugadores.size
     }
 
@@ -47,4 +47,9 @@ class JugadorRepository {
         return jugadores.sortedByDescending { it.goles }
     }
 
+    // Calcular el total de goles
+    fun obtenerTotalGoles(): Int {
+        val totalGoles = jugadores.sumOf { it.goles }
+        return totalGoles
+    }
 }

@@ -18,11 +18,6 @@
 <div class="container">
     <header class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3">Jugadores ⚽</h1>
-        <!-- Ejemplo de botón para volver o agregar (ruta a adaptar) -->
-        <div>
-            <a href="/" class="btn btn-outline-secondary btn-sm">Inicio</a>
-            <!-- <a href="/jugadores/nuevo" class="btn btn-primary btn-sm">Agregar jugador</a> -->
-        </div>
     </header>
 
     <!-- Mensaje si la lista está vacía -->
@@ -60,6 +55,7 @@
     <!-- Pie -->
     <footer class="mt-4 text-muted small">
         <p th:text="'Se obtuvieron ' + ${cantidadJugadores} + ' jugadores'"></p>
+        <p th:text="'Total de goles ' + ${totalGoles}"></p>
     </footer>
 </div>
 
