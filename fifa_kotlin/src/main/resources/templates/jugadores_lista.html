@@ -1,0 +1,70 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lista de Jugadores</title>
+    <!-- CDN Bootstrap opcional para estilo rápido -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-..." crossorigin="anonymous">
+    <style>
+        /* Estilos sencillos para mejorar la legibilidad */
+        body { padding: 1.5rem; }
+        .tabla-jugadores th, .tabla-jugadores td { vertical-align: middle; }
+        .badge-goles { font-weight: 600; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3">Jugadores ⚽</h1>
+        <!-- Ejemplo de botón para volver o agregar (ruta a adaptar) -->
+        <div>
+            <a href="/" class="btn btn-outline-secondary btn-sm">Inicio</a>
+            <!-- <a href="/jugadores/nuevo" class="btn btn-primary btn-sm">Agregar jugador</a> -->
+        </div>
+    </header>
+
+    <!-- Mensaje si la lista está vacía -->
+    <div th:if="${#lists.isEmpty(jugadores)}" class="alert alert-info">
+        No hay jugadores para mostrar.
+    </div>
+
+    <!-- Tabla de jugadores -->
+    <div th:if="${!#lists.isEmpty(jugadores)}" class="table-responsive">
+        <table class="table table-striped table-hover tabla-jugadores">
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">Número</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Posición</th>
+                <th scope="col">Goles</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Iteramos la colección 'jugadores' pasada por el controller -->
+            <tr th:each="jugador, iterStat : ${jugadores}">
+                <td th:text="${jugador.numero}">10</td>
+                <td th:text="${jugador.nombre}">Lionel Messi</td>
+                <td th:text="${jugador.posicion}">Delantero</td>
+                <td>
+                    <!-- Mostrar un badge si tiene goles, sino mostrar 0 -->
+                    <span th:if="${jugador.goles > 0}" class="badge bg-success badge-goles" th:text="${jugador.goles}">5</span>
+                    <span th:if="${jugador.goles == 0}" class="text-muted" th:text="${jugador.goles}">0</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pie -->
+    <footer class="mt-4 text-muted small">
+        <p th:text="'Se obtuvieron ' + ${cantidadJugadores} + ' jugadores'"></p>
+    </footer>
+</div>
+
+<!-- Scripts opcionales de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-..." crossorigin="anonymous"></script>
+</body>
+</html>

@@ -10,8 +10,4 @@ class FifaKotlinApplication
 fun main(args: Array<String>) {
 	runApplication<FifaKotlinApplication>(*args)
     println("Ejecutando en puerto 8080...")
-    val jugadores= JugadorRepository()
-    jugadores.leerJugadores()
-
-    //jugadores.forEach { println(it.usuarioId) }
 }
