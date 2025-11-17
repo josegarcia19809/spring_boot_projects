@@ -1,1 +1,1 @@
-API REST CAFE: Agregando códigos de estado HTTP con ResponseEntity
+API REST CAFE: Agregando validaciones a los endpoints
