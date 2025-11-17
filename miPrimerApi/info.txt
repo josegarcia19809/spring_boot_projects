@@ -1,1 +1,1 @@
-API REST CAFE: Agregando validaciones a los endpoints
+API REST CAFE: Documentación de los endpoints

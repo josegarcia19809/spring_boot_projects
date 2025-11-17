@@ -9,6 +9,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,12 +33,17 @@ public class ResponseEntityCoffee {
         ));
     }
 
+    @Operation(summary = "Obtener todos los cafés", description = "Devuelve una lista con todos los cafés")
+    @ApiResponse(responseCode = "200", description = "Lista devuelta exitosamente")
+
     @GetMapping
     public ResponseEntity<Iterable<Cafe>> getCoffees() {
         Iterable<Cafe> coffeeList = cafes;
         return ResponseEntity.ok(coffeeList);
     }
 
+    @Operation(summary = "Agregar un café", description = "Agrega un café")
+    @ApiResponse(responseCode = "CREATED", description = "Café creado exitosamente")
     @PostMapping
     public ResponseEntity<?> postCoffee(@Valid @RequestBody Cafe nuevoCafe, BindingResult bindingResult) {
 
@@ -64,6 +72,8 @@ public class ResponseEntityCoffee {
                 .body(nuevoCafe);
     }
 
+    @Operation(summary = "Mostrar nombres de cafés", description = "Muestra solamente nombres de cafés")
+    @ApiResponse(responseCode = "200", description = "Lista de nombres devuelta exitosamente")
     @GetMapping("/nombres")
     public ResponseEntity<String> obtenerDatos() {
         String nombresCafes = cafes.stream()
@@ -74,6 +84,9 @@ public class ResponseEntityCoffee {
         return new ResponseEntity<>(nombresCafes, headers, HttpStatus.OK);
     }
 
+    @Operation(summary = "Buscar café por ID", description = "Muestra solamente el café según el ID mandado")
+    @ApiResponse(responseCode = "200", description = "El café se devolvió exitosamente")
+    @ApiResponse(responseCode = "Not Found", description = "No se encontró el café")
     @GetMapping("/{id}")
     public ResponseEntity<?> getCoffeeById(@PathVariable String id) {
         for (Cafe c : cafes) {
@@ -85,6 +98,9 @@ public class ResponseEntityCoffee {
                 .body("⚠️ No se encontró ningún café con id: " + id);
     }
 
+    @Operation(summary = "Actualizar café por ID", description = "Actualiza el café según el ID mandado")
+    @ApiResponse(responseCode = "200", description = "El café se actualizó exitosamente")
+    @ApiResponse(responseCode = "Not Found", description = "El café no se encontró.")
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizarCafe(
             @PathVariable String id,
@@ -122,6 +138,9 @@ public class ResponseEntityCoffee {
     }
 
 
+    @Operation(summary = "Eliminar café por ID", description = "Elimina el café según el ID mandado")
+    @ApiResponse(responseCode = "Not content", description = "El café se eliminó exitosamente. No devuelve contenido")
+    @ApiResponse(responseCode = "Not Found", description = "El café no se encontró.")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> borrarCafe(@PathVariable String id) {
         boolean eliminado = cafes.removeIf(c -> c.getId().equals(id));
