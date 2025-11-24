@@ -1,3 +1,3 @@
-Café API Rest DB MySQL: Creando el proyecto
+Café API Rest DB MySQL: Conectando con la BD
 
 lunes 24 de noviembre de 2025

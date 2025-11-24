@@ -8,6 +8,7 @@ public class CafeApiRestDbApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CafeApiRestDbApplication.class, args);
+        System.out.println("Ejecutando en puerto 8080...");
 	}
 
 }
