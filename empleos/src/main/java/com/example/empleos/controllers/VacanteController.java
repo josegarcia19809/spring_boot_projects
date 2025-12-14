@@ -4,10 +4,7 @@ import com.example.empleos.models.Vacante;
 import com.example.empleos.service.IVacanteService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -23,6 +20,31 @@ public class VacanteController {
     public VacanteController(IVacanteService vacanteService) {
         this.vacanteService = vacanteService;
     }
+
+    @GetMapping("/create")
+    public String crear(){
+        return "vacantes/formVacante";
+    }
+
+    @PostMapping("/save")
+    public String guardar(@RequestParam("nombre") String nombre,
+                          @RequestParam("descripcion") String descripcion,
+                          @RequestParam("estatus") String estatus,
+                          @RequestParam("fecha") String fecha,
+                          @RequestParam("destacado") int destacado,
+                          @RequestParam("salario") double salario,
+                          @RequestParam("detalles") String detalles){
+        System.out.println(nombre);
+        System.out.println(descripcion);
+        System.out.println(estatus);
+        System.out.println(fecha);
+        System.out.println(destacado);
+        System.out.println(salario);
+        System.out.println(detalles);
+
+        return "vacantes/listVacantes";
+    }
+
 
     @GetMapping("/delete")
     public String eliminar(@RequestParam("id") int idVacante, Model model) {
