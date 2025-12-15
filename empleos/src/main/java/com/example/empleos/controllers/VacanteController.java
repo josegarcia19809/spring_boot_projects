@@ -1,6 +1,7 @@
 package com.example.empleos.controllers;
 
 import com.example.empleos.models.Vacante;
+import com.example.empleos.service.ICategoriasService;
 import com.example.empleos.service.IVacanteService;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -20,10 +21,13 @@ import java.util.List;
 public class VacanteController {
 
     private IVacanteService vacanteService;
+    private ICategoriasService categoriasService;
 
     // Inyección mediante el constructor
-    public VacanteController(IVacanteService vacanteService) {
+    public VacanteController(IVacanteService vacanteService,
+                             ICategoriasService categoriasService) {
         this.vacanteService = vacanteService;
+        this.categoriasService = categoriasService;
     }
 
     @GetMapping("/index")
@@ -33,9 +37,9 @@ public class VacanteController {
         return "vacantes/listVacantes";
     }
 
-    // http://localhost:8080/vacantes/create
     @GetMapping("/create")
-    public String crear(Vacante vacante) {
+    public String crear(Vacante vacante, Model model) {
+        model.addAttribute("categorias", categoriasService.buscarTodas());
         return "vacantes/formVacante";
     }
 

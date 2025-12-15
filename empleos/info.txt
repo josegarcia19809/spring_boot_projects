@@ -1,7 +1,7 @@
-Desarrollo web con Spring Framework y MySQL8: Vincular inputs de formularios HTML a propiedades de clases de modelo.
+Desarrollo web con Spring Framework y MySQL8: Generar input de tipo <select> de forma dinámica con valores de un List
 
 
-Generar input de tipo <select> de forma dinámica con valores de un List
+
 07:44
 Data Binding entre un input tipo <select> y una clase definida por el usuario.
 06:01
