@@ -2,10 +2,13 @@ package com.example.empleos.controllers;
 
 import com.example.empleos.models.Vacante;
 import com.example.empleos.service.IVacanteService;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -21,13 +24,14 @@ public class VacanteController {
         this.vacanteService = vacanteService;
     }
 
-    @GetMapping("/create") //vacantes/create
+    @GetMapping("/create") // http://localhost:8080/vacantes/create
     public String crear() {
         return "vacantes/formVacante";
     }
 
     @PostMapping("/save")
     public String guardar(Vacante vacante) {
+        vacanteService.guardar(vacante);
         System.out.println(vacante);
         return "vacantes/listVacantes";
     }
@@ -84,6 +88,12 @@ public class VacanteController {
         List<Vacante> vacantes = vacanteService.buscarTodas();
         model.addAttribute("vacantes", vacantes);
         return "tabla";
+    }
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
 
 }

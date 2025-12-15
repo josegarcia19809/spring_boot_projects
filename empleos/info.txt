@@ -1,6 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: Data Binding - Clase de modelo Vacante
+Desarrollo web con Spring Framework y MySQL8: Anotación @InitBinder - Personalizar Data Binding
 
-Anotación @InitBinder - Personalizar Data Binding
+
 08:42
 Ejercicio de creación de vistas
 03:17
