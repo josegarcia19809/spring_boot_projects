@@ -32,8 +32,9 @@ public class VacanteController {
         return "vacantes/listVacantes";
     }
 
-    @GetMapping("/create") // http://localhost:8080/vacantes/create
-    public String crear() {
+    // http://localhost:8080/vacantes/create
+    @GetMapping("/create")
+    public String crear(Vacante vacante) {
         return "vacantes/formVacante";
     }
 

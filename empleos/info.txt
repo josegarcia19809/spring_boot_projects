@@ -1,6 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: BindingResult - Verificar errores
+Desarrollo web con Spring Framework y MySQL8: Desplegar errores de Data Binding en la vista.
 
-Desplegar errores de Data Binding en la vista.
+
 06:15
 Redirect en Spring MVC
 05:26
