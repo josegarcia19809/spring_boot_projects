@@ -4,6 +4,7 @@ import com.example.empleos.models.Vacante;
 import com.example.empleos.service.ICategoriasService;
 import com.example.empleos.service.IVacanteService;
 import com.example.empleos.util.Utileria;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +22,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/vacantes")
 public class VacanteController {
+
+    @Value("${empleosapp.ruta.imagenes}")
+    private String ruta;
 
     private IVacanteService vacanteService;
     private ICategoriasService categoriasService;
@@ -53,7 +57,7 @@ public class VacanteController {
             return "vacantes/formVacante";
         }
         if (!multiPart.isEmpty()) {
-            String ruta = "/Users/josegarcia/empleos/img-vacantes/"; // Linux/MAC
+            // String ruta = "/Users/josegarcia/empleos/img-vacantes/"; // Linux/MAC
             // String ruta = "c:/empleos/img-vacantes/"; // Windows
             String nombreImagen = Utileria.guardarArchivo(multiPart, ruta);
             if (nombreImagen != null) {
