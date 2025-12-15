@@ -1,8 +1,8 @@
-Desarrollo web con Spring Framework y MySQL8: Anotación @InitBinder - Personalizar Data Binding
+Desarrollo web con Spring Framework y MySQL8: Ejercicio de creación de vistas
 
 
 08:42
-Ejercicio de creación de vistas
+
 03:17
 BindingResult - Verificar errores
 07:54

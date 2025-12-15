@@ -24,6 +24,13 @@ public class VacanteController {
         this.vacanteService = vacanteService;
     }
 
+    @GetMapping("/index")
+    public String index(Model model) {
+        List<Vacante> vacantes = vacanteService.buscarTodas();
+        model.addAttribute("vacantes", vacantes);
+        return "vacantes/listVacantes";
+    }
+
     @GetMapping("/create") // http://localhost:8080/vacantes/create
     public String crear() {
         return "vacantes/formVacante";
