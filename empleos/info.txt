@@ -1,11 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Ejercicio de creación de vistas
+Desarrollo web con Spring Framework y MySQL8: BindingResult - Verificar errores
 
-
-08:42
-
-03:17
-BindingResult - Verificar errores
-07:54
 Desplegar errores de Data Binding en la vista.
 06:15
 Redirect en Spring MVC

@@ -5,6 +5,7 @@ import com.example.empleos.service.IVacanteService;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,7 +38,10 @@ public class VacanteController {
     }
 
     @PostMapping("/save")
-    public String guardar(Vacante vacante) {
+    public String guardar(Vacante vacante, BindingResult result) {
+        if (result.hasErrors()) {
+            return "vacantes/formVacante";
+        }
         vacanteService.guardar(vacante);
         System.out.println(vacante);
         return "vacantes/listVacantes";
