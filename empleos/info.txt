@@ -1,14 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: Operaciones mostrar y guardar Categorías
+Desarrollo web con Spring Framework y MySQL8: Vincular inputs de formularios HTML a propiedades de clases de modelo.
 
 
-
-06:32
-TinyMCE – Práctica
-05:24
-Ejercicio - Inyección de Dependencias
-04:00
-Vincular inputs de formularios HTML a propiedades de clases de modelo.
-06:55
 Generar input de tipo <select> de forma dinámica con valores de un List
 07:44
 Data Binding entre un input tipo <select> y una clase definida por el usuario.
