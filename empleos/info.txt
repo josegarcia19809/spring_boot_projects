@@ -1,9 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Desplegar errores de Data Binding en la vista.
+Desarrollo web con Spring Framework y MySQL8: Redirect en Spring MVC
 
-
-06:15
-Redirect en Spring MVC
-05:26
 Flash Attributes
 11:02
 TinyMCE – Editor Web HTML
