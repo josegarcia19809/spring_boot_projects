@@ -1,9 +1,9 @@
-Desarrollo web con Spring Framework y MySQL8: Configuración del proyecto Spring Boot para subir archivos
+Desarrollo web con Spring Framework y MySQL8: Clase Utileria.java para guardar archivos subidos desde formularios HTML.
 
 
 
 06:22
-Clase Utileria.java para guardar archivos subidos desde formularios HTML.
+
 06:24
 Subir y guardar la imagen de la Vacante
 06:15
