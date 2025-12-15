@@ -21,29 +21,35 @@ public class VacanteController {
         this.vacanteService = vacanteService;
     }
 
-    @GetMapping("/create")
-    public String crear(){
+    @GetMapping("/create") //vacantes/create
+    public String crear() {
         return "vacantes/formVacante";
     }
 
     @PostMapping("/save")
-    public String guardar(@RequestParam("nombre") String nombre,
-                          @RequestParam("descripcion") String descripcion,
-                          @RequestParam("estatus") String estatus,
-                          @RequestParam("fecha") String fecha,
-                          @RequestParam("destacado") int destacado,
-                          @RequestParam("salario") double salario,
-                          @RequestParam("detalles") String detalles){
-        System.out.println(nombre);
-        System.out.println(descripcion);
-        System.out.println(estatus);
-        System.out.println(fecha);
-        System.out.println(destacado);
-        System.out.println(salario);
-        System.out.println(detalles);
-
+    public String guardar(Vacante vacante) {
+        System.out.println(vacante);
         return "vacantes/listVacantes";
     }
+
+//    @PostMapping("/save")
+//    public String guardar(@RequestParam("nombre") String nombre,
+//                          @RequestParam("descripcion") String descripcion,
+//                          @RequestParam("estatus") String estatus,
+//                          @RequestParam("fecha") String fecha,
+//                          @RequestParam("destacado") int destacado,
+//                          @RequestParam("salario") double salario,
+//                          @RequestParam("detalles") String detalles){
+//        System.out.println(nombre);
+//        System.out.println(descripcion);
+//        System.out.println(estatus);
+//        System.out.println(fecha);
+//        System.out.println(destacado);
+//        System.out.println(salario);
+//        System.out.println(detalles);
+//
+//        return "vacantes/listVacantes";
+//    }
 
 
     @GetMapping("/delete")

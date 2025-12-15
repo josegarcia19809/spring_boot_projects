@@ -1,10 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Formulario HTML para crear una Vacante
+Desarrollo web con Spring Framework y MySQL8: Data Binding - Clase de modelo Vacante
 
-
-Data Binding en Spring MVC - Explicación
-08:09
-Data Binding - Clase de modelo Vacante
-07:45
 Anotación @InitBinder - Personalizar Data Binding
 08:42
 Ejercicio de creación de vistas
