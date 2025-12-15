@@ -9,6 +9,8 @@ public class Utileria {
     public static String guardarArchivo(MultipartFile multiPart, String ruta) {
         // Obtenemos el nombre original del archivo.
         String nombreOriginal = multiPart.getOriginalFilename();
+        nombreOriginal = nombreOriginal.replace(" ", "-");
+        System.out.println("Nombre Original: " + nombreOriginal);
         try {
             // Formamos el nombre del archivo para guardarlo en el disco duro.
             File imageFile = new File(ruta + nombreOriginal);
@@ -22,6 +24,5 @@ public class Utileria {
             System.out.println("Error " + e.getMessage());
             return null;
         }
-
     }
 }
