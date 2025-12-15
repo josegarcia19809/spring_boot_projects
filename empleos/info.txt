@@ -1,11 +1,11 @@
-Desarrollo web con Spring Framework y MySQL8: Clase Utileria.java para guardar archivos subidos desde formularios HTML.
+Desarrollo web con Spring Framework y MySQL8: Subir y guardar la imagen de la Vacante
 
 
 
 06:22
 
 06:24
-Subir y guardar la imagen de la Vacante
+
 06:15
 Quitar espacios del nombre del archivo
 03:38

@@ -3,12 +3,14 @@ package com.example.empleos.controllers;
 import com.example.empleos.models.Vacante;
 import com.example.empleos.service.ICategoriasService;
 import com.example.empleos.service.IVacanteService;
+import com.example.empleos.util.Utileria;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.text.SimpleDateFormat;
@@ -45,9 +47,19 @@ public class VacanteController {
 
     @PostMapping("/save")
     public String guardar(Vacante vacante, BindingResult result,
-                          RedirectAttributes redirectAttributes) {
+                          RedirectAttributes redirectAttributes,
+                          @RequestParam("archivoImagen") MultipartFile multiPart) {
         if (result.hasErrors()) {
             return "vacantes/formVacante";
+        }
+        if (!multiPart.isEmpty()) {
+            String ruta = "/Users/josegarcia/empleos/img-vacantes/"; // Linux/MAC
+            // String ruta = "c:/empleos/img-vacantes/"; // Windows
+            String nombreImagen = Utileria.guardarArchivo(multiPart, ruta);
+            if (nombreImagen != null) {
+                // La imagen si se subio. // Procesamos la variable nombreImagen
+                vacante.setImagen(nombreImagen);
+            }
         }
         vacanteService.guardar(vacante);
         redirectAttributes.addFlashAttribute("msg", "Registro guardado exitosamente");
