@@ -1,4 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: TinyMCE – Editor Web HTML
+Desarrollo web con Spring Framework y MySQL8: Operaciones mostrar y guardar Categorías
 
 
 
