@@ -1,4 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: Quitar espacios del nombre del archivo
+Desarrollo web con Spring Framework y MySQL8: Agregar caracteres aleatorios al nombre del archivo para evitar duplicados
 
-Agregar caracteres aleatorios al nombre del archivo para evitar duplicados
+
 Anotación @Value - Inyectar propiedades en nuestro proyecto
