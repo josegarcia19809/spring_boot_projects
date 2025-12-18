@@ -1,5 +1,6 @@
 package com.example.empleos.service;
 
+import com.example.empleos.models.EstatusVacante;
 import com.example.empleos.models.Vacante;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +26,7 @@ public class VacanteServiceImpl implements  IVacanteService {
             vacante1.setSalario(8500.00);
             vacante1.setDestacado(1);
             vacante1.setDetalles("Crea edificios");
-            vacante1.setEstatus("Eliminada");
+            vacante1.setEstatus(EstatusVacante.Aprobada);
 
             vacante1.setImagen("empresa1.png");
 
@@ -37,7 +38,7 @@ public class VacanteServiceImpl implements  IVacanteService {
             vacante2.setSalario(12000.00);
             vacante2.setDestacado(0);
             vacante2.setDetalles("Cuenta");
-            vacante2.setEstatus("Aprobada");
+            vacante2.setEstatus(EstatusVacante.Aprobada);
             vacante2.setImagen("empresa2.png");
 
             Vacante vacante3 = new Vacante();
@@ -48,7 +49,7 @@ public class VacanteServiceImpl implements  IVacanteService {
             vacante3.setSalario(10500.00);
             vacante3.setDestacado(0);
             vacante3.setDetalles("Crea conexiones");
-            vacante3.setEstatus("Creada");
+            vacante3.setEstatus(EstatusVacante.Creada);
             // No tiene imagen
 
             Vacante vacante4 = new Vacante();
@@ -59,7 +60,7 @@ public class VacanteServiceImpl implements  IVacanteService {
             vacante4.setSalario(7500.00);
             vacante4.setDestacado(1);
             vacante4.setDetalles("Crea diseños");
-            vacante4.setEstatus("Creada");
+            vacante4.setEstatus(EstatusVacante.Creada);
             vacante4.setImagen("empresa3.png");
 
             listaVacantes.add(vacante1);

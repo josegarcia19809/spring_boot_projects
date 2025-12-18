@@ -1,4 +1,41 @@
-Desarrollo web con Spring Framework y MySQL8: Anotación @Value - Inyectar propiedades en nuestro proyecto
+Desarrollo web con Spring Framework y MySQL8: Configurar los Repositorios de Spring Data JPA en nuestra aplicación de Empleos
 
 
+05:39
+Crear una nueva implementación de ICategoriasService con nuestro Repositorio
+06:47
+Anotación @Primary
+10:45
+Anotación @Qualifier
+05:04
+Crear una nueva implementación de IVacantesService con nuestro Repositorio
+10:54
+Configurar el parámetro serverTimezone de la conexión a MySQL
+04:07
+Thymeleaf Expresión th:utext - Renderizar tags de HTML en la vista
+07:59
+Implementar método buscarDestacadas en IVacantesService
+07:43
+Configurar recursos estáticos de rutas adicionales.
+13:44
+Configurar botón HTML para eliminar una Vacante
+10:36
+Módulo para editar una Vacante - Parte 1
+12:06
+Módulo para editar una Vacante - Parte 2
+11:21
+Ejercicio de operaciones CRUD con Spring Data JPA
+04:53
+Implementando formulario búsqueda de Vacantes
+15:17
+Query By Example - Buscando Vacantes por Categoría
+13:17
+Query By Example(ExampleMatcher) - Utilizando el operador Like
+07:24
+Implementar paginación con Spring MVC y Spring Data JPA
+09:42
+Implementación de paginación avanzada.
+00:30
+Aplicar formato a fechas con Thymeleaf
+00:45
 

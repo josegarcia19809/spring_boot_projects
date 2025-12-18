@@ -1,38 +1,31 @@
 package com.example.empleos.models;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.List;
+
+@Entity
+@Table(name = "Categorias")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Categoria {
 
-	private Integer id;
-	private String nombre;
-	private String descripcion;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	public Integer getId() {
-		return id;
-	}
+    @Column(name = "nombre", nullable = false, length = 100)
+    private String nombre;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    @Column(name = "descripcion", columnDefinition = "text")
+    private String descripcion;
 
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	@Override
-	public String toString() {
-		return "Categoria [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
-	}
+    @OneToMany(mappedBy = "categoria")
+    private List<Vacante> vacantes;
 
 }
+
