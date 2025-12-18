@@ -47,7 +47,7 @@
                     </thead>
                     <tbody>
                     <tr th:each="vacante : ${vacantes}">
-                        <td>Ventas</td>
+                        <td th:text="${vacante.categoria.getNombre()}">Ventas</td>
                         <td th:text="${vacante.getNombre()}"> Supervisor de Ventas</td>
                         <td th:text="${vacante.getFecha()}">11-01-2023</td>
                         <td th:text="${vacante.getEstatus()}">Creada</td>

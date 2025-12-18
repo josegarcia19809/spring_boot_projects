@@ -1,11 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Anotación @Primary
+Desarrollo web con Spring Framework y MySQL8: Crear una nueva implementación de IVacantesService con nuestro Repositorio
 
-
-10:45
-Anotación @Qualifier
-05:04
-Crear una nueva implementación de IVacantesService con nuestro Repositorio
-10:54
 Configurar el parámetro serverTimezone de la conexión a MySQL
 04:07
 Thymeleaf Expresión th:utext - Renderizar tags de HTML en la vista
