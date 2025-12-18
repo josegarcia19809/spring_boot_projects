@@ -1,5 +1,6 @@
 package com.example.empleos.service.db;
 
+import com.example.empleos.models.EstatusVacante;
 import com.example.empleos.models.Vacante;
 import com.example.empleos.repository.VacantesRepository;
 import com.example.empleos.service.IVacanteService;
@@ -36,5 +37,11 @@ public class VacantesServiceJPA implements IVacanteService {
     @Override
     public void guardar(Vacante vacante) {
         vacantesRepository.save(vacante);
+    }
+
+    @Override
+    public List<Vacante> buscarDestacadas() {
+        return vacantesRepository.findByDestacadoAndEstatusOrderByIdDesc(1,
+                EstatusVacante.Aprobada);
     }
 }

@@ -1,11 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Thymeleaf Expresión th:utext - Renderizar tags de HTML en la vista
+Desarrollo web con Spring Framework y MySQL8: Implementar método buscarDestacadas en IVacantesService
 
-
-04:07
-
-07:59
-Implementar método buscarDestacadas en IVacantesService
-07:43
 Configurar recursos estáticos de rutas adicionales.
 13:44
 Configurar botón HTML para eliminar una Vacante

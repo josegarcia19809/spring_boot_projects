@@ -93,4 +93,9 @@ public class VacanteServiceImpl implements  IVacanteService {
         listaVacantes.add(vacante);
     }
 
+    @Override
+    public List<Vacante> buscarDestacadas() {
+        return List.of();
+    }
+
 }
