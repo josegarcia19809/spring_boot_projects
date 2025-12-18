@@ -1,6 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: Crear una nueva implementación de ICategoriasService con nuestro Repositorio
+Desarrollo web con Spring Framework y MySQL8: Anotación @Primary
 
-Anotación @Primary
+
 10:45
 Anotación @Qualifier
 05:04
