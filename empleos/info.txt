@@ -1,6 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: Crear una nueva implementación de IVacantesService con nuestro Repositorio
+Desarrollo web con Spring Framework y MySQL8: Configurar el parámetro serverTimezone de la conexión a MySQL
 
-Configurar el parámetro serverTimezone de la conexión a MySQL
+
 04:07
 Thymeleaf Expresión th:utext - Renderizar tags de HTML en la vista
 07:59
