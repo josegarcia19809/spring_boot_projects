@@ -35,7 +35,7 @@
                     <h4 class="card-header">Aplicar para <strong
                             th:text="${vacante.nombre}">Ingeniero Civil</strong></h4>
                     <div class="card-body">
-                        <h5 class="card-title"><strong>Categoría: </strong> <span>Nombre la categoría</span>
+                        <h5 class="card-title"><strong>Categoría: </strong> <span th:text="${vacante.categoria.nombre}">Nombre la categoría</span>
                         </h5>
                         <h6 class="card-title"><strong>Publicado: </strong> <span
                                 th:text="${vacante.fecha}">2023-01-01 </span></h6>
@@ -47,7 +47,7 @@
                         <div class="card bg-light mb-3">
                             <div class="card-body">
                                 <h5 class="card-title">Detalles de la oferta de trabajo</h5>
-                                <p class="card-text"></p>
+                                <p class="card-text" th:utext="${vacante.getDetalles()}"></p>
                             </div>
                         </div>
                         <a class="btn btn-primary" href="#" role="button"
