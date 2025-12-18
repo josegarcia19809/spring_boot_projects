@@ -1,9 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Configurar los Repositorios de Spring Data JPA en nuestra aplicación de Empleos
+Desarrollo web con Spring Framework y MySQL8: Crear una nueva implementación de ICategoriasService con nuestro Repositorio
 
-
-05:39
-Crear una nueva implementación de ICategoriasService con nuestro Repositorio
-06:47
 Anotación @Primary
 10:45
 Anotación @Qualifier
