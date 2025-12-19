@@ -98,4 +98,9 @@ public class VacanteServiceImpl implements  IVacanteService {
         return List.of();
     }
 
+    @Override
+    public void eliminar(Integer idVacante) {
+
+    }
+
 }

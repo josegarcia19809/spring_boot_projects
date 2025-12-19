@@ -1,8 +1,8 @@
-Desarrollo web con Spring Framework y MySQL8: Configurar recursos estáticos de rutas adicionales.
+Desarrollo web con Spring Framework y MySQL8: Configurar botón HTML para eliminar una Vacante
 
 
 13:44
-Configurar botón HTML para eliminar una Vacante
+
 10:36
 Módulo para editar una Vacante - Parte 1
 12:06
