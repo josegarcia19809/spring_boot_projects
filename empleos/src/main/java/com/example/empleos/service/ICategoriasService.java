@@ -10,7 +10,9 @@ public interface ICategoriasService {
 
 
 	List<Categoria> buscarTodas();
-	Categoria buscarPorId(Integer idCategoria);	
+	Categoria buscarPorId(Integer idCategoria);
+	// Ejercicio: Implementar método
+	void eliminar(Integer idCategoria);
 }
 
 /**
