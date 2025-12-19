@@ -1,5 +1,8 @@
 package com.example.empleos.controllers;
 
+import com.example.empleos.service.IUsuariosService;
+import com.example.empleos.service.db.UsuariosServiceJPA;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,20 +14,20 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/usuarios")
 public class UsuariosController {
 
-    
-    @GetMapping("/index")
-	public String mostrarIndex(Model model) {
+    @Autowired
+    IUsuariosService usuariosService;
 
-    	// Ejercicio
-    	
-    	return "usuarios/listUsuarios";
-	}
-    
+    @GetMapping("/index")
+    public String mostrarIndex(Model model) {
+        model.addAttribute("usuarios", usuariosService.buscarTodos());
+        return "usuarios/listUsuarios";
+    }
+
     @GetMapping("/delete/{id}")
-	public String eliminar(@PathVariable("id") int idUsuario, RedirectAttributes attributes) {		    	
-		
-    	// Ejercicio.
-    	
-		return "redirect:/usuarios/index";
-	}
+    public String eliminar(@PathVariable("id") int idUsuario,
+                           RedirectAttributes attributes) {
+        usuariosService.eliminar(idUsuario);
+        attributes.addFlashAttribute("message", "Usuario eliminado exitosamente");
+        return "redirect:/usuarios/index";
+    }
 }

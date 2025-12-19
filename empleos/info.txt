@@ -1,4 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: Editar una categoría
+Desarrollo web con Spring Framework y MySQL8: Agregar y Eliminar un usuario
 
 Ejercicio de operaciones CRUD con Spring Data JPA
 04:53

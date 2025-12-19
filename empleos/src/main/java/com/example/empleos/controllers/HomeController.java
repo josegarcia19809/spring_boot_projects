@@ -1,19 +1,17 @@
 package com.example.empleos.controllers;
 
 import com.example.empleos.models.Usuario;
-import com.example.empleos.models.Vacante;
 import com.example.empleos.service.IUsuariosService;
 import com.example.empleos.service.IVacanteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.util.List;
 
 @Controller
 public class HomeController {
@@ -21,7 +19,7 @@ public class HomeController {
     IVacanteService vacanteService;
 
     @Autowired
-    private IUsuariosService serviceUsuarios;
+    private IUsuariosService usuariosService;
 
     @GetMapping("/signup")
     public String registrarse(Usuario usuario) {
@@ -29,9 +27,10 @@ public class HomeController {
     }
 
     @PostMapping("/signup")
-    public String guardarRegistro(Usuario usuario, RedirectAttributes attributes) {
-
-        // Ejercicio.
+    public String guardarRegistro(Usuario usuario,  BindingResult result,
+                                  RedirectAttributes attributes) {
+        usuariosService.guardar(usuario);
+        attributes.addFlashAttribute("msg", "Registro guardado exitosamente");
 
         return "redirect:/usuarios/index";
     }
