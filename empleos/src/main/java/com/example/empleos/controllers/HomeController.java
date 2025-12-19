@@ -1,5 +1,6 @@
 package com.example.empleos.controllers;
 
+import com.example.empleos.models.Perfil;
 import com.example.empleos.models.Usuario;
 import com.example.empleos.service.IUsuariosService;
 import com.example.empleos.service.IVacanteService;
@@ -12,6 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Controller
 public class HomeController {
@@ -29,6 +34,20 @@ public class HomeController {
     @PostMapping("/signup")
     public String guardarRegistro(Usuario usuario,  BindingResult result,
                                   RedirectAttributes attributes) {
+        usuario.setEstatus(1); // Activado por defecto
+        usuario.setFechaRegistro(LocalDate.now()); // Fecha de Registro, la fecha actual del servidor
+
+        // Creamos el Perfil que le asignaremos al usuario nuevo
+        // Crear el conjunto de perfiles y asignarlo
+        Set<Perfil> perfilesUsuario = new HashSet<>();
+        Perfil perfil = new Perfil();
+        perfil.setId(3); // Perfil USUARIO
+        perfilesUsuario.add(perfil);
+        usuario.setPerfiles(perfilesUsuario);
+
+        /**
+         * Guardamos el usuario en la base de datos. El Perfil se guarda automaticamente
+         */
         usuariosService.guardar(usuario);
         attributes.addFlashAttribute("msg", "Registro guardado exitosamente");
 

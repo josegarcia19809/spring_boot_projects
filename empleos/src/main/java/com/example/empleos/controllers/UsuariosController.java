@@ -27,7 +27,7 @@ public class UsuariosController {
     public String eliminar(@PathVariable("id") int idUsuario,
                            RedirectAttributes attributes) {
         usuariosService.eliminar(idUsuario);
-        attributes.addFlashAttribute("message", "Usuario eliminado exitosamente");
+        attributes.addFlashAttribute("msg", "Usuario eliminado exitosamente");
         return "redirect:/usuarios/index";
     }
 }
