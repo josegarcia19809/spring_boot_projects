@@ -34,6 +34,10 @@ public class HomeController {
     @PostMapping("/signup")
     public String guardarRegistro(Usuario usuario,  BindingResult result,
                                   RedirectAttributes attributes) {
+        try {
+        if (result.hasErrors()) {
+            return "usuarios/formRegistro";
+        }
         usuario.setEstatus(1); // Activado por defecto
         usuario.setFechaRegistro(LocalDate.now()); // Fecha de Registro, la fecha actual del servidor
 
@@ -50,7 +54,9 @@ public class HomeController {
          */
         usuariosService.guardar(usuario);
         attributes.addFlashAttribute("msg", "Registro guardado exitosamente");
-
+        }catch(Exception ex) {
+            attributes.addFlashAttribute("msg", "Ocurrio un error durante la operación. " + ex.getMessage());
+        }
         return "redirect:/usuarios/index";
     }
     @RequestMapping("/")

@@ -1,4 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: Corregir error al intentar borrar categoría vinculada
+Desarrollo web con Spring Framework y MySQL8: Corregir error al intentar ingresar usuario duplicado
 
 Ejercicio de operaciones CRUD con Spring Data JPA
 04:53
