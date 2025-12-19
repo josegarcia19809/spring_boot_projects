@@ -1,6 +1,7 @@
 package com.example.empleos.controllers;
 
 import com.example.empleos.models.Categoria;
+import com.example.empleos.models.Vacante;
 import com.example.empleos.service.ICategoriasService;
 import com.example.empleos.service.VacanteServiceImpl;
 import org.springframework.stereotype.Controller;
@@ -52,6 +53,13 @@ public class CategoriasController {
         return "redirect:/categorias/index";
     }
 
+    @GetMapping("/edit/{id}")
+    public String editar(@PathVariable Integer id, Model model) {
+        Categoria categoria = categoriasService.buscarPorId(id);
+        model.addAttribute("categoria", categoria);
+        // Se agregó en setGenericos()
+        return "categorias/formCategoria";
+    }
     @GetMapping("/delete/{id}")
     public String eliminar(@PathVariable("id") int idCategoria,
                            RedirectAttributes redirectAttributes) {

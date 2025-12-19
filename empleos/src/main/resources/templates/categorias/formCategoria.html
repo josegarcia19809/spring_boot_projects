@@ -43,6 +43,7 @@
                                 <label for="nombre">Nombre</label>
                                 <input type="hidden" th:field="*{id}">
                                 <input type="text" class="form-control" id="nombre"
+                                       th:field="*{nombre}"
                                        name="nombre"
                                        placeholder="Escriba el nombre de la categoria"
                                        required="required">
@@ -54,6 +55,7 @@
                             <div class="form-group">
                                 <label for="descripcion">Descripción</label>
                                 <textarea class="form-control" name="descripcion"
+                                          th:field="*{descripcion}"
                                           id="descripcion" rows="2"></textarea>
                             </div>
                         </div>
