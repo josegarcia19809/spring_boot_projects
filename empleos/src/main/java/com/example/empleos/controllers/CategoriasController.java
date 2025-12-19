@@ -29,7 +29,7 @@ public class CategoriasController {
 
     // @GetMapping("/index")
     @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String mostrarIndex(Model model){
+    public String mostrarIndex(Model model) {
         List<Categoria> categorias = categoriasService.buscarTodas();
         model.addAttribute("categorias", categorias);
         return "categorias/listCategorias";
@@ -37,15 +37,15 @@ public class CategoriasController {
 
     // @GetMapping("/create")
     @RequestMapping(value = "/create", method = RequestMethod.GET)
-    public String crear(Categoria categoria, Model model){
+    public String crear(Categoria categoria, Model model) {
         return "categorias/formCategoria";
     }
 
     // @PostMapping("/save")
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String guardar(Categoria categoria, BindingResult result,
-                          RedirectAttributes redirectAttributes){
-        if(result.hasErrors()){
+                          RedirectAttributes redirectAttributes) {
+        if (result.hasErrors()) {
             return "categorias/formCategoria";
         }
         categoriasService.guardar(categoria);
@@ -60,12 +60,18 @@ public class CategoriasController {
         // Se agregó en setGenericos()
         return "categorias/formCategoria";
     }
+
     @GetMapping("/delete/{id}")
     public String eliminar(@PathVariable("id") int idCategoria,
                            RedirectAttributes redirectAttributes) {
-        System.out.println("Borrando categoria con id: " + idCategoria);
-        categoriasService.eliminar(idCategoria);
-        redirectAttributes.addFlashAttribute("msg", "Registro eliminado exitosamente");
+        try {
+            // Eliminamos la categoria.
+            categoriasService.eliminar(idCategoria);
+            redirectAttributes.addFlashAttribute("msg", "La categoría fue eliminada!.");
+
+        } catch (Exception ex) {
+            redirectAttributes.addFlashAttribute("msg", "No es posible eliminar la Categoría seleccionada!.");
+        }
         return "redirect:/categorias/index";
     }
 
