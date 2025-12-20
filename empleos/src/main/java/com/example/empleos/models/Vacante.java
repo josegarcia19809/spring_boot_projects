@@ -14,6 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString
 public class Vacante {
 
     @Id
@@ -45,6 +46,10 @@ public class Vacante {
 
     @Column(name = "detalles", columnDefinition = "text")
     private String detalles;
+
+    public void reset() {
+        this.imagen = null;
+    }
 
     // FK a Categorias (id_categoria)
     @ManyToOne

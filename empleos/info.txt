@@ -1,9 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: Corregir error al intentar ingresar usuario duplicado
+Desarrollo web con Spring Framework y MySQL8: Implementando formulario búsqueda de Vacantes
 
-Ejercicio de operaciones CRUD con Spring Data JPA
-04:53
-Implementando formulario búsqueda de Vacantes
-15:17
+
 Query By Example - Buscando Vacantes por Categoría
 13:17
 Query By Example(ExampleMatcher) - Utilizando el operador Like
