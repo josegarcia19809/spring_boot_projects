@@ -2,6 +2,7 @@ package com.example.empleos.service;
 
 import com.example.empleos.models.EstatusVacante;
 import com.example.empleos.models.Vacante;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
@@ -101,6 +102,11 @@ public class VacanteServiceImpl implements  IVacanteService {
     @Override
     public void eliminar(Integer idVacante) {
 
+    }
+
+    @Override
+    public List<Vacante> buscarByExample(Example<Vacante> example) {
+        return List.of();
     }
 
 }

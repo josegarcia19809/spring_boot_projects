@@ -7,17 +7,18 @@ import com.example.empleos.service.ICategoriasService;
 import com.example.empleos.service.IUsuariosService;
 import com.example.empleos.service.IVacanteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -72,8 +73,22 @@ public class HomeController {
 
     @GetMapping("/search")
     public String buscar(@ModelAttribute("search") Vacante vacante, Model model) {
-        System.out.println("Buscando vacante "+vacante);
+        System.out.println("Buscando vacante " + vacante);
+        Example<Vacante> example = Example.of(vacante);
+        List<Vacante> lista = vacanteService.buscarByExample(example);
+        model.addAttribute("vacantes", lista);
         return "home";
+    }
+
+    /**
+     * InitBinder para Strings, si los detecta vacíos en el DataBinding los establece
+     * en NULL
+     *
+     * @param binder
+     */
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
     }
 
     @ModelAttribute

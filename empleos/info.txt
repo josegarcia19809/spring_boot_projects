@@ -1,7 +1,7 @@
-Desarrollo web con Spring Framework y MySQL8: Implementando formulario búsqueda de Vacantes
+Desarrollo web con Spring Framework y MySQL8: Query By Example - Buscando Vacantes por Categoría
 
 
-Query By Example - Buscando Vacantes por Categoría
+
 13:17
 Query By Example(ExampleMatcher) - Utilizando el operador Like
 07:24

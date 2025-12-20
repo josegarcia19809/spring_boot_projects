@@ -5,6 +5,7 @@ import com.example.empleos.models.Vacante;
 import com.example.empleos.repository.VacantesRepository;
 import com.example.empleos.service.IVacanteService;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,5 +49,10 @@ public class VacantesServiceJPA implements IVacanteService {
     @Override
     public void eliminar(Integer idVacante) {
         vacantesRepository.deleteById(idVacante);
+    }
+
+    @Override
+    public List<Vacante> buscarByExample(Example<Vacante> example) {
+        return vacantesRepository.findAll(example);
     }
 }
