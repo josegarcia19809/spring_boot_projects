@@ -1,9 +1,9 @@
-Desarrollo web con Spring Framework y MySQL8: Query By Example - Buscando Vacantes por Categoría
+Desarrollo web con Spring Framework y MySQL8: Query By Example(ExampleMatcher) - Utilizando el operador Like
 
 
 
 13:17
-Query By Example(ExampleMatcher) - Utilizando el operador Like
+
 07:24
 Implementar paginación con Spring MVC y Spring Data JPA
 09:42

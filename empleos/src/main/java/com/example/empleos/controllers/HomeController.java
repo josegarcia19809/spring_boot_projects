@@ -9,6 +9,7 @@ import com.example.empleos.service.IVacanteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -61,7 +62,8 @@ public class HomeController {
             usuariosService.guardar(usuario);
             attributes.addFlashAttribute("msg", "Registro guardado exitosamente");
         } catch (Exception ex) {
-            attributes.addFlashAttribute("msg", "Ocurrio un error durante la operación. " + ex.getMessage());
+            attributes.addFlashAttribute("msg", "Ocurrio un error durante la operación. " +
+                    ex.getMessage());
         }
         return "redirect:/usuarios/index";
     }
@@ -74,7 +76,11 @@ public class HomeController {
     @GetMapping("/search")
     public String buscar(@ModelAttribute("search") Vacante vacante, Model model) {
         System.out.println("Buscando vacante " + vacante);
-        Example<Vacante> example = Example.of(vacante);
+        // La búsqueda ya no será exacta, será como un like
+        ExampleMatcher matcher = ExampleMatcher.matching()
+                .withMatcher("descripcion",
+                        ExampleMatcher.GenericPropertyMatchers.contains());
+        Example<Vacante> example = Example.of(vacante, matcher);
         List<Vacante> lista = vacanteService.buscarByExample(example);
         model.addAttribute("vacantes", lista);
         return "home";
