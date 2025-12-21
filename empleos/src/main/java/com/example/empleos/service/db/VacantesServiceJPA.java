@@ -6,6 +6,8 @@ import com.example.empleos.repository.VacantesRepository;
 import com.example.empleos.service.IVacanteService;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -54,5 +56,10 @@ public class VacantesServiceJPA implements IVacanteService {
     @Override
     public List<Vacante> buscarByExample(Example<Vacante> example) {
         return vacantesRepository.findAll(example);
+    }
+
+    @Override
+    public Page<Vacante> buscarTodas(Pageable pageable) {
+        return vacantesRepository.findAll(pageable);
     }
 }

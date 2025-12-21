@@ -6,6 +6,8 @@ import com.example.empleos.service.IVacanteService;
 import com.example.empleos.util.Utileria;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -40,6 +42,13 @@ public class VacanteController {
     public String index(Model model) {
         List<Vacante> vacantes = vacanteService.buscarTodas();
         model.addAttribute("vacantes", vacantes);
+        return "vacantes/listVacantes";
+    }
+
+    @GetMapping(value = "/indexPaginate")
+    public String indexPaginate(Pageable pageable, Model model) {
+        Page<Vacante> lista = vacanteService.buscarTodas(pageable);
+        model.addAttribute("vacantes", lista);
         return "vacantes/listVacantes";
     }
 

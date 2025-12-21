@@ -1,11 +1,11 @@
-Desarrollo web con Spring Framework y MySQL8: Query By Example(ExampleMatcher) - Utilizando el operador Like
+Desarrollo web con Spring Framework y MySQL8: Implementar paginación con Spring MVC y Spring Data JPA
 
 
 
 13:17
 
 07:24
-Implementar paginación con Spring MVC y Spring Data JPA
+
 09:42
 Implementación de paginación avanzada.
 00:30
