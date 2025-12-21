@@ -1,4 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: Implementar paginación con Spring MVC y Spring Data JPA
+Desarrollo web con Spring Framework y MySQL8: Implementación de paginación avanzada.
 
 
 
@@ -7,7 +7,7 @@ Desarrollo web con Spring Framework y MySQL8: Implementar paginación con Spring
 07:24
 
 09:42
-Implementación de paginación avanzada.
+
 00:30
 Aplicar formato a fechas con Thymeleaf
 00:45
