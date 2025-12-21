@@ -83,12 +83,13 @@ public class HomeController {
         for (GrantedAuthority rol : authentication.getAuthorities()) {
             System.out.println(rol.getAuthority());
         }
-        if (session.getAttribute("usuario") != null) {
+        if (session.getAttribute("usuario") == null) {
             Usuario usuario = usuariosService.buscarPorUsername(userName);
             usuario.setPassword(null);
             session.setAttribute("usuario", usuario);
+            System.out.println(session.getAttribute("usuario"));
         }
-        System.out.println("userName: " + userName);
+        // System.out.println("userName: " + userName);
         return "redirect:/";
     }
 
