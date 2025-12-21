@@ -1,11 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Personalizar usuario y contraseña de Spring Security
+Desarrollo web con Spring Framework y MySQL8: Creación de la base de datos por defecto de usuarios de Spring Security
 
-
-02:35
-Recuperar usuarios y roles desde una base de datos MySQL - Explicación
-03:49
-Creación de la base de datos por defecto de usuarios de Spring Security
-06:25
 Recuperar usuarios y roles de la base de datos por defecto
 07:13
 Recuperar usuarios y roles de nuestras tablas de usuarios y roles personalizadas
