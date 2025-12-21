@@ -1,11 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: Recuperar usuarios y roles de nuestras tablas de usuarios y roles personalizadas
-
-
-07:13
-
-07:48
-Personalizar accesos a URLs
-10:03
+Desarrollo web con Spring Framework y MySQL8: Personalizar accesos a URLs
 
 Personalizar accesos a URLs por ROLES
 04:49
