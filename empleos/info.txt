@@ -1,6 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: Spring Security – Cerrar Sesión
+Desarrollo web con Spring Framework y MySQL8: Personalizar usuario y contraseña de Spring Security
 
-Personalizar usuario y contraseña de Spring Security
+
 02:35
 Recuperar usuarios y roles desde una base de datos MySQL - Explicación
 03:49
