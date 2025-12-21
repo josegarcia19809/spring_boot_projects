@@ -1,8 +1,8 @@
-Desarrollo web con Spring Framework y MySQL8: Recuperar usuarios y roles de la base de datos por defecto
+Desarrollo web con Spring Framework y MySQL8: Recuperar usuarios y roles de nuestras tablas de usuarios y roles personalizadas
 
 
 07:13
-Recuperar usuarios y roles de nuestras tablas de usuarios y roles personalizadas
+
 07:48
 Personalizar accesos a URLs
 10:03
