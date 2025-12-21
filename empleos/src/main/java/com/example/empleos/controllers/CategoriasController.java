@@ -4,6 +4,8 @@ import com.example.empleos.models.Categoria;
 import com.example.empleos.models.Vacante;
 import com.example.empleos.service.ICategoriasService;
 import com.example.empleos.service.VacanteServiceImpl;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -32,6 +34,13 @@ public class CategoriasController {
     public String mostrarIndex(Model model) {
         List<Categoria> categorias = categoriasService.buscarTodas();
         model.addAttribute("categorias", categorias);
+        return "categorias/listCategorias";
+    }
+
+    @GetMapping(value = "/indexPaginate")
+    public String indexPaginate(Pageable pageable, Model model) {
+        Page<Categoria> lista = categoriasService.buscarTodas(pageable);
+        model.addAttribute("categorias", lista);
         return "categorias/listCategorias";
     }
 

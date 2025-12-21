@@ -2,9 +2,11 @@ package com.example.empleos.service.db;
 
 import com.example.empleos.models.Categoria;
 import com.example.empleos.repository.CategoriasJPARepository;
-import com.example.empleos.repository.CategoriasRepository;
+import com.example.empleos.repository.VacantesRepository;
 import com.example.empleos.service.ICategoriasService;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,10 +16,12 @@ import java.util.Optional;
 @Primary
 public class CategoriasServiceJPA implements ICategoriasService {
 
+    private final VacantesRepository vacantesRepository;
     private CategoriasJPARepository categoriasRepository;
 
-    public CategoriasServiceJPA(CategoriasJPARepository categoriasRepository) {
+    public CategoriasServiceJPA(CategoriasJPARepository categoriasRepository, VacantesRepository vacantesRepository) {
         this.categoriasRepository = categoriasRepository;
+        this.vacantesRepository = vacantesRepository;
     }
 
     @Override
@@ -42,5 +46,10 @@ public class CategoriasServiceJPA implements ICategoriasService {
     @Override
     public void eliminar(Integer idCategoria) {
         categoriasRepository.deleteById(idCategoria);
+    }
+
+    @Override
+    public Page<Categoria> buscarTodas(Pageable pageable) {
+        return categoriasRepository.findAll(pageable);
     }
 }

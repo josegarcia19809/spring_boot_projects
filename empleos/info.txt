@@ -1,5 +1,2 @@
-Desarrollo web con Spring Framework y MySQL8: Aplicar formato a fechas con Thymeleaf
-
-
-
+Desarrollo web con Spring Framework y MySQL8: Paginas categorías
 
