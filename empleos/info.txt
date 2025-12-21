@@ -1,2 +1,82 @@
-Desarrollo web con Spring Framework y MySQL8: Paginas categorías
+Desarrollo web con Spring Framework y MySQL8: Agregar soporte de Spring Security en un proyecto de Spring Boot
 
+
+02:54
+Configuración básica - Usuario y contraseña por defecto de Spring Security
+05:34
+Spring Security – Cerrar Sesión
+03:35
+Personalizar usuario y contraseña de Spring Security
+02:35
+Recuperar usuarios y roles desde una base de datos MySQL - Explicación
+03:49
+Creación de la base de datos por defecto de usuarios de Spring Security
+06:25
+Recuperar usuarios y roles de la base de datos por defecto
+07:13
+Recuperar usuarios y roles de nuestras tablas de usuarios y roles personalizadas
+07:48
+Personalizar accesos a URLs
+10:03
+
+Personalizar accesos a URLs por ROLES
+04:49
+Expresión sec:authorize de Thymeleaf - Renderizar el menú dinámicamente
+04:55
+Recuperar el nombre el usuario que inició sesión en un controlador.
+08:25
+Recuperar los roles del usuario que inició sesión en un controlador.
+03:12
+HttpSession - Agregar datos en la sesión del usuario
+06:48
+Renderizar atributos de la sesión con Thymeleaf
+05:06
+Recuperar el nombre el usuario que inició sesión en la vista con Thymeleaf.
+02:03
+Expresión Thymeleaf sec:authorize="isAnonymous()"
+03:11
+Expresión Thymeleaf sec:authorize="isAuthenticated()"
+02:35
+Encriptar passwords con el algoritmo BCrypt - Explicación
+06:13
+Encriptar passwords con el algoritmo BCrypt - Práctica
+05:39
+Utilería para encriptar passwords con el algoritmo BCrypt en un Controlador
+09:01
+Creación de un formulario de login personalizado - Explicación
+05:35
+Creación de un formulario de login personalizado - Práctica
+07:00
+Método personalizado para cerrar la sesión del usuario.
+06:17
+
+Clase de modelo Solicitud
+06:30
+Implementación de la interfaz de servicio ISolicitudesService
+03:40
+Configuración del botón 'Aplicar' para una determinada vacante.
+06:05
+Configurar URL del botón Aplicar y crear controlador SolicitudesController
+06:55
+Configurar la vista del formulario para enviar una solicitud de vacante
+07:43
+Actualizar la clase de modelo Solicitud con la fecha de tipo LocalDate
+02:00
+Configurar el DataBinding del formulario HTML con un objeto de modelo Solicitud
+06:56
+Configurar la ruta del directorio físico donde se guadarán los Curriculum Vitae
+05:01
+Guardar archivo del CV enviado por el archivo en el disco duro del servidor.
+06:42
+Asignar el usuario de la sesión al objeto solicitud
+03:45
+Guardar el objeto solicitud en la base de datos.
+04:43
+Mostrar listado de solicitudes
+08:46
+Configurar el botón para descargar el Curriculum Vitae.
+02:13
+Configurar los permisos de las URLs para enviar una solicitud de empleo
+05:36
+Configurar el botón para eliminar una vacante.
+06:00
