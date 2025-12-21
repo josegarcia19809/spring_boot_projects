@@ -1,11 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Agregar soporte de Spring Security en un proyecto de Spring Boot
+Desarrollo web con Spring Framework y MySQL8: Spring Security – Cerrar Sesión
 
-
-02:54
-Configuración básica - Usuario y contraseña por defecto de Spring Security
-05:34
-Spring Security – Cerrar Sesión
-03:35
 Personalizar usuario y contraseña de Spring Security
 02:35
 Recuperar usuarios y roles desde una base de datos MySQL - Explicación
