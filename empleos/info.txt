@@ -1,10 +1,10 @@
-Desarrollo web con Spring Framework y MySQL8: Personalizar accesos a URLs por ROLES
+Desarrollo web con Spring Framework y MySQL8: Recuperar el nombre el usuario que inició sesión en un controlador.
 
 
 04:49
-Expresión sec:authorize de Thymeleaf - Renderizar el menú dinámicamente
+
 04:55
-Recuperar el nombre el usuario que inició sesión en un controlador.
+
 08:25
 Recuperar los roles del usuario que inició sesión en un controlador.
 03:12

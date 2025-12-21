@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -71,6 +72,13 @@ public class HomeController {
     @RequestMapping("/")
     public String index(Model model) {
         return "home";
+    }
+
+    @GetMapping("/index")
+    public String index(Authentication authentication, Model model) {
+        String userName = authentication.getName();
+        System.out.println("userName: " + userName);
+        return "redirect:/";
     }
 
     @GetMapping("/search")
