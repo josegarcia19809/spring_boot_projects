@@ -1,14 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Implementación de paginación avanzada.
+Desarrollo web con Spring Framework y MySQL8: Aplicar formato a fechas con Thymeleaf
 
 
 
-13:17
-
-07:24
-
-09:42
-
-00:30
-Aplicar formato a fechas con Thymeleaf
-00:45
 

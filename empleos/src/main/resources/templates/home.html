@@ -66,7 +66,8 @@
                 <h6 class="card-title"><strong>Categoría: </strong>
                     <span th:text="${vacante.categoria.nombre}">Arquitectura</span></h6>
                 <h6 class="card-title"><strong>Publicado: </strong> <span
-                        th:text="${vacante.fecha}">2023-01-01 </span></h6>
+                        th:text="${#dates.format(vacante.fecha, 'dd-MM-yyyy')}">2023-01-01
+                </span></h6>
                 <p th:text="${vacante.descripcion}">Donec id elit non mi porta gravida at
                     eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
                     condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta
