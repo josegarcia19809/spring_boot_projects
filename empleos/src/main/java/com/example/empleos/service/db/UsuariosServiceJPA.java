@@ -28,4 +28,9 @@ public class UsuariosServiceJPA implements IUsuariosService {
     public List<Usuario> buscarTodos() {
         return usuarioRepository.findAll();
     }
+
+    @Override
+    public Usuario buscarPorUsername(String username) {
+        return usuarioRepository.findByUsername(username);
+    }
 }

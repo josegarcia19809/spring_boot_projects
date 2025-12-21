@@ -1,6 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: Recuperar los roles del usuario que inició sesión en un controlador.
+Desarrollo web con Spring Framework y MySQL8: HttpSession - Agregar datos en la sesión del usuario
 
-HttpSession - Agregar datos en la sesión del usuario
+
 06:48
 Renderizar atributos de la sesión con Thymeleaf
 05:06

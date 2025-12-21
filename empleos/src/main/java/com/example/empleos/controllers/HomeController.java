@@ -6,6 +6,7 @@ import com.example.empleos.models.Vacante;
 import com.example.empleos.service.ICategoriasService;
 import com.example.empleos.service.IUsuariosService;
 import com.example.empleos.service.IVacanteService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.data.domain.Example;
@@ -76,10 +77,16 @@ public class HomeController {
     }
 
     @GetMapping("/index")
-    public String index(Authentication authentication, Model model) {
+    public String index(Authentication authentication, Model model,
+                        HttpSession session) {
         String userName = authentication.getName();
-        for(GrantedAuthority rol : authentication.getAuthorities()) {
+        for (GrantedAuthority rol : authentication.getAuthorities()) {
             System.out.println(rol.getAuthority());
+        }
+        if (session.getAttribute("usuario") != null) {
+            Usuario usuario = usuariosService.buscarPorUsername(userName);
+            usuario.setPassword(null);
+            session.setAttribute("usuario", usuario);
         }
         System.out.println("userName: " + userName);
         return "redirect:/";
