@@ -1,14 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: Creación de un formulario de login personalizado
-
-
-
-09:01
-Creación de un formulario de login personalizado - Explicación
-05:35
- - Práctica
-07:00
-Método personalizado para cerrar la sesión del usuario.
-06:17
+Desarrollo web con Spring Framework y MySQL8: Método personalizado para cerrar la sesión del usuario.
 
 Clase de modelo Solicitud
 06:30
