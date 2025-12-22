@@ -1,11 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Expresión Thymeleaf sec:authorize="isAnonymous()"
+Desarrollo web con Spring Framework y MySQL8: Expresión Thymeleaf sec:authorize="isAuthenticated()"
 
-
-02:03
-
-03:11
-Expresión Thymeleaf sec:authorize="isAuthenticated()"
-02:35
 Encriptar passwords con el algoritmo BCrypt - Explicación
 06:13
 Encriptar passwords con el algoritmo BCrypt - Práctica
@@ -48,4 +42,3 @@ Configurar el botón para descargar el Curriculum Vitae.
 Configurar los permisos de las URLs para enviar una solicitud de empleo
 05:36
 Configurar el botón para eliminar una vacante.
-06:00
