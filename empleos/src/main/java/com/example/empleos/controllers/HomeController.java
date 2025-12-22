@@ -13,6 +13,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -36,6 +37,9 @@ public class HomeController {
     @Autowired
     private ICategoriasService categoriasService;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @GetMapping("/signup")
     public String registrarse(Usuario usuario) {
         return "formRegistro";
@@ -50,6 +54,10 @@ public class HomeController {
             }
             usuario.setEstatus(1); // Activado por defecto
             usuario.setFechaRegistro(LocalDate.now()); // Fecha de Registro, la fecha actual del servidor
+
+            // Aquí se encripta la contraseña
+            String passwordEncriptado = passwordEncoder.encode(usuario.getPassword());
+            usuario.setPassword(passwordEncriptado);
 
             // Creamos el Perfil que le asignaremos al usuario nuevo
             // Crear el conjunto de perfiles y asignarlo

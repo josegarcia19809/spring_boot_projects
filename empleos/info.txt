@@ -1,9 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: Expresión Thymeleaf sec:authorize="isAuthenticated()"
+Desarrollo web con Spring Framework y MySQL8: Encriptar passwords con el algoritmo BCrypt
 
-Encriptar passwords con el algoritmo BCrypt - Explicación
-06:13
-Encriptar passwords con el algoritmo BCrypt - Práctica
-05:39
+
 Utilería para encriptar passwords con el algoritmo BCrypt en un Controlador
 09:01
 Creación de un formulario de login personalizado - Explicación
