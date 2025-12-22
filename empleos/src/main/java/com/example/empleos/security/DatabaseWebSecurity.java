@@ -61,7 +61,11 @@ public class DatabaseWebSecurity {
                         .anyRequest().authenticated()
                 )
                 // El formulario de Login no requiere autenticacion
-                .formLogin(AbstractAuthenticationFilterConfigurer::permitAll
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/", true) // después de login exitoso
+                        .failureUrl("/login?error=true")
+                        .permitAll()
                 );
 
         return http.build();

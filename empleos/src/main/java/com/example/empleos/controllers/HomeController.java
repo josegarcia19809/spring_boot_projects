@@ -84,6 +84,11 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/login")
+    public String login() {
+        return "login"; // login.html (Thymeleaf)
+    }
+
     @GetMapping("/index")
     public String index(Authentication authentication, Model model,
                         HttpSession session) {
