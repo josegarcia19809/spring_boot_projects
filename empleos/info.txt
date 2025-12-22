@@ -1,7 +1,7 @@
-Desarrollo web con Spring Framework y MySQL8: Encriptar passwords con el algoritmo BCrypt
+Desarrollo web con Spring Framework y MySQL8: Utilería para encriptar passwords con el algoritmo BCrypt en un Controlador
 
 
-Utilería para encriptar passwords con el algoritmo BCrypt en un Controlador
+
 09:01
 Creación de un formulario de login personalizado - Explicación
 05:35

@@ -47,7 +47,7 @@ public class DatabaseWebSecurity {
                                 "/logos/**").permitAll()
 
                         // Las vistas públicas no requieren autenticación
-                        .requestMatchers("/", "/signup", "/search",
+                        .requestMatchers("/", "/signup", "/search", "/bcrypt/**",
                                 "/vacantes/view/**").permitAll()
 
                         // Asignar permisos a URLs por ROLES

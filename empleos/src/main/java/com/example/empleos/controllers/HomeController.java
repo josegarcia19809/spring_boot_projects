@@ -125,6 +125,12 @@ public class HomeController {
         binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
     }
 
+    @GetMapping("/bcrypt/{texto}")
+    @ResponseBody
+    public String encriptar(@PathVariable("texto") String texto) {
+        return texto + " - encriptado en Bcrypt: " + passwordEncoder.encode(texto);
+    }
+
     @ModelAttribute
     public void setGenericos(Model model) {
         model.addAttribute("vacantes", vacanteService.buscarDestacadas());
