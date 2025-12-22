@@ -1,8 +1,8 @@
-Desarrollo web con Spring Framework y MySQL8: Clase de modelo Solicitud e interfaz de servicio ISolicitudesService
+Desarrollo web con Spring Framework y MySQL8: Implementación de la interfaz de servicio ISolicitudesService
 
 
 06:30
-Implementación de la interfaz de servicio ISolicitudesService
+
 03:40
 Configuración del botón 'Aplicar' para una determinada vacante.
 06:05
