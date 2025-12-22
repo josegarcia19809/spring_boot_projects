@@ -1,8 +1,8 @@
-Desarrollo web con Spring Framework y MySQL8: Recuperar el nombre el usuario que inició sesión en la vista con Thymeleaf.
+Desarrollo web con Spring Framework y MySQL8: Expresión Thymeleaf sec:authorize="isAnonymous()"
 
 
 02:03
-Expresión Thymeleaf sec:authorize="isAnonymous()"
+
 03:11
 Expresión Thymeleaf sec:authorize="isAuthenticated()"
 02:35
