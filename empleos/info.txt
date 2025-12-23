@@ -1,7 +1,4 @@
-Desarrollo web con Spring Framework y MySQL8: Mostrar listado de solicitudes
+Desarrollo web con Spring Framework y MySQL8: Configurar el botón para descargar el Curriculum Vitae.
 
-Configurar el botón para descargar el Curriculum Vitae.
-02:13
 Configurar los permisos de las URLs para enviar una solicitud de empleo
-05:36
 Configurar el botón para eliminar una vacante.
