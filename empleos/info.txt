@@ -1,9 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Configurar el DataBinding del formulario HTML con un objeto de modelo Solicitud
+Desarrollo web con Spring Framework y MySQL8: Configurar la ruta del directorio físico donde se guadarán los Curriculum Vitae
 
-
-06:56
-Configurar la ruta del directorio físico donde se guadarán los Curriculum Vitae
-05:01
 Guardar archivo del CV enviado por el archivo en el disco duro del servidor.
 06:42
 Asignar el usuario de la sesión al objeto solicitud

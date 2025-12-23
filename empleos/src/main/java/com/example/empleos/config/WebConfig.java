@@ -7,12 +7,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
     @Value("${empleosapp.ruta.imagenes}")
     private String rutaImagenes;
+
+    @Value("${empleosapp.ruta.cv}")
+    private String rutaCV;
 
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 //        registry.addResourceHandler("/logos/**").addResourceLocations("file:/Users" +
 //                "/josegarcia/empleos/img-vacantes/");
+
         registry.addResourceHandler("/logos/**").addResourceLocations("file:" + rutaImagenes);
+        registry.addResourceHandler("/cv/**").addResourceLocations("file:" + rutaCV);
     }
 }
