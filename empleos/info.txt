@@ -1,6 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: Actualizar la clase de modelo Solicitud con la fecha de tipo LocalDate
+Desarrollo web con Spring Framework y MySQL8: Configurar el DataBinding del formulario HTML con un objeto de modelo Solicitud
 
-Configurar el DataBinding del formulario HTML con un objeto de modelo Solicitud
+
 06:56
 Configurar la ruta del directorio físico donde se guadarán los Curriculum Vitae
 05:01

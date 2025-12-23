@@ -52,13 +52,18 @@
                         <p class="card-text" th:text="${vacante.descripcion}">
                             La descripción corta de la oferta de trabajo</p>
                         <hr>
-                        <form>
+                        <form th:action="@{/solicitudes/save}" method="post"
+                        enctype="multipart/form-data"
+                        th:object="${solicitud}">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="comentarios">Comentarios</label>
-                                        <textarea class="form-control" name="comentarios"
-                                                  id="comentarios" rows="2"></textarea>
+                                        <input type="hidden" th:value="${vacante.id}"
+                                               th:name="vacante.id">
+                                        <label>Comentarios</label>
+                                        <textarea class="form-control"
+                                                  th:field="*{comentarios}"
+                                                   rows="2"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
