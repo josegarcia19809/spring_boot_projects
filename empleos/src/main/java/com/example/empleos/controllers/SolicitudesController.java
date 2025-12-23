@@ -2,11 +2,14 @@ package com.example.empleos.controllers;
 
 
 import com.example.empleos.models.Solicitud;
+import com.example.empleos.models.Usuario;
 import com.example.empleos.models.Vacante;
+import com.example.empleos.service.IUsuariosService;
 import com.example.empleos.service.IVacanteService;
 import com.example.empleos.util.Utileria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,6 +26,9 @@ public class SolicitudesController {
     @Autowired
     private IVacanteService vacanteService;
 
+    @Autowired
+    private IUsuariosService usuariosService;
+
     @GetMapping("/create/{idVacante}")
     public String create(Solicitud solicitud, @PathVariable("idVacante") Integer idVacante,
                          Model model) {
@@ -33,18 +39,26 @@ public class SolicitudesController {
 
     @PostMapping("/save")
     public String save(Solicitud solicitud, BindingResult result, Model model,
-                       @RequestParam("archivoCV") MultipartFile archivoCV) {
-        System.out.println("Solicitud " + solicitud);
+                       @RequestParam("archivoCV") MultipartFile archivoCV,
+                       Authentication authentication) {
+
+        String username = authentication.getName();
+
         if (result.hasErrors()) {
             System.out.println("Errores existieron");
             return "solicitudes/formSolicitud";
         }
+
         if (!archivoCV.isEmpty()) {
             String nombreArchivo = Utileria.guardarArchivo(archivoCV, rutaCV);
             if (nombreArchivo != null) {
                 solicitud.setArchivo(nombreArchivo);
             }
         }
+
+        Usuario usuario = usuariosService.buscarPorUsername(username);
+        solicitud.setUsuario(usuario);
+
         return "redirect:/";
     }
 }

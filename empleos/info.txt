@@ -1,9 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Guardar archivo del CV enviado por el archivo en el disco duro del servidor.
+Desarrollo web con Spring Framework y MySQL8: Asignar el usuario de la sesión al objeto solicitud
 
-
-06:42
-Asignar el usuario de la sesión al objeto solicitud
-03:45
 Guardar el objeto solicitud en la base de datos.
 04:43
 Mostrar listado de solicitudes
