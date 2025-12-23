@@ -1,8 +1,8 @@
-Desarrollo web con Spring Framework y MySQL8: Configurar URL del botón Aplicar y crear controlador SolicitudesController
+Desarrollo web con Spring Framework y MySQL8: Configurar la vista del formulario para enviar una solicitud de vacante
 
 
 06:55
-Configurar la vista del formulario para enviar una solicitud de vacante
+
 07:43
 Actualizar la clase de modelo Solicitud con la fecha de tipo LocalDate
 02:00
