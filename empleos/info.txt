@@ -1,4 +1,3 @@
-Desarrollo web con Spring Framework y MySQL8: Configurar los permisos de las URLs para enviar una solicitud de empleo
+Desarrollo web con Spring Framework y MySQL8: Configurar el botón para eliminar una vacante.
 
 
-Configurar el botón para eliminar una vacante.
