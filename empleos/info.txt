@@ -1,11 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Configurar la vista del formulario para enviar una solicitud de vacante
+Desarrollo web con Spring Framework y MySQL8: Actualizar la clase de modelo Solicitud con la fecha de tipo LocalDate
 
-
-06:55
-
-07:43
-Actualizar la clase de modelo Solicitud con la fecha de tipo LocalDate
-02:00
 Configurar el DataBinding del formulario HTML con un objeto de modelo Solicitud
 06:56
 Configurar la ruta del directorio físico donde se guadarán los Curriculum Vitae

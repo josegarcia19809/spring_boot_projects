@@ -13,7 +13,7 @@ import java.time.LocalDate;
         })
 @Getter
 @Setter
-@NoArgsConstructor
+//@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Solicitud {
@@ -30,6 +30,10 @@ public class Solicitud {
 
     @Column(name = "comentarios", columnDefinition = "text")
     private String comentarios;
+
+    public Solicitud() {
+        this.fecha = LocalDate.now();
+    }
 
     // FK a Vacante
     @ManyToOne(fetch = FetchType.LAZY)
