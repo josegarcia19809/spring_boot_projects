@@ -4,6 +4,7 @@ package com.example.empleos.controllers;
 import com.example.empleos.models.Solicitud;
 import com.example.empleos.models.Usuario;
 import com.example.empleos.models.Vacante;
+import com.example.empleos.service.ISolicitudesService;
 import com.example.empleos.service.IUsuariosService;
 import com.example.empleos.service.IVacanteService;
 import com.example.empleos.util.Utileria;
@@ -15,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/solicitudes")
@@ -29,6 +31,9 @@ public class SolicitudesController {
     @Autowired
     private IUsuariosService usuariosService;
 
+    @Autowired
+    private ISolicitudesService solicitudesService;
+
     @GetMapping("/create/{idVacante}")
     public String create(Solicitud solicitud, @PathVariable("idVacante") Integer idVacante,
                          Model model) {
@@ -40,7 +45,8 @@ public class SolicitudesController {
     @PostMapping("/save")
     public String save(Solicitud solicitud, BindingResult result, Model model,
                        @RequestParam("archivoCV") MultipartFile archivoCV,
-                       Authentication authentication) {
+                       Authentication authentication,
+                       RedirectAttributes redirectAttributes) {
 
         String username = authentication.getName();
 
@@ -58,6 +64,9 @@ public class SolicitudesController {
 
         Usuario usuario = usuariosService.buscarPorUsername(username);
         solicitud.setUsuario(usuario);
+
+        solicitudesService.guardar(solicitud);
+        redirectAttributes.addFlashAttribute("msg", "Solicitud guardada correctamente");
 
         return "redirect:/";
     }
