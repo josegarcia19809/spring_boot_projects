@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,7 +36,14 @@
                     <h4 class="card-header">Aplicar para <strong
                             th:text="${vacante.nombre}">Ingeniero Civil</strong></h4>
                     <div class="card-body">
-                        <h5 class="card-title"><strong>Categoría: </strong> <span th:text="${vacante.categoria.nombre}">Nombre la categoría</span>
+                        <div class="alert alert-danger" role="alert"
+                             sec:authorize="isAnonymous()">
+                            ¿Te interesa esta vacante? <strong>Registrate</strong> y
+                            después ingresa para enviar tu CV.
+                        </div>
+
+                        <h5 class="card-title"><strong>Categoría: </strong> <span
+                                th:text="${vacante.categoria.nombre}">Nombre la categoría</span>
                         </h5>
                         <h6 class="card-title"><strong>Publicado: </strong> <span
                                 th:text="${vacante.fecha}">2023-01-01 </span></h6>
@@ -47,10 +55,12 @@
                         <div class="card bg-light mb-3">
                             <div class="card-body">
                                 <h5 class="card-title">Detalles de la oferta de trabajo</h5>
-                                <p class="card-text" th:utext="${vacante.getDetalles()}"></p>
+                                <p class="card-text"
+                                   th:utext="${vacante.getDetalles()}"></p>
                             </div>
                         </div>
-                        <a class="btn btn-primary" href="#" role="button"
+                        <a sec:authorize="isAuthenticated() and hasAnyAuthority('USUARIO')"
+                           class="btn btn-primary" href="#" role="button"
                            title="Quiero aplicar para esta oferta de trabajo."><i
                                 class="fas fa-file" aria-hidden="true"></i> Aplicar</a>
                     </div>

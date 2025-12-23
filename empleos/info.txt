@@ -1,11 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Implementación de la interfaz de servicio ISolicitudesService
+Desarrollo web con Spring Framework y MySQL8: Configuración del botón 'Aplicar' para una determinada vacante.
 
-
-06:30
-
-03:40
-Configuración del botón 'Aplicar' para una determinada vacante.
-06:05
 Configurar URL del botón Aplicar y crear controlador SolicitudesController
 06:55
 Configurar la vista del formulario para enviar una solicitud de vacante
