@@ -1,9 +1,5 @@
-Desarrollo web con Spring Framework y MySQL8: Guardar el objeto solicitud en la base de datos.
+Desarrollo web con Spring Framework y MySQL8: Mostrar listado de solicitudes
 
-
-04:43
-Mostrar listado de solicitudes
-08:46
 Configurar el botón para descargar el Curriculum Vitae.
 02:13
 Configurar los permisos de las URLs para enviar una solicitud de empleo

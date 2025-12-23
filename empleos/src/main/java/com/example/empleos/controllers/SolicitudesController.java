@@ -10,6 +10,8 @@ import com.example.empleos.service.IVacanteService;
 import com.example.empleos.util.Utileria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +35,13 @@ public class SolicitudesController {
 
     @Autowired
     private ISolicitudesService solicitudesService;
+
+    @GetMapping("/indexPaginate")
+    public String index(Model model, Pageable pageable) {
+        Page<Solicitud> lista = solicitudesService.buscarTodos(pageable);
+        model.addAttribute("solicitudes", lista);
+        return "solicitudes/listSolicitudes";
+    }
 
     @GetMapping("/create/{idVacante}")
     public String create(Solicitud solicitud, @PathVariable("idVacante") Integer idVacante,
