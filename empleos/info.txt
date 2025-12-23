@@ -1,6 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: Configurar la ruta del directorio físico donde se guadarán los Curriculum Vitae
+Desarrollo web con Spring Framework y MySQL8: Guardar archivo del CV enviado por el archivo en el disco duro del servidor.
 
-Guardar archivo del CV enviado por el archivo en el disco duro del servidor.
+
 06:42
 Asignar el usuario de la sesión al objeto solicitud
 03:45

@@ -16,7 +16,7 @@ import java.time.LocalDate;
 //@NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString
+//@ToString
 public class Solicitud {
 
     @Id
