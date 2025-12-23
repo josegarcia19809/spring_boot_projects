@@ -1,6 +1,6 @@
-Desarrollo web con Spring Framework y MySQL8: Configuración del botón 'Aplicar' para una determinada vacante.
+Desarrollo web con Spring Framework y MySQL8: Configurar URL del botón Aplicar y crear controlador SolicitudesController
 
-Configurar URL del botón Aplicar y crear controlador SolicitudesController
+
 06:55
 Configurar la vista del formulario para enviar una solicitud de vacante
 07:43
