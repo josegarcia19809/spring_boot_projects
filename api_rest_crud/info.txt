@@ -1,13 +1,8 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: Creando clases entity y repository
+API REST MySQL & Security Producto: Añadiendo el componente Service
 
-
-
-04:29
-Añadiendo el componente Service
-10:26
 Añadiendo el componente RESTFul Controller
 14:36
 Probando API RESTFul en Postman
