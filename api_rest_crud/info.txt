@@ -1,22 +1,5 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: Probando API RESTFul en Postman
+API REST MySQL & Security Producto: Validando con el API Java Bean Validation y Personalizando la respuesta con los mensajes de error
 
-
-14:36
-
-11:55
-Optimizando RESTFul Controller
-13:24
-Validando con el API Java Bean Validation
-12:12
-Personalizando la respuesta con los mensajes de error
-14:07
-Mensajes de errores personalizados usando properties
-10:03
-Validación personalizada usando una clase Validation
-13:24
-Validación personalizada usando anotaciones
-12:36
-Validación personalizada usando anotaciones check Db
