@@ -1,9 +1,9 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: Añadiendo el componente Service
+API REST MySQL & Security Producto: Añadiendo el componente RESTFul Controller
 
-Añadiendo el componente RESTFul Controller
+
 14:36
 Probando API RESTFul en Postman
 11:55
@@ -20,6 +20,3 @@ Validación personalizada usando una clase Validation
 Validación personalizada usando anotaciones
 12:36
 Validación personalizada usando anotaciones check Db
-15:43
-Descargar Código Fuente
-00:16

@@ -29,7 +29,7 @@ public class ProductoServiceImpl implements ProductoServiceI {
 
     @Transactional
     @Override
-    public Producto Guardar(Producto nuevoProducto) {
+    public Producto guardar(Producto nuevoProducto) {
         return repository.save(nuevoProducto);
     }
 

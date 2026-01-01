@@ -10,7 +10,7 @@ public interface ProductoServiceI {
 
     Optional<Producto> buscarPorId(Long id);
 
-    Producto Guardar(Producto product);
+    Producto guardar(Producto product);
 
     Optional<Producto> actualizar(Long id, Producto product);
 
