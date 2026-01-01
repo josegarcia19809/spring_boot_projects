@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -36,7 +37,8 @@ public class ProductoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Producto> update(@PathVariable Long id, @RequestBody Producto product) {
+    public ResponseEntity<Producto> update(@PathVariable Long id,
+                                           @RequestBody Producto product) {
         Optional<Producto> productOptional = service.actualizar(id, product);
         if (productOptional.isPresent()) {
             return ResponseEntity.ok(productOptional.get());
@@ -52,6 +54,4 @@ public class ProductoController {
         }
         return ResponseEntity.notFound().build();
     }
-
-
 }
