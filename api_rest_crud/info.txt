@@ -1,14 +1,8 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: Clases entities y repositorios
+API REST MySQL & Security Producto: El componente service y configuraciones
 
-Creando la estructura de tablas de la base de datos
-11:54
-
-11:15
-El componente service y configuraciones
-13:02
 Asignando roles y encriptando password con Bcrypt
 06:15
 Implementando el rest controller

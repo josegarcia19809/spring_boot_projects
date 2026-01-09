@@ -30,5 +30,8 @@ public class User {
             uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "role_id"})}
     )
     private List<Role> roles;
+
+    @Transient
+    private boolean admin;
 }
 
