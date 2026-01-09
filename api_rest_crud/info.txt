@@ -1,9 +1,9 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: El componente service y configuraciones
+API REST MySQL & Security Producto: Asignando roles y encriptando password con Bcrypt
 
-Asignando roles y encriptando password con Bcrypt
+
 06:15
 Implementando el rest controller
 07:45
