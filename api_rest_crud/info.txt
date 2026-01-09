@@ -1,5 +1,53 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: Validando con el API Java Bean Validation y Personalizando la respuesta con los mensajes de error
+API REST MySQL & Security Producto: Clases entities y repositorios
 
+Creando la estructura de tablas de la base de datos
+11:54
+
+11:15
+El componente service y configuraciones
+13:02
+Asignando roles y encriptando password con Bcrypt
+06:15
+Implementando el rest controller
+07:45
+Configurando reglas de seguridad http en los endpoint
+11:56
+Excluir atributos en el json
+09:16
+Agregando endpoint register
+07:16
+ManyToMany Bidireccinal revisando error Bucle
+12:57
+Validano si existe el username en la base de datos
+08:39
+Implementando componente UserDetailsService
+14:24
+Añadiendo el filtro JwtAuthenticationFilter para el login
+09:45
+Implementando Login successful & Generando el firmando el token JWT
+16:16
+Agregando roles en los claims cuando se genera el token
+08:52
+Implementando método unsuccessful authentication
+04:22
+Añadiendo el Filtro JwtAuthentication en la Configuración de Spring Security
+09:31
+Implementando Filtro para validar el token JwtValidationFilter
+10:00
+Validando el Token
+16:56
+Probando en Postman
+11:07
+Solución a error en la validación ExistsDb
+04:58
+Añadiendo reglas de seguridad en la Configuración de Spring Security
+12:13
+Anotaciones de reglas de seguridad de Spring Security
+10:48
+Configurando Cors para los clientes
+15:49
+Descargar Código Fuente
+00:03
