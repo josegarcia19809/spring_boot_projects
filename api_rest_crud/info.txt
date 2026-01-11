@@ -1,14 +1,8 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: Implementando el rest controller
+API REST MySQL & Security Producto: Configurando reglas de seguridad http en los endpoint
 
-
-06:15
-
-07:45
-Configurando reglas de seguridad http en los endpoint
-11:56
 Excluir atributos en el json
 09:16
 Agregando endpoint register

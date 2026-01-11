@@ -36,6 +36,8 @@ public class User {
     )
     private List<Role> roles;
 
+    private boolean enabled;
+
     @Transient
     private boolean admin;
 }
