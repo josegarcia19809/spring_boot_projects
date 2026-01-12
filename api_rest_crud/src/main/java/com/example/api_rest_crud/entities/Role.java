@@ -1,7 +1,10 @@
 package com.example.api_rest_crud.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,4 +25,9 @@ public class Role {
     public Role(String name) {
         this.name = name;
     }
+
+    @JsonIgnoreProperties({"roles", "handler", "hibernateLazyInitializer"})
+    @ManyToMany(mappedBy = "roles")
+    private List<User> users;
+
 }
