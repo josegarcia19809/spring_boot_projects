@@ -1,5 +1,6 @@
 package com.example.api_rest_crud.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -26,7 +27,9 @@ public class User {
     private String username;
 
     @NotBlank
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
+
     @ManyToMany
     @JoinTable(
             name = "users_roles",
@@ -37,6 +40,11 @@ public class User {
     private List<Role> roles;
 
     private boolean enabled;
+
+    @PrePersist
+    public void prePersist() {
+        this.enabled = true;
+    }
 
     @Transient
     private boolean admin;
