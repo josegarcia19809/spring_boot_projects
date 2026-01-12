@@ -1,12 +1,8 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: Excluir atributos en el json
+API REST MySQL & Security Producto: Agregando endpoint register
 
-
-09:16
-Agregando endpoint register
-07:16
 ManyToMany Bidireccinal revisando error Bucle
 12:57
 Validano si existe el username en la base de datos

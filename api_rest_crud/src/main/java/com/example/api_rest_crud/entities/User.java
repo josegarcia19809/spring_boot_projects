@@ -47,6 +47,7 @@ public class User {
     }
 
     @Transient
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private boolean admin;
 }
 
