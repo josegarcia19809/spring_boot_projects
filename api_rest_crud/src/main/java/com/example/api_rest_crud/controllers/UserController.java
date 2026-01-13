@@ -31,7 +31,15 @@ public class UserController {
         if (result.hasFieldErrors()) {
             return validation(result);
         }
-        return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(user));
+//        try {
+//            return ResponseEntity.status(HttpStatus.CREATED)
+//                    .body(userService.save(user));
+//        } catch (IllegalArgumentException e) {
+//            return ResponseEntity.badRequest()
+//                    .body(Map.of("username", e.getMessage()));
+//        }
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(userService.save(user));
     }
 
     @PostMapping("/register")

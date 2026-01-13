@@ -1,5 +1,6 @@
 package com.example.api_rest_crud.entities;
 
+import com.example.api_rest_crud.validation.ExistsByUsername;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -22,6 +23,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ExistsByUsername // <--- ¡Aquí es donde ocurre la magia!
     @Column(unique = true)
     @NotBlank
     @Size(min = 4, max = 12)

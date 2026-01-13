@@ -1,11 +1,11 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: ManyToMany Bidireccional revisando error Bucle
+API REST MySQL & Security Producto: Validando si existe el username en la base de datos
 
 
 12:57
-Validando si existe el username en la base de datos
+
 08:39
 Implementando componente UserDetailsService
 14:24
