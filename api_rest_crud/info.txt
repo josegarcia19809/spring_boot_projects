@@ -1,7 +1,7 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: Validando si existe el username en la base de datos
+API REST MySQL & Security Producto: Añadiendo el filtro JwtAuthenticationFilter para el login
 
 
 12:57
@@ -9,7 +9,7 @@ API REST MySQL & Security Producto: Validando si existe el username en la base d
 08:39
 Implementando componente UserDetailsService
 14:24
-Añadiendo el filtro JwtAuthenticationFilter para el login
+
 09:45
 Implementando Login successful & Generando el firmando el token JWT
 16:16
