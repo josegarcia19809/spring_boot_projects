@@ -1,0 +1,54 @@
+Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
+
+
+JPA e Hibernate - Asociaciones: Creando nuevo proyecto y clases entities
+
+La relación ManyToOne
+4:14
+Añadiendo los repositorios
+3:55
+Configurando la conexión en el properties
+7:23
+Codificando ejemplo ManyToOne
+11:55
+Codificando ejemplo ManyToOne con relación existente
+5:58
+La anotación @JoinColumn
+9:50
+La relación OneToMany
+12:05
+Codificando ejemplo OneToMany
+14:32
+Codificando ejemplo OneToMany con relación existente
+12:35
+Esquema con tabla de enlace en OneToMany
+9:53
+Eliminar objetos dependientes o hijos en la relacion OneToMany parte 1
+10:21
+Eliminar objetos dependientes o hijos en la relacion OneToMany parte 2
+6:47
+Eliminar objetos dependientes OneToMany con relación existente
+9:35
+Relación OneToMany Bidireccional
+8:41
+Codificando ejemplo OneToMany Bidireccional
+10:11
+Optimizando relación OneToMany con método encadenado
+5:56
+Codificando ejemplo OneToMany Bidireccional con relación existente
+16:35
+Eliminar objetos dependientes OneToMany Bidireccional
+22:27
+Relación OneToOne
+29:56
+Relación OneToOne Bidireccional
+14:01
+Relación ManyToMany
+22:55
+Esquema con tabla de enlace en relación ManyToMany
+6:46
+Relación ManyToMany con relación existente
+7:44
+Eliminar objetos dependientes en relación ManyToMany
+13:26
+Relación ManyToMany Bidireccional
