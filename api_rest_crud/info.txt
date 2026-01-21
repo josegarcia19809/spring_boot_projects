@@ -1,32 +1,9 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: Añadiendo el filtro JwtAuthenticationFilter para el login
+API REST MySQL & Security Producto: Implementando Login successful & Generando la firma del token JWT
 
 
-12:57
-
-08:39
-Implementando componente UserDetailsService
-14:24
-
-09:45
-Implementando Login successful & Generando el firmando el token JWT
-16:16
-Agregando roles en los claims cuando se genera el token
-08:52
-Implementando método unsuccessful authentication
-04:22
-Añadiendo el Filtro JwtAuthentication en la Configuración de Spring Security
-09:31
-Implementando Filtro para validar el token JwtValidationFilter
-10:00
-Validando el Token
-16:56
-Probando en Postman
-11:07
-Solución a error en la validación ExistsDb
-04:58
 Añadiendo reglas de seguridad en la Configuración de Spring Security
 12:13
 Anotaciones de reglas de seguridad de Spring Security
