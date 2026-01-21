@@ -1,8 +1,4 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: Anotaciones de reglas de seguridad de Spring Security
-
-
-
-Configurando Cors para los clientes
+API REST MySQL & Security Producto: Configurando Cors para los clientes
