@@ -1,14 +1,8 @@
 Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-API REST MySQL & Security Producto: Implementando Login successful & Generando la firma del token JWT
+API REST MySQL & Security Producto: Añadiendo reglas de seguridad en la Configuración de Spring Security
 
-
-Añadiendo reglas de seguridad en la Configuración de Spring Security
-12:13
 Anotaciones de reglas de seguridad de Spring Security
-10:48
+
 Configurando Cors para los clientes
-15:49
-Descargar Código Fuente
-00:03
