@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,19 +26,13 @@ public class UserController {
         return userService.findAll();
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<?> createUser(@Valid @RequestBody User user,
                                         BindingResult result) {
         if (result.hasFieldErrors()) {
             return validation(result);
         }
-//        try {
-//            return ResponseEntity.status(HttpStatus.CREATED)
-//                    .body(userService.save(user));
-//        } catch (IllegalArgumentException e) {
-//            return ResponseEntity.badRequest()
-//                    .body(Map.of("username", e.getMessage()));
-//        }
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(userService.save(user));
     }

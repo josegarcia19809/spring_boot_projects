@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@EnableMethodSecurity(prePostEnabled = true)
 public class SpringSecurityConfig {
 
     @Autowired
@@ -37,17 +39,17 @@ public class SpringSecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/users").permitAll()
                         .requestMatchers(HttpMethod.POST,
                                 "/api/users/register").permitAll()
-                        .requestMatchers(HttpMethod.POST,
-                                "/api/users").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET,
-                                "/api/productos", "/api/products/{id}")
-                        .hasAnyRole("ADMIN", "USER")
-                        .requestMatchers(HttpMethod.POST,
-                                "/api/productos").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT,
-                                "/api/productos/{id}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE,
-                                "/api/productos/{id}").hasRole("ADMIN")
+//                        .requestMatchers(HttpMethod.POST,
+//                                "/api/users").hasRole("ADMIN")
+//                        .requestMatchers(HttpMethod.GET,
+//                                "/api/productos", "/api/products/{id}")
+//                        .hasAnyRole("ADMIN", "USER")
+//                        .requestMatchers(HttpMethod.POST,
+//                                "/api/productos").hasRole("ADMIN")
+//                        .requestMatchers(HttpMethod.PUT,
+//                                "/api/productos/{id}").hasRole("ADMIN")
+//                        .requestMatchers(HttpMethod.DELETE,
+//                                "/api/productos/{id}").hasRole("ADMIN")
                         .anyRequest().authenticated())
 //                .anyRequest().permitAll())
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))

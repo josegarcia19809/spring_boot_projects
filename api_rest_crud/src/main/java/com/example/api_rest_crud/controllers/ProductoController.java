@@ -5,6 +5,7 @@ import com.example.api_rest_crud.services.ProductoServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
@@ -21,11 +22,13 @@ public class ProductoController {
     @Autowired
     private ProductoServiceI service;
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping
     public List<Producto> list() {
         return service.buscarTodos();
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/{id}")
     public ResponseEntity<?> view(@PathVariable Long id) {
         Optional<Producto> productOptional = service.buscarPorId(id);
@@ -35,6 +38,7 @@ public class ProductoController {
         return ResponseEntity.notFound().build();
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping()
     public ResponseEntity<?> create(@Valid @RequestBody Producto product,
                                     BindingResult result) {
@@ -44,6 +48,7 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.guardar(product));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable Long id,
                                     @Valid @RequestBody Producto product,
@@ -58,6 +63,7 @@ public class ProductoController {
         return ResponseEntity.notFound().build();
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         Optional<Producto> productOptional = service.borrar(id);
