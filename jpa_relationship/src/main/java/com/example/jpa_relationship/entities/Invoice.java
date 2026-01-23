@@ -25,6 +25,8 @@ public class Invoice {
     }
 
     @ManyToOne
+    @JoinColumn(name = "client_id") // Nombre de cómo quedará la columna relacionada
+    // Se puede omitir
     private Client client;
 
     @Override
