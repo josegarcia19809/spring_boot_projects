@@ -1,11 +1,11 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: Creando nuevo proyecto y clases entities
+JPA e Hibernate - Asociaciones: Añadiendo los repositorios
 
 La relación ManyToOne
 4:14
-Añadiendo los repositorios
+
 3:55
 Configurando la conexión en el properties
 7:23
