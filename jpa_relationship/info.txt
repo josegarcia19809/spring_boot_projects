@@ -1,9 +1,9 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: La relación ManyToOne
+JPA e Hibernate - Asociaciones: Configurando la conexión en el properties
 
-Configurando la conexión en el properties
+
 7:23
 Codificando ejemplo ManyToOne
 11:55
