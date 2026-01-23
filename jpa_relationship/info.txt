@@ -1,12 +1,8 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: Configurando la conexión en el properties
+JPA e Hibernate - Asociaciones: Codificando ejemplo ManyToOne
 
-
-7:23
-Codificando ejemplo ManyToOne
-11:55
 Codificando ejemplo ManyToOne con relación existente
 5:58
 La anotación @JoinColumn
