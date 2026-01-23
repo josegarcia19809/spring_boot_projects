@@ -23,4 +23,17 @@ public class Invoice {
         this.description = description;
         this.total = total;
     }
+
+    @ManyToOne
+    private Client client;
+
+    @Override
+    public String toString() {
+        return "Invoice{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", total=" + total +
+                ", client=" + client +
+                '}';
+    }
 }

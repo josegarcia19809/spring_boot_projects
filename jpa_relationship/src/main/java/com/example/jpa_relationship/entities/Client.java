@@ -22,4 +22,13 @@ public class Client {
         this.name = name;
         this.lastName = lastName;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
 }
