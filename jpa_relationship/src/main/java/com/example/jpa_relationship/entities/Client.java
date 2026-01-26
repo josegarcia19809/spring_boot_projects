@@ -20,9 +20,18 @@ public class Client {
 
     private String name;
     private String lastName;
+     /*
+     Esto crea una tabla de muchos a muchos entre clients y address
+      */
+//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//    private List<Address> addresses = new ArrayList<>();
 
+
+    /*
+    Esto crea una relación uno a muchos. Un cliente y muchas direcciones
+     */
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @Builder.Default
+    @JoinColumn(name="client_id")
     private List<Address> addresses = new ArrayList<>();
 
     public void addAddress(Address address) {
