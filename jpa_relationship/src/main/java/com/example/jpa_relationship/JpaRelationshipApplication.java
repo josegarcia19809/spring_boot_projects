@@ -30,8 +30,8 @@ public class JpaRelationshipApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         // manyToOne();
 //        AddFindByIdClient();
-//        guardarClienteConDireccionesOneToMany();
-        agregarDireccionesAClienteExistenteOneToMany();
+        guardarClienteConDireccionesOneToMany();
+        // agregarDireccionesAClienteExistenteOneToMany();
     }
 
     @Transactional

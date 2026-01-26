@@ -1,9 +1,9 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: Codificando ejemplo OneToMany con relación existente
+JPA e Hibernate - Asociaciones: Esquema con tabla de enlace en OneToMany
 
-Esquema con tabla de enlace en OneToMany
+
 9:53
 Eliminar objetos dependientes o hijos en la relación OneToMany parte 1
 10:21
