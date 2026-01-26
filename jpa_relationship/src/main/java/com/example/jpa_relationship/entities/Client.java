@@ -3,6 +3,9 @@ package com.example.jpa_relationship.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,6 +20,10 @@ public class Client {
 
     private String name;
     private String lastName;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @Builder.Default
+    private List<Address> addresses = new ArrayList<>();
 
     public Client(String name, String lastName) {
         this.name = name;

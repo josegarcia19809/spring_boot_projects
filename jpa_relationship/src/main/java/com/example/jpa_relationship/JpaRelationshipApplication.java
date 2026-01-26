@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -30,6 +31,7 @@ public class JpaRelationshipApplication implements CommandLineRunner {
         AddFindByIdClient();
     }
 
+    @Transactional
     public void manyToOne() {
         Client client = new Client("José", "García");
         clientRepository.save(client);
@@ -40,6 +42,7 @@ public class JpaRelationshipApplication implements CommandLineRunner {
         System.out.println(invoiceDB);
     }
 
+    @Transactional
     public void AddFindByIdClient() {
         Optional<Client> clientOptional = clientRepository.findById(1L);
         if (clientOptional.isPresent()) {

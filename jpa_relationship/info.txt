@@ -1,9 +1,9 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: La anotación @JoinColumn
+JPA e Hibernate - Asociaciones: La relación OneToMany
 
-La relación OneToMany
+
 12:05
 Codificando ejemplo OneToMany
 14:32
