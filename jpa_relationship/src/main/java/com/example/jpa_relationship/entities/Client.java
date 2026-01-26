@@ -25,6 +25,13 @@ public class Client {
     @Builder.Default
     private List<Address> addresses = new ArrayList<>();
 
+    public void addAddress(Address address) {
+        if (addresses == null) {
+            addresses = new ArrayList<>();
+        }
+        addresses.add(address);
+    }
+
     public Client(String name, String lastName) {
         this.name = name;
         this.lastName = lastName;

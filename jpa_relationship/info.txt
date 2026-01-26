@@ -1,11 +1,11 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: La relación OneToMany
+JPA e Hibernate - Asociaciones: Codificando ejemplo OneToMany
 
 
 12:05
-Codificando ejemplo OneToMany
+
 14:32
 Codificando ejemplo OneToMany con relación existente
 12:35

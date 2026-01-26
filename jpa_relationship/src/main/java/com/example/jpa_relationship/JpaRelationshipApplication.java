@@ -1,5 +1,6 @@
 package com.example.jpa_relationship;
 
+import com.example.jpa_relationship.entities.Address;
 import com.example.jpa_relationship.entities.Client;
 import com.example.jpa_relationship.entities.Invoice;
 import com.example.jpa_relationship.repositories.ClientRepository;
@@ -27,8 +28,22 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-       // manyToOne();
-        AddFindByIdClient();
+        // manyToOne();
+//        AddFindByIdClient();
+        guardarClienteConDireccionesOneToMany();
+    }
+
+    @Transactional
+    public void guardarClienteConDireccionesOneToMany() {
+        Client newClient = new Client("Carolina", "González");
+
+        Address newAddress1 = new Address("Rio Grande", 1234);
+        Address newAddress2 = new Address("Atlacomulco", 4321);
+
+        newClient.addAddress(newAddress1);
+        newClient.addAddress(newAddress2);
+
+        clientRepository.save(newClient);
     }
 
     @Transactional
