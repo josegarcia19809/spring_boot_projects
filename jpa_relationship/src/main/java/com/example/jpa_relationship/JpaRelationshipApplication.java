@@ -11,9 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @SpringBootApplication
 public class JpaRelationshipApplication implements CommandLineRunner {
@@ -35,17 +33,58 @@ public class JpaRelationshipApplication implements CommandLineRunner {
         // guardarClienteConDireccionesOneToMany();
         // agregarDireccionesAClienteExistenteOneToMany();
 //        removeAddress();
-        oneToManyInvoiceBidireccional();
+//        oneToManyInvoiceBidireccional();
+//        oneToManyInvoiceBidireccionalFindById();
+//        agregarDireccionesAClienteExistenteOneToMany(6L);
+        mostrarClienteCompleto(6L);
+    }
+
+    @Transactional
+    public void mostrarClienteCompleto(Long id) {
+        Optional<Client> optionalClient =
+                clientRepository.findOneWithAddressesAndInvoices(id);
+
+        optionalClient.ifPresent(client -> {
+            System.out.println("👤 CLIENTE");
+            System.out.println(client);
+
+            System.out.println("\n📍 DIRECCIONES");
+            client.getAddresses().forEach(address ->
+                    System.out.println("  " + address)
+            );
+
+            System.out.println("\n🧾 FACTURAS");
+            client.getInvoices().forEach(invoice ->
+                    System.out.println("  " + invoice)
+            );
+        });
+    }
+
+    @Transactional
+    public void oneToManyInvoiceBidireccionalFindById() {
+        Optional<Client> optionalClient = clientRepository.findOneWithInvoices(6L);
+        optionalClient.ifPresent(client1 -> {
+            Invoice invoice1 = new Invoice("Compras de la escuela", 3000L);
+            Invoice invoice2 = new Invoice("Compras del negocio", 3000L);
+
+            client1.getInvoices().add(invoice1);
+            client1.getInvoices().add(invoice2);
+
+            invoice1.setClient(client1);
+            invoice2.setClient(client1);
+
+            clientRepository.save(client1);
+        });
     }
 
     @Transactional
     public void oneToManyInvoiceBidireccional() {
-        Client newClient = new Client("Rosa", "María");
+        Client newClient = new Client("Rosa M", "Tijuana");
 
         Invoice invoice1 = new Invoice("Compras de la casa", 3000L);
         Invoice invoice2 = new Invoice("Compras de la oficina", 3000L);
 
-        List<Invoice> invoices = new ArrayList<>();
+        Set<Invoice> invoices = new HashSet<>();
         invoices.add(invoice1);
         invoices.add(invoice2);
         newClient.setInvoices(invoices);
@@ -58,13 +97,15 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 
 
     @Transactional
-    public void removeAddress() {
+    public void removeAddress(Long addressId) {
         Optional<Client> optionalClient = clientRepository.findById(4L);
+
         optionalClient.ifPresent(client -> {
-            client.removeAddress(client.getAddresses().get(0));
-            clientRepository.save(client);
+            client.getAddresses()
+                    .removeIf(address -> address.getId().equals(addressId));
         });
     }
+
 
     @Transactional
     public void guardarClienteConDireccionesOneToMany() {
@@ -80,8 +121,8 @@ public class JpaRelationshipApplication implements CommandLineRunner {
     }
 
     @Transactional
-    public void agregarDireccionesAClienteExistenteOneToMany() {
-        Optional<Client> optionalClient = clientRepository.findById(1L);
+    public void agregarDireccionesAClienteExistenteOneToMany(Long id) {
+        Optional<Client> optionalClient = clientRepository.findById(id);
         optionalClient.ifPresent(client -> {
                     Address newAddress1 = new Address("San Felipe del Progreso", 1234);
                     Address newAddress2 = new Address("Atlacomulco", 4321);

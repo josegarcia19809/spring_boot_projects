@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -45,23 +47,25 @@ public class Client {
             inverseJoinColumns = @JoinColumn(name = "id_direcciones"),
             uniqueConstraints = @UniqueConstraint(columnNames = {"id_direcciones"})
     )
-    private List<Address> addresses = new ArrayList<>();
+    private Set<Address> addresses = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
-    private List<Invoice> invoices = new ArrayList<>();
+    private Set<Invoice> invoices = new HashSet<>();
 
     public void addAddress(Address address) {
         if (addresses == null) {
-            addresses = new ArrayList<>();
+            addresses = new HashSet<>();
         }
         addresses.add(address);
     }
 
     public void removeAddress(Address address) {
-        if (addresses != null) {
-            addresses.remove(address);
+        if (address == null) {
+            return;
         }
+        addresses.remove(address);
     }
+
 
     public Client(String name, String lastName) {
         this.name = name;
