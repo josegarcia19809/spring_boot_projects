@@ -37,6 +37,23 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 //        oneToManyInvoiceBidireccionalFindById();
 //        agregarDireccionesAClienteExistenteOneToMany(6L);
         mostrarClienteCompleto(6L);
+        removeInvoiceBidireccionalFindById();
+        System.out.println(".".repeat(20));
+        mostrarClienteCompleto(6L);
+    }
+
+    @Transactional
+    public void removeInvoiceBidireccionalFindById() {
+        Optional<Client> optionalClientDB = clientRepository.findOneWithInvoices(6L);
+        optionalClientDB.ifPresent(client1 -> {
+            Optional<Invoice> invoiceOptional = invoiceRepository.findById(10L);
+            invoiceOptional.ifPresent(invoice -> {
+                client1.getInvoices().remove(invoice);
+                invoice.setClient(null);
+
+                clientRepository.save(client1);
+            });
+        });
     }
 
     @Transactional
