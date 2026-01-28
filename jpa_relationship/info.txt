@@ -1,13 +1,13 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: Eliminar objetos dependientes OneToMany Bidireccional
+JPA e Hibernate - Asociaciones: Relación OneToOne Bidireccional
 
 
 22:27
 Relación OneToOne
 29:56
-Relación OneToOne Bidireccional
+
 14:01
 Relación ManyToMany
 22:55

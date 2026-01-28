@@ -52,6 +52,9 @@ public class Client {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
     private Set<Invoice> invoices = new HashSet<>();
 
+    @OneToOne(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
+    private ClientDetails details;
+
     public void addAddress(Address address) {
         if (addresses == null) {
             addresses = new HashSet<>();

@@ -20,4 +20,14 @@ public interface ClientRepository extends CrudRepository<Client, Long> {
     where c.id = ?1
 """)
     Optional<Client> findOneWithAddressesAndInvoices(Long id);
+
+    @Query("""
+    select distinct c
+    from Client c
+    left join fetch c.addresses
+    left join fetch c.invoices
+    left join fetch c.details
+    where c.id = ?1
+""")
+    Optional<Client> findOneWithAddressesInvoicesAndDetails(Long id);
 }

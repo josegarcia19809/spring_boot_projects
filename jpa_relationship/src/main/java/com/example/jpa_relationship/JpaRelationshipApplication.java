@@ -2,7 +2,9 @@ package com.example.jpa_relationship;
 
 import com.example.jpa_relationship.entities.Address;
 import com.example.jpa_relationship.entities.Client;
+import com.example.jpa_relationship.entities.ClientDetails;
 import com.example.jpa_relationship.entities.Invoice;
+import com.example.jpa_relationship.repositories.ClientDetailsRepository;
 import com.example.jpa_relationship.repositories.ClientRepository;
 import com.example.jpa_relationship.repositories.InvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class JpaRelationshipApplication implements CommandLineRunner {
     @Autowired
     private InvoiceRepository invoiceRepository;
 
+    @Autowired
+    private ClientDetailsRepository clientDetailsRepository;
+
     public static void main(String[] args) {
         SpringApplication.run(JpaRelationshipApplication.class, args);
     }
@@ -36,10 +41,35 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 //        oneToManyInvoiceBidireccional();
 //        oneToManyInvoiceBidireccionalFindById();
 //        agregarDireccionesAClienteExistenteOneToMany(6L);
-        mostrarClienteCompleto(6L);
-        removeInvoiceBidireccionalFindById();
-        System.out.println(".".repeat(20));
-        mostrarClienteCompleto(6L);
+//        mostrarClienteCompleto(6L);
+//        removeInvoiceBidireccionalFindById();
+//        System.out.println(".".repeat(20));
+//        mostrarClienteCompleto(6L);
+//        oneToOneClient();
+//        oneToOneClientFindById();
+        mostrarClienteCompleto(1L);
+    }
+
+
+    @Transactional
+    public void oneToOneClientFindById() {
+
+        Optional<Client> clientOptional = clientRepository.findById(1L);
+        clientOptional.ifPresent(client -> {
+            ClientDetails clientDetails = new ClientDetails(false, 3500);
+            clientDetails.setClient(client);
+            clientDetailsRepository.save(clientDetails);
+        });
+    }
+
+    @Transactional
+    public void oneToOneClient() {
+        Client client = new Client("Peter", "Parker");
+        clientRepository.save(client);
+
+        ClientDetails clientDetails = new ClientDetails(true, 2500);
+        clientDetails.setClient(client);
+        clientDetailsRepository.save(clientDetails);
     }
 
     @Transactional
@@ -74,6 +104,9 @@ public class JpaRelationshipApplication implements CommandLineRunner {
             client.getInvoices().forEach(invoice ->
                     System.out.println("  " + invoice)
             );
+
+            System.out.println("\n📄 DETALLES");
+            System.out.println(client.getDetails());
         });
     }
 
