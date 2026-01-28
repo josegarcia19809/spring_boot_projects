@@ -47,6 +47,8 @@ public class Client {
     )
     private List<Address> addresses = new ArrayList<>();
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
+    private List<Invoice> invoices = new ArrayList<>();
 
     public void addAddress(Address address) {
         if (addresses == null) {

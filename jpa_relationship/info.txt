@@ -1,14 +1,8 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: Eliminar objetos dependientes o hijos en la relación OneToMany parte 1
+JPA e Hibernate - Asociaciones: Relación OneToMany Bidireccional
 
-Eliminar objetos dependientes o hijos en la relación OneToMany parte 2
-6:47
-Eliminar objetos dependientes OneToMany con relación existente
-9:35
-Relación OneToMany Bidireccional
-8:41
 Codificando ejemplo OneToMany Bidireccional
 10:11
 Optimizando relación OneToMany con método encadenado
