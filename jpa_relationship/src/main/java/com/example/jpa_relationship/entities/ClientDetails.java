@@ -22,12 +22,11 @@ public class ClientDetails {
     @JoinColumn(name = "client_id")
     private Client client;
 
-
-
     public ClientDetails(boolean premium, Integer points) {
         this.premium = premium;
         this.points = points;
     }
+
 
     @Override
     public String toString() {

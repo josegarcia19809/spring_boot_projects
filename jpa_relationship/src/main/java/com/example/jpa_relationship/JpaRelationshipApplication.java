@@ -47,7 +47,29 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 //        mostrarClienteCompleto(6L);
 //        oneToOneClient();
 //        oneToOneClientFindById();
+//        mostrarClienteCompleto(1L);
+//        addClientDetails(1L);
         mostrarClienteCompleto(1L);
+        removeClientDetails(1L);
+        mostrarClienteCompleto(1L);
+    }
+
+    @Transactional
+    public void removeClientDetails(Long clientId) {
+        Client client = clientRepository.findById(clientId).orElseThrow();
+
+        client.removeDetails();
+
+        clientRepository.save(client);
+    }
+    @Transactional
+    public void addClientDetails(Long clientId) {
+        Client client = clientRepository.findById(clientId).orElseThrow();
+
+        ClientDetails details = new ClientDetails(true, 12500);
+        client.setDetails(details);
+
+        clientRepository.save(client);
     }
 
 

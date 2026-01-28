@@ -1,7 +1,7 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: Relación OneToOne Bidireccional
+JPA e Hibernate - Asociaciones: Relación OneToOne Bidireccional, eliminando detalles cliente
 
 
 22:27

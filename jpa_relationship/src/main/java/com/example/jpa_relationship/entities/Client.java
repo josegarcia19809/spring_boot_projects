@@ -75,6 +75,19 @@ public class Client {
         this.lastName = lastName;
     }
 
+    public void setDetails(ClientDetails details) {
+        this.details = details;
+        if (details != null) {
+            details.setClient(this);
+        }
+    }
+
+    public void removeDetails() {
+        if (this.details != null) {
+            this.details.setClient(null);
+            this.details = null;
+        }
+    }
     @Override
     public String toString() {
         return "Client{" +
