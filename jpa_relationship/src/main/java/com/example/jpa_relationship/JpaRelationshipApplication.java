@@ -11,6 +11,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @SpringBootApplication
@@ -32,12 +34,31 @@ public class JpaRelationshipApplication implements CommandLineRunner {
         // AddFindByIdClient();
         // guardarClienteConDireccionesOneToMany();
         // agregarDireccionesAClienteExistenteOneToMany();
-        removeAddress();
+//        removeAddress();
+        oneToManyInvoiceBidireccional();
+    }
+
+    @Transactional
+    public void oneToManyInvoiceBidireccional() {
+        Client newClient = new Client("Rosa", "María");
+
+        Invoice invoice1 = new Invoice("Compras de la casa", 3000L);
+        Invoice invoice2 = new Invoice("Compras de la oficina", 3000L);
+
+        List<Invoice> invoices = new ArrayList<>();
+        invoices.add(invoice1);
+        invoices.add(invoice2);
+        newClient.setInvoices(invoices);
+
+        invoice1.setClient(newClient);
+        invoice2.setClient(newClient);
+
+        clientRepository.save(newClient);
     }
 
 
     @Transactional
-    public void removeAddress(){
+    public void removeAddress() {
         Optional<Client> optionalClient = clientRepository.findById(4L);
         optionalClient.ifPresent(client -> {
             client.removeAddress(client.getAddresses().get(0));

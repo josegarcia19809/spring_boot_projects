@@ -1,9 +1,9 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: Relación OneToMany Bidireccional
+JPA e Hibernate - Asociaciones: Codificando ejemplo OneToMany Bidireccional
 
-Codificando ejemplo OneToMany Bidireccional
+
 10:11
 Optimizando relación OneToMany con método encadenado
 5:56
