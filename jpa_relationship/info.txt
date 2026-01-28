@@ -1,12 +1,8 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: Esquema con tabla de enlace en OneToMany
+JPA e Hibernate - Asociaciones: Eliminar objetos dependientes o hijos en la relación OneToMany parte 1
 
-
-9:53
-Eliminar objetos dependientes o hijos en la relación OneToMany parte 1
-10:21
 Eliminar objetos dependientes o hijos en la relación OneToMany parte 2
 6:47
 Eliminar objetos dependientes OneToMany con relación existente

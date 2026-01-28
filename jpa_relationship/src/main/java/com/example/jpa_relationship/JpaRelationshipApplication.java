@@ -29,9 +29,20 @@ public class JpaRelationshipApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // manyToOne();
-//        AddFindByIdClient();
-        guardarClienteConDireccionesOneToMany();
+        // AddFindByIdClient();
+        // guardarClienteConDireccionesOneToMany();
         // agregarDireccionesAClienteExistenteOneToMany();
+        removeAddress();
+    }
+
+
+    @Transactional
+    public void removeAddress(){
+        Optional<Client> optionalClient = clientRepository.findById(4L);
+        optionalClient.ifPresent(client -> {
+            client.removeAddress(client.getAddresses().get(0));
+            clientRepository.save(client);
+        });
     }
 
     @Transactional

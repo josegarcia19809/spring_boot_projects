@@ -55,6 +55,12 @@ public class Client {
         addresses.add(address);
     }
 
+    public void removeAddress(Address address) {
+        if (addresses != null) {
+            addresses.remove(address);
+        }
+    }
+
     public Client(String name, String lastName) {
         this.name = name;
         this.lastName = lastName;
