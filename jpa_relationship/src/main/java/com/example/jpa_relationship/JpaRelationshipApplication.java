@@ -54,7 +54,7 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 //        removeClientDetails(1L);
 //        mostrarClienteCompleto(1L);
 
-        // manyToManyStudentsCourses();
+        manyToManyStudentsCourses();
         imprimirEstudiantesConCursos();
     }
 
