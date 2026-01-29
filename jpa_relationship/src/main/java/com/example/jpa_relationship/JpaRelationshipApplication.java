@@ -1,12 +1,10 @@
 package com.example.jpa_relationship;
 
-import com.example.jpa_relationship.entities.Address;
-import com.example.jpa_relationship.entities.Client;
-import com.example.jpa_relationship.entities.ClientDetails;
-import com.example.jpa_relationship.entities.Invoice;
+import com.example.jpa_relationship.entities.*;
 import com.example.jpa_relationship.repositories.ClientDetailsRepository;
 import com.example.jpa_relationship.repositories.ClientRepository;
 import com.example.jpa_relationship.repositories.InvoiceRepository;
+import com.example.jpa_relationship.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,6 +24,9 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 
     @Autowired
     private ClientDetailsRepository clientDetailsRepository;
+
+    @Autowired
+    private StudentRepository studentRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(JpaRelationshipApplication.class, args);
@@ -49,10 +50,38 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 //        oneToOneClientFindById();
 //        mostrarClienteCompleto(1L);
 //        addClientDetails(1L);
-        mostrarClienteCompleto(1L);
-        removeClientDetails(1L);
-        mostrarClienteCompleto(1L);
+//        mostrarClienteCompleto(1L);
+//        removeClientDetails(1L);
+//        mostrarClienteCompleto(1L);
+
+        // manyToManyStudentsCourses();
+        imprimirEstudiantesConCursos();
     }
+
+    @Transactional
+    public void manyToManyStudentsCourses() {
+        Student student1 = new Student("Tony", "Stark");
+        Student student2 = new Student("Bruce", "Banner");
+
+        Course course1 = new Course("Java Master", "Alfredo Molina");
+        Course course2 = new Course("Python Master", "Javier Molina");
+
+        student1.setCourses(Set.of(course1, course2));
+        student2.setCourses(Set.of(course1));
+
+        studentRepository.saveAll(List.of(student1, student2));
+    }
+
+    public void imprimirEstudiantesConCursos() {
+        List<Student> students = studentRepository.findAllWithCourses();
+
+        for (Student student : students) {
+            System.out.println(student);
+            student.getCourses().forEach(c -> System.out.println(" ".repeat(10) + c));
+        }
+    }
+
+
 
     @Transactional
     public void removeClientDetails(Long clientId) {
@@ -62,6 +91,7 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 
         clientRepository.save(client);
     }
+
     @Transactional
     public void addClientDetails(Long clientId) {
         Client client = clientRepository.findById(clientId).orElseThrow();

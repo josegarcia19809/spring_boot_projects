@@ -1,15 +1,9 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: Relación OneToOne Bidireccional, eliminando detalles cliente
+JPA e Hibernate - Asociaciones: Relación ManyToMany
 
 
-22:27
-Relación OneToOne
-29:56
-
-14:01
-Relación ManyToMany
 22:55
 Esquema con tabla de enlace en relación ManyToMany
 6:46
