@@ -1,10 +1,7 @@
 package com.example.jpa_relationship;
 
 import com.example.jpa_relationship.entities.*;
-import com.example.jpa_relationship.repositories.ClientDetailsRepository;
-import com.example.jpa_relationship.repositories.ClientRepository;
-import com.example.jpa_relationship.repositories.InvoiceRepository;
-import com.example.jpa_relationship.repositories.StudentRepository;
+import com.example.jpa_relationship.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -27,6 +24,9 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 
     @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    private CourseRepository courseRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(JpaRelationshipApplication.class, args);
@@ -54,10 +54,26 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 //        removeClientDetails(1L);
 //        mostrarClienteCompleto(1L);
 
-        manyToManyStudentsCourses();
+        //manyToManyStudentsExistentesCourses();
         imprimirEstudiantesConCursos();
     }
 
+    @Transactional
+    public void manyToManyStudentsExistentesCourses() {
+        Optional<Student> studentOptional1 = studentRepository.findById(1L);
+        Optional<Student> studentOptional2 = studentRepository.findById(2L);
+
+        Student student1 = studentOptional1.orElse(null);
+        Student student2 = studentOptional2.orElse(null);
+
+        Course course1 = new Course("Swift Master", "Alfredo Molina");
+        Course course2 = new Course("Kotlin Master", "Javier Molina");
+
+        student1.setCourses(Set.of(course1, course2));
+        student2.setCourses(Set.of(course1));
+
+        studentRepository.saveAll(List.of(student1, student2));
+    }
     @Transactional
     public void manyToManyStudentsCourses() {
         Student student1 = new Student("Tony", "Stark");
