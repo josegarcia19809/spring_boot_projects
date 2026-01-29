@@ -1,7 +1,4 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: Relación ManyToMany Bidireccional
-
-
-
+JPA e Hibernate - Asociaciones: Fin de sección
