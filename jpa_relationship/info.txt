@@ -1,7 +1,7 @@
 Curso: Spring Framework 6 & Spring Boot 3 desde cero a experto
 
 
-JPA e Hibernate - Asociaciones: Relación ManyToMany con relación existente
+JPA e Hibernate - Asociaciones: Eliminar objetos dependientes en relación ManyToMany
 
-Eliminar objetos dependientes en relación ManyToMany
+
 Relación ManyToMany Bidireccional

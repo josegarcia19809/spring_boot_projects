@@ -55,7 +55,23 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 //        mostrarClienteCompleto(1L);
 
         //manyToManyStudentsExistentesCourses();
+        manyToManyStudentsCoursesRemove();
         imprimirEstudiantesConCursos();
+    }
+
+    @Transactional
+    public void manyToManyStudentsCoursesRemove() {
+        Optional<Student> studentOptionalDB = studentRepository.findOneWithCourses(1L);
+        if (studentOptionalDB.isPresent()) {
+            Student studentDB = studentOptionalDB.get();
+            Optional<Course> courseOptionalDB = courseRepository.findById(5L);
+            if (courseOptionalDB.isPresent()) {
+                Course courseDB = courseOptionalDB.get();
+                studentDB.getCourses().remove(courseDB);
+
+                studentRepository.save(studentDB);
+            }
+        }
     }
 
     @Transactional
@@ -74,6 +90,7 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 
         studentRepository.saveAll(List.of(student1, student2));
     }
+
     @Transactional
     public void manyToManyStudentsCourses() {
         Student student1 = new Student("Tony", "Stark");
@@ -96,7 +113,6 @@ public class JpaRelationshipApplication implements CommandLineRunner {
             student.getCourses().forEach(c -> System.out.println(" ".repeat(10) + c));
         }
     }
-
 
 
     @Transactional
