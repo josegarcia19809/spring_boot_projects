@@ -3,7 +3,9 @@ package com.example.jpa_relationship.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -19,6 +21,9 @@ public class Course {
 
     private String courseName;
     private String instructor;
+
+    @ManyToMany(mappedBy = "courses")
+    private Set<Student> students = new HashSet<>();
 
     public Course(String courseName, String instructor) {
         this.courseName = courseName;

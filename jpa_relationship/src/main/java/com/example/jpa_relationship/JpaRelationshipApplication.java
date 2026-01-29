@@ -55,8 +55,55 @@ public class JpaRelationshipApplication implements CommandLineRunner {
 //        mostrarClienteCompleto(1L);
 
         //manyToManyStudentsExistentesCourses();
-        manyToManyStudentsCoursesRemove();
+        //manyToManyStudentsCoursesBidireccionalRemove();
+        //manyToManyStudentsExistentesCoursesBidireccional();
         imprimirEstudiantesConCursos();
+    }
+
+    @Transactional
+    public void manyToManyStudentsExistentesCoursesBidireccional() {
+        Optional<Student> studentOptional1 = studentRepository.findOneWithCourses(1L);
+        Optional<Student> studentOptional2 = studentRepository.findOneWithCourses(2L);
+
+        Student student1 = studentOptional1.orElse(null);
+        Student student2 = studentOptional2.orElse(null);
+
+        Course course1 = courseRepository.findOneWithStudents(8L).orElse(null);
+        Course course2 = courseRepository.findOneWithStudents(9L).orElse(null);
+
+        student1.getCourses().add(course1);
+        student1.getCourses().add(course2);
+        student2.getCourses().add(course1);
+
+        studentRepository.saveAll(List.of(student1, student2));
+    }
+    @Transactional
+    public void manyToManyStudentsCoursesBidireccionalRemove() {
+        Optional<Student> studentOptionalDB = studentRepository.findOneWithCourses(5L);
+        if (studentOptionalDB.isPresent()) {
+            Student studentDB = studentOptionalDB.get();
+            Optional<Course> courseOptionalDB = courseRepository.findOneWithStudents(9L);
+            if (courseOptionalDB.isPresent()) {
+                Course courseDB = courseOptionalDB.get();
+                studentDB.removeCourse(courseDB);
+
+                studentRepository.save(studentDB);
+            }
+        }
+    }
+    @Transactional
+    public void manyToManyStudentsCoursesBidireccional() {
+        Student student1 = new Student("Mary", "Stark");
+        Student student2 = new Student("Tatiana", "Banner");
+
+        Course course1 = new Course("React Master", "Alfredo Molina");
+        Course course2 = new Course("Angular Master", "Javier Molina");
+
+        student1.addCourse(course1);
+        student1.addCourse(course2);
+        student2.addCourse(course2);
+
+        studentRepository.saveAll(List.of(student1, student2));
     }
 
     @Transactional
