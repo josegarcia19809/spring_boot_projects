@@ -1,4 +1,4 @@
-package com.portfolio.my_portfolio_backend.models;
+package com.portfolio.my_portfolio_backend.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
