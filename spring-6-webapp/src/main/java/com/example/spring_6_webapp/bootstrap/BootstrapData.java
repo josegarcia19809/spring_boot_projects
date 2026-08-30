@@ -26,49 +26,102 @@ public class BootstrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Author author = new Author();
-        author.setFirstName("John");
-        author.setLastName("Doe");
 
-        Book book = new Book();
-        book.setTitle("Java Developer");
-        book.setIsbn("123456789");
-
-        Author authorSaved = authorRepository.save(author);
-        Book bookSaved = bookRepository.save(book);
-
-        authorSaved.getBooks().add(bookSaved);
-        authorRepository.save(authorSaved);
-
-        // Segundo autor
-        Author author2 = new Author();
-        author2.setFirstName("Jane");
-        author2.setLastName("Smith");
-
-        // Segundo libro
-        Book book2 = new Book();
-        book2.setTitle("Spring Boot desde Cero");
-        book2.setIsbn("987654321");
-
-        Author author2Saved = authorRepository.save(author2);
-        Book book2Saved = bookRepository.save(book2);
-
-        author2Saved.getBooks().add(book2Saved);
-        authorRepository.save(author2Saved);
-
-        System.out.println("In BootstrapData");
-        System.out.println("Author count: " + authorRepository.count());
-        System.out.println("Book count: " + bookRepository.count());
+// ========================================
+        // 1. Crear editorial
+        // ========================================
 
         Publisher publisher = new Publisher();
-        publisher.setPublisherName("Maria");
+        publisher.setPublisherName("Pearson");
         publisher.setAddress("I Fabela");
         publisher.setCity("Atlacomulco");
         publisher.setState("México");
         publisher.setZip("12345");
 
-        publisherRepository.save(publisher);
+        Publisher savedPublisher = publisherRepository.save(publisher);
+
+
+        // ========================================
+        // 2. Crear primer autor
+        // ========================================
+
+        Author author = new Author();
+        author.setFirstName("John");
+        author.setLastName("Doe");
+
+        Author savedAuthor = authorRepository.save(author);
+
+
+        // ========================================
+        // 3. Crear primer libro
+        // ========================================
+
+        Book book = new Book();
+        book.setTitle("Java Developer");
+        book.setIsbn("123456789");
+        book.setPublisher(savedPublisher);
+
+        Book savedBook = bookRepository.save(book);
+
+
+        // ========================================
+        // 4. Relacionar autor y libro
+        // ========================================
+
+        savedAuthor.getBooks().add(savedBook);
+        savedBook.getAuthors().add(savedAuthor);
+
+        authorRepository.save(savedAuthor);
+        bookRepository.save(savedBook);
+
+
+        // ========================================
+        // 5. Crear segundo autor
+        // ========================================
+
+        Author author2 = new Author();
+        author2.setFirstName("Jane");
+        author2.setLastName("Smith");
+
+        Author savedAuthor2 = authorRepository.save(author2);
+
+
+        // ========================================
+        // 6. Crear segundo libro
+        // ========================================
+
+        Book book2 = new Book();
+        book2.setTitle("Spring Boot desde Cero");
+        book2.setIsbn("987654321");
+        book2.setPublisher(savedPublisher);
+
+        Book savedBook2 = bookRepository.save(book2);
+
+
+        // ========================================
+        // 7. Relacionar segundo autor y libro
+        // ========================================
+
+        savedAuthor2.getBooks().add(savedBook2);
+        savedBook2.getAuthors().add(savedAuthor2);
+
+        authorRepository.save(savedAuthor2);
+        bookRepository.save(savedBook2);
+
+
+        // ========================================
+        // 8. Mostrar resultados
+        // ========================================
+
+        System.out.println("=================================");
+        System.out.println("       DATOS INICIALES");
+        System.out.println("=================================");
+
+        System.out.println("Author count: " + authorRepository.count());
+        System.out.println("Book count: " + bookRepository.count());
         System.out.println("Publisher count: " + publisherRepository.count());
 
+        System.out.println("=================================");
     }
 }
+

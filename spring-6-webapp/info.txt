@@ -1,5 +1,5 @@
 [NEW] Spring Boot 4, Spring Framework 7: Beginner to Guru
 
 
-Building a Spring Boot Web App: Spring Data Repositories
+Building a Spring Boot Web App: Uso de H2 Console
 

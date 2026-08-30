@@ -2,7 +2,9 @@ package com.example.spring_6_webapp.domain;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Publisher {
@@ -18,6 +20,10 @@ public class Publisher {
     private String state;
 
     private String zip;
+
+    @OneToMany(mappedBy = "publisher")
+    private Set<Book> books = new HashSet<>();
+
 
     public void setId(Long id) {
         this.id = id;
@@ -67,24 +73,28 @@ public class Publisher {
         this.zip = zip;
     }
 
+
+    // equals y hashCode
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Publisher publisher = (Publisher) o;
-        return id.equals(publisher.id) && Objects.equals(publisherName, publisher.publisherName) && Objects.equals(address, publisher.address) && Objects.equals(city, publisher.city) && Objects.equals(state, publisher.state) && Objects.equals(zip, publisher.zip);
+
+        return Objects.equals(id, publisher.id);
     }
 
     @Override
     public int hashCode() {
-        int result = id.hashCode();
-        result = 31 * result + Objects.hashCode(publisherName);
-        result = 31 * result + Objects.hashCode(address);
-        result = 31 * result + Objects.hashCode(city);
-        result = 31 * result + Objects.hashCode(state);
-        result = 31 * result + Objects.hashCode(zip);
-        return result;
+        return Objects.hash(id);
     }
+
+
+    // toString
 
     @Override
     public String toString() {
