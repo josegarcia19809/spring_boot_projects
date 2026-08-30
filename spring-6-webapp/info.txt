@@ -1,5 +1,5 @@
 [NEW] Spring Boot 4, Spring Framework 7: Beginner to Guru
 
 
-Building a Spring Boot Web App: Despliegue de lista de libros
+Building a Spring Boot Web App: Despliegue de lista de autores
 
