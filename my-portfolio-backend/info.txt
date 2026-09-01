@@ -1,4 +1,4 @@
 Del curso: Java: Spring Boot - Guía definitiva
 
 
-Portfolio Backend: PersonalInfo - Service & RestController
+Portfolio Backend: Terminando repositorios y servicios
