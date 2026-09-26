@@ -1,1 +1,1 @@
-jpa_empleos 2026: Actualizar una categoría
+jpa_empleos 2026: Borrar una categoría por ID
