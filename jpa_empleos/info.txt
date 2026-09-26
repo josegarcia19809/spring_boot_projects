@@ -1,1 +1,1 @@
-jpa_empleos 2026: Crear una categoría
+jpa_empleos 2026: Recuperar una categoría por ID
