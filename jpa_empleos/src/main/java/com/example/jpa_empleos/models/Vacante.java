@@ -29,6 +29,7 @@ public class Vacante {
     @Column(name = "fecha", nullable = false)
     private Date fecha;
 
+
     @Column(name = "salario", nullable = false)
     private Double salario;
 
@@ -51,4 +52,5 @@ public class Vacante {
     @JoinColumn(name = "idCategoria")
     private Categoria categoria;
 }
+
 

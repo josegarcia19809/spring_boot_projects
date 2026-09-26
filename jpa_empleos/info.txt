@@ -1,2 +1,1 @@
-Desarrollo web con Spring Framework y MySQL8: JPA - Keyword In
-
+jpa_empleos 2026: Creando entidades

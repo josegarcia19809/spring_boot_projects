@@ -28,4 +28,3 @@ public class Categoria {
     private List<Vacante> vacantes;
 
 }
-
