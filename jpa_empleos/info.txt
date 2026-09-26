@@ -1,1 +1,1 @@
-jpa_empleos 2026: Creando CommandLineRunner
+jpa_empleos 2026: Crear una categoría

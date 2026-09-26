@@ -1,5 +1,7 @@
 package com.example.jpa_empleos;
 
+import com.example.jpa_empleos.models.Categoria;
+import com.example.jpa_empleos.repository.CategoriasRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,23 +9,37 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JpaEmpleosApplication implements CommandLineRunner {
 
-	public static void main(String[] args) {
-		SpringApplication.run(JpaEmpleosApplication.class, args);
-	}
+    private final CategoriasRepository categoriasRepo;
 
-	@Override
-	public void run(String... args) throws Exception {
-		guardar();
-		eliminar();
-	}
+    public JpaEmpleosApplication(CategoriasRepository categoriasRepo) {
+        this.categoriasRepo = categoriasRepo;
+    }
 
-	private void guardar() {
-		System.out.println("guardando");
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(JpaEmpleosApplication.class, args);
+    }
 
-	private void eliminar() {
-		System.out.println("eliminando");
+    @Override
+    public void run(String... args) throws Exception {
+        guardar();
+    }
 
-	}
+    private void guardar() {
+        System.out.println("Guardando...");
+
+        Categoria nuevaCategoria = new Categoria();
+        nuevaCategoria.setNombre("Finanzas");
+        nuevaCategoria.setDescripcion("Trabajos relacionados con finanzas y " +
+                "contabilidad");
+
+        categoriasRepo.save(nuevaCategoria);
+        System.out.println(nuevaCategoria);
+    }
+
+    private void eliminar() {
+        System.out.println("eliminando");
+    }
 }
+
+
 
