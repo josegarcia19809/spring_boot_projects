@@ -1,5 +1,6 @@
 package com.example.jpa_empleos.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,6 +26,7 @@ public class Categoria {
     @Column(name = "descripcion", columnDefinition = "text")
     private String descripcion;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "categoria")
     private List<Vacante> vacantes;
 

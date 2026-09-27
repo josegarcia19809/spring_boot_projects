@@ -1,1 +1,1 @@
-jpa_empleos 2026: mostrar todas las categorías
+jpa_empleos 2026: Creando API Rest para Categorías
