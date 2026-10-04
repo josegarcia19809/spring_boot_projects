@@ -46,7 +46,7 @@ public class JpaEmpleosApplication implements CommandLineRunner {
      * Método para buscar un usuario y sus métodos asociados
      */
     public void buscarUsuario() {
-        Optional<Usuario> usuarioOptional = usuarioRepo.findById(1);
+        Optional<Usuario> usuarioOptional = usuarioRepo.findById(50);
         if (usuarioOptional.isPresent()) {
             Usuario usuario = usuarioOptional.get();
             System.out.println("Nombre: " + usuario.getNombre());
@@ -55,6 +55,10 @@ public class JpaEmpleosApplication implements CommandLineRunner {
                 System.out.println(perfil.getPerfil());
             }
         }
+        else {
+            System.out.println("Usuario no encontrado");
+        }
+
     }
 
 
