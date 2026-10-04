@@ -1,1 +1,1 @@
-jpa_empleos 2026: JPARepository – Crear perfiles
+jpa_empleos 2026: JPARepository – Crear usuario con perfiles

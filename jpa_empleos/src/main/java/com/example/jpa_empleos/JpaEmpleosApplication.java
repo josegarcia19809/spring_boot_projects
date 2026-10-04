@@ -1,9 +1,6 @@
 package com.example.jpa_empleos;
 
-import com.example.jpa_empleos.models.Categoria;
-import com.example.jpa_empleos.models.EstatusVacante;
-import com.example.jpa_empleos.models.Perfil;
-import com.example.jpa_empleos.models.Vacante;
+import com.example.jpa_empleos.models.*;
 import com.example.jpa_empleos.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -12,10 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
+import java.time.LocalDate;
+import java.util.*;
 
 @SpringBootApplication
 public class JpaEmpleosApplication implements CommandLineRunner {
@@ -44,8 +39,38 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        crearPerfiles();
+        crearUsuarioConPerfiles();
     }
+
+    /**
+     * Crear usuario con 2 perfiles ADMINISTRADOR=2, USUARIO=3
+     */
+
+    private void crearUsuarioConPerfiles() {
+        Usuario nuevoUsuario = new Usuario();
+        nuevoUsuario.setNombre("José García");
+        nuevoUsuario.setEmail("jose@gmail.com");
+        nuevoUsuario.setUsername("joseg"); // 👈 nombre de usuario
+        nuevoUsuario.setPassword("12345");
+        nuevoUsuario.setEstatus(1); // activo por defecto
+        nuevoUsuario.setFechaRegistro(LocalDate.now()); // 👈 fecha actual
+
+        // Supongamos que ya tienes dos perfiles obtenidos del repositorio
+        Perfil perfil1= new Perfil();
+        perfil1.setId(2);
+
+        Perfil perfil2= new Perfil();
+        perfil2.setId(3);
+
+        // Crear el conjunto de perfiles y asignarlo
+        Set<Perfil> perfilesUsuario = new HashSet<>();
+        perfilesUsuario.add(perfil1);
+        perfilesUsuario.add(perfil2);
+        nuevoUsuario.setPerfiles(perfilesUsuario);
+
+        usuarioRepo.save(nuevoUsuario);
+    }
+
 
     /**
      * Método para crear los perfiles
