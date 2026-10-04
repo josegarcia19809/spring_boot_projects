@@ -43,12 +43,24 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     /**
      * Método findAll - Interfaz JPARepository
      */
-    private void buscarVacantes() {
+    public void buscarVacantes() {
         List<Vacante> vacantes = vacantesRepo.findAll();
         for (Vacante vacante : vacantes) {
-            System.out.println(vacante.getId() + ". " + vacante.getNombre());
+            System.out.println(vacante.getId() + ". " + vacante.getNombre() +
+                    " -> " + vacante.getCategoria().getNombre());
         }
     }
+
+
+    /**
+     * Método findAll - Interfaz JPARepository
+     */
+//    private void buscarVacantes() {
+//        List<Vacante> vacantes = vacantesRepo.findAll();
+//        for (Vacante vacante : vacantes) {
+//            System.out.println(vacante.getId() + ". " + vacante.getNombre());
+//        }
+//    }
 
 
     /**

@@ -1,1 +1,1 @@
-jpa_empleos 2026: JPARepository - Recuperar todas las vacantes
+jpa_empleos 2026: JPARepository - Recuperar todas las vacantes y sus categorías
