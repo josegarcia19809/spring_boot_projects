@@ -2,10 +2,9 @@ package com.example.jpa_empleos;
 
 import com.example.jpa_empleos.models.Categoria;
 import com.example.jpa_empleos.models.EstatusVacante;
+import com.example.jpa_empleos.models.Perfil;
 import com.example.jpa_empleos.models.Vacante;
-import com.example.jpa_empleos.repository.CategoriasJPARepository;
-import com.example.jpa_empleos.repository.CategoriasRepository;
-import com.example.jpa_empleos.repository.VacantesRepository;
+import com.example.jpa_empleos.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,13 +23,18 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     private final CategoriasRepository categoriasRepo;
     private final CategoriasJPARepository categoriasJPARepo;
     private final VacantesRepository vacantesRepo;
+    private final PerfilesRepository perfilesRepo;
+    private final UsuarioRepository usuarioRepo;
 
-    public JpaEmpleosApplication(CategoriasRepository categoriasRepo,
-                                 CategoriasJPARepository categoriasJPARepo, VacantesRepository vacantesRepo) {
+
+    public JpaEmpleosApplication(CategoriasRepository categoriasRepo, CategoriasJPARepository categoriasJPARepo, VacantesRepository vacantesRepo, PerfilesRepository perfilesRepo, UsuarioRepository usuarioRepo) {
         this.categoriasRepo = categoriasRepo;
         this.categoriasJPARepo = categoriasJPARepo;
         this.vacantesRepo = vacantesRepo;
+        this.perfilesRepo = perfilesRepo;
+        this.usuarioRepo = usuarioRepo;
     }
+
 
 
     public static void main(String[] args) {
@@ -39,8 +44,37 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-       // guardarVacante();
+        crearPerfiles();
     }
+
+    /**
+     * Método para crear los perfiles
+     */
+    private void crearPerfiles() {
+        perfilesRepo.saveAll(obtenerPerfiles());
+    }
+
+    /**
+     * Método que regresa una lista de Perfiles que se tienen en la aplicación de empleos
+     */
+    private List<Perfil> obtenerPerfiles() {
+        List<Perfil> perfiles = new LinkedList<>();
+        Perfil perfil1 = new Perfil();
+        perfil1.setPerfil("SUPERVISOR");
+
+        Perfil perfil2 = new Perfil();
+        perfil2.setPerfil("ADMINISTRADOR");
+
+        Perfil perfil3 = new Perfil();
+        perfil3.setPerfil("USUARIO");
+
+        perfiles.add(perfil1);
+        perfiles.add(perfil2);
+        perfiles.add(perfil3);
+        return perfiles;
+    }
+
+
 
     /**
      * Guardar una vacante

@@ -1,1 +1,1 @@
-jpa_empleos 2026: JPARepository – API REST vacante
+jpa_empleos 2026: JPARepository – Crear perfiles
