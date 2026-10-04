@@ -1,1 +1,1 @@
-jpa_empleos 2026: Creando API Rest para Categorías JPARepository
+jpa_empleos 2026: JPARepository - Recuperar todas las vacantes
