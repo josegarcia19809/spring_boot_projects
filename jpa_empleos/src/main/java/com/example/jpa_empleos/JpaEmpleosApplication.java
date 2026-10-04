@@ -39,8 +39,24 @@ public class JpaEmpleosApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        crearUsuarioConPerfiles();
+        buscarUsuario();
     }
+
+    /**
+     * Método para buscar un usuario y sus métodos asociados
+     */
+    public void buscarUsuario() {
+        Optional<Usuario> usuarioOptional = usuarioRepo.findById(1);
+        if (usuarioOptional.isPresent()) {
+            Usuario usuario = usuarioOptional.get();
+            System.out.println("Nombre: " + usuario.getNombre());
+            System.out.println("Perfiles asignados");
+            for (Perfil perfil : usuario.getPerfiles()) {
+                System.out.println(perfil.getPerfil());
+            }
+        }
+    }
+
 
     /**
      * Crear usuario con 2 perfiles ADMINISTRADOR=2, USUARIO=3
