@@ -1,1 +1,1 @@
-jpa_empleos 2026: Query – Buscar vacantes por estatus y por destacada
+jpa_empleos 2026: Query – Buscar vacantes por rango de salarios
