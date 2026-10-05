@@ -1,1 +1,1 @@
-jpa_empleos 2026: JPARepository – Crear UsuarioController. Usuarios y perfiles
+jpa_empleos 2026: Query – Buscar vacantes por estatus
