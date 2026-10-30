@@ -1,0 +1,12 @@
+package com.example.asistente_medico.services;
+
+import reactor.core.publisher.Flux;
+
+public interface AsistenteService {
+    String chat(String prompt, String model);
+    Flux<String> chatStream(String prompt, String model);
+    String explainCondition(String condition, String model);
+    String analyzeSymptoms(String symptoms, String model);
+    String diagnoseWithReasoning(String symptoms, String model);
+    String consult(String query, String model);
+}
